@@ -12,9 +12,9 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: DefaultCompany
+  companyName: "Mar\xEDa RN"
   productName: Jacksonville
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: f4bcc33b3cff30045a2fc9a32d4a2d97, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
@@ -703,7 +703,7 @@ PlayerSettings:
   hmiLogStartupTiming: 0
   hmiCpuConfiguration: 
   apiCompatibilityLevel: 6
-  activeInputHandler: 0
+  activeInputHandler: 2
   windowsGamepadBackendHint: 0
   cloudProjectId: 71980dc6-034e-434b-86f8-13e1d88687aa
   framebufferDepthMemorylessMode: 0
