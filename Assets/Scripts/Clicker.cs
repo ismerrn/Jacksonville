@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Clicker : MonoBehaviour
@@ -55,6 +56,8 @@ public class Clicker : MonoBehaviour
     public GameObject CEggplantShape;
     public GameObject CMushroomShape;
 
+    public PantryBehaviour pantryBehaviourScript;
+
 
     // ---------------------------------- MOUSE ------------------------------------------
     // Store Mouse position every frame
@@ -63,6 +66,9 @@ public class Clicker : MonoBehaviour
     // Check if clicked (default = false)
     public bool isClicked = false;
 
+    // Check if the ingredient has been clicked (default = false)
+    public bool isIngrSelected = false;
+
 
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
     void Start()
@@ -70,6 +76,9 @@ public class Clicker : MonoBehaviour
         // ---------------------------------- ACCESS --------------------------------------------
         // Access Ingredient chip sprite renderer
         ingredientChipRenderer = transform.parent.GetComponent<SpriteRenderer>();
+
+        // Access the Pantry Behaviour script
+        pantryBehaviourScript = FindObjectOfType<PantryBehaviour>();
 
 
         // ---------------------------------- ACTIVATION ----------------------------------------
@@ -131,7 +140,7 @@ public class Clicker : MonoBehaviour
         // Active the renderer of the ingredient selected
         ingredientSelected.GetComponent<SpriteRenderer>().enabled = true;
 
-        // Access the Ingredient Sprite Change method
+        // Change the Ingredient Sprite
         IngredientSpriteChange();
     }
 
@@ -142,21 +151,30 @@ public class Clicker : MonoBehaviour
         // Loop to check which ingredient is being clicked
         for (int i = 0; i < 4; i = i + 1)
         {
-            // If the ingredient clicked matches the ingredient of that round of the loop
-            if (ingredientChipRenderer.sprite == pantryIngrDefault[i])
-            {
-                //Change the sprite for it's blocked one
-                ingredientChipRenderer.sprite = pantryIngrBlocked[i];
+            // If the ingredient clicked matches the ingredient of that round of the loop & it hasn't been selected before
+            if (ingredientChipRenderer.sprite == pantryIngrDefault[i])// && pantryIngrDefault[i].GetComponent<Clicker>().isIngrSelected == false)
+            { 
+                if(ingredientChipRenderer.gameObject.transform.GetChild(0).gameObject.GetComponent<Clicker>().isIngrSelected == false)
+                {
+                    // Set the looped sprite as an ingredient selected
+                    ingredientChipRenderer.gameObject.transform.GetChild(0).gameObject.GetComponent<Clicker>().isIngrSelected = true;
 
-                // Set the Ingredient selected UI to it's selected sprite
-                ingredientSelected.GetComponent<SpriteRenderer>().sprite = cursorIngrSelected[i];
+                    //Change the sprite for it's blocked one
+                    ingredientChipRenderer.sprite = pantryIngrBlocked[i];
 
-                // Active the loop shape's Game Object
-                cursorIngrShape[i].SetActive (true);
+                    // Set the Ingredient selected UI to it's selected sprite
+                    ingredientSelected.GetComponent<SpriteRenderer>().sprite = cursorIngrSelected[i];
 
-                // Not clicked anymore
-                isClicked = false;
+                    // Active the loop shape's Game Object
+                    cursorIngrShape[i].SetActive (true);
+
+                    // Not clicked anymore
+                    isClicked = false;
+
+                    pantryBehaviourScript.DeactivateChilds(i);
+                }
             }
+
         }
     }
 }
