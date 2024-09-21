@@ -22,7 +22,7 @@ public class Clicker : MonoBehaviour
 
     // ---------------------------------- SCRIPTS -----------------------------------------
     // Access Pantry Behaviour script
-    public PantryBehaviour pantryBehaviourScript;
+    public Pantry pantryScript;
 
 
     // ---------------------------------- ARRAYS ------------------------------------------
@@ -79,7 +79,7 @@ public class Clicker : MonoBehaviour
         pIngredientRenderer = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
 
         // Access the Pantry Behaviour script
-        pantryBehaviourScript = FindObjectOfType<PantryBehaviour>();
+        pantryScript = FindObjectOfType<Pantry>();
 
 
         // ---------------------------------- ACTIVATION ----------------------------------------
@@ -174,7 +174,7 @@ public class Clicker : MonoBehaviour
                     isClicked = false;
 
                     // Start the method of unblocking ingredients
-                    pantryBehaviourScript.UnblockIngredients(i);
+                    pantryScript.UnblockIngredients(i);
                 }
             }
 

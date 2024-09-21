@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PantryBehaviour : MonoBehaviour
+public class Pantry : MonoBehaviour
 {
     // ---------------------------------- ARRAYS -------------------------------------------
     // Array to store all the Ingredient chips GOs
@@ -35,7 +35,6 @@ public class PantryBehaviour : MonoBehaviour
         // ---------------------------------- ACCESS --------------------------------------------
         // Access the Clicker script
         ClickerScript = FindObjectOfType<Clicker>();
-
     }
 
 
