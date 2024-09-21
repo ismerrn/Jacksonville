@@ -1052,11 +1052,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 292.7}
   m_SizeDelta: {x: 276.69995, y: 73.600006}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &246549841 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9129567486813464906, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-  m_PrefabInstance: {fileID: 7878552132799104395}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &255252903
 GameObject:
   m_ObjectHideFlags: 0
@@ -2452,6 +2447,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 175.7}
   m_SizeDelta: {x: 276.69995, y: 73.600006}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &553810328 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1139789430779291147, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+  m_PrefabInstance: {fileID: 7878552132799104395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &594984927 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2608455778558938024, guid: c49debfc61d264c42be9563569dca23a, type: 3}
@@ -2461,11 +2461,6 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 344588850602163918, guid: c49debfc61d264c42be9563569dca23a, type: 3}
   m_PrefabInstance: {fileID: 5931647888388366693}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &669079640 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1545946716581352060, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-  m_PrefabInstance: {fileID: 7878552132799104395}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &740926199
 GameObject:
@@ -3882,6 +3877,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217971631}
   m_CullTransparentMesh: 1
+--- !u!1 &1240600946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2770570261649180202, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+  m_PrefabInstance: {fileID: 7878552132799104395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1256067631
 GameObject:
   m_ObjectHideFlags: 0
@@ -4309,6 +4309,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1325232337}
   m_CullTransparentMesh: 1
+--- !u!1 &1336959895 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8091036857050587840, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+  m_PrefabInstance: {fileID: 7878552132799104395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1356809738
 GameObject:
   m_ObjectHideFlags: 0
@@ -4461,10 +4466,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pIngredientChip:
-  - {fileID: 669079640}
-  - {fileID: 1903244068}
-  - {fileID: 1626794398}
-  - {fileID: 246549841}
+  - {fileID: 1240600946}
+  - {fileID: 1805759773}
+  - {fileID: 1336959895}
+  - {fileID: 553810328}
 --- !u!1 &1413034438
 GameObject:
   m_ObjectHideFlags: 0
@@ -4785,11 +4790,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1611613240}
   m_CullTransparentMesh: 1
---- !u!1 &1626794398 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 390248508751692828, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-  m_PrefabInstance: {fileID: 7878552132799104395}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1693380938
 GameObject:
   m_ObjectHideFlags: 0
@@ -5462,6 +5462,11 @@ Transform:
   - {fileID: 8870686470066914270}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1805759773 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1849559360176522050, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+  m_PrefabInstance: {fileID: 7878552132799104395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1806808784
 GameObject:
   m_ObjectHideFlags: 0
@@ -5864,11 +5869,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881290990}
   m_CullTransparentMesh: 1
---- !u!1 &1903244068 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5001914167538662743, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-  m_PrefabInstance: {fileID: 7878552132799104395}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1962973566
 GameObject:
   m_ObjectHideFlags: 0
@@ -7997,6 +7997,66 @@ PrefabInstance:
       propertyPath: cursorIngrSelected.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: CCarrotShape
+      value: 
+      objectReference: {fileID: 1722144922}
+    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: CTomatoShape
+      value: 
+      objectReference: {fileID: 594984927}
+    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: CEggplantShape
+      value: 
+      objectReference: {fileID: 865552115}
+    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: CMushroomShape
+      value: 
+      objectReference: {fileID: 1729398156}
+    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cIngredientShapes
+      value: 
+      objectReference: {fileID: 255252903}
+    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: ingredientSelected
+      value: 
+      objectReference: {fileID: 1987812630}
+    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pIngredientSelected
+      value: 
+      objectReference: {fileID: 1987812630}
+    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cursorIngrShape.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cIngredientShape.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pantryIngrBlocked.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pantryIngrDefault.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cursorIngrSelected.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pIngredientBlocked.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pIngredientDefault.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cIngredientSelected.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3619081169335345446, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: CCarrotShape
       value: 
@@ -8075,11 +8135,131 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5323609452206902384, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: cursorIngrSelected.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: CCarrotShape
+      value: 
+      objectReference: {fileID: 1722144922}
+    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: CTomatoShape
+      value: 
+      objectReference: {fileID: 594984927}
+    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: CEggplantShape
+      value: 
+      objectReference: {fileID: 865552115}
+    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: CMushroomShape
+      value: 
+      objectReference: {fileID: 1729398156}
+    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cIngredientShapes
+      value: 
+      objectReference: {fileID: 255252903}
+    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: ingredientSelected
+      value: 
+      objectReference: {fileID: 1987812630}
+    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pIngredientSelected
+      value: 
+      objectReference: {fileID: 1987812630}
+    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cursorIngrShape.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cIngredientShape.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pantryIngrBlocked.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pantryIngrDefault.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cursorIngrSelected.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pIngredientBlocked.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pIngredientDefault.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cIngredientSelected.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5905744340343933762, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: m_Name
       value: Pantry
+      objectReference: {fileID: 0}
+    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: CCarrotShape
+      value: 
+      objectReference: {fileID: 1722144922}
+    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: CTomatoShape
+      value: 
+      objectReference: {fileID: 594984927}
+    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: CEggplantShape
+      value: 
+      objectReference: {fileID: 865552115}
+    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: CMushroomShape
+      value: 
+      objectReference: {fileID: 1729398156}
+    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cIngredientShapes
+      value: 
+      objectReference: {fileID: 255252903}
+    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: ingredientSelected
+      value: 
+      objectReference: {fileID: 1987812630}
+    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pIngredientSelected
+      value: 
+      objectReference: {fileID: 1987812630}
+    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cursorIngrShape.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cIngredientShape.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pantryIngrBlocked.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pantryIngrDefault.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cursorIngrSelected.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pIngredientBlocked.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pIngredientDefault.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cIngredientSelected.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6384041572285821497, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8120,6 +8300,66 @@ PrefabInstance:
     - target: {fileID: 6384041572285821497, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: CCarrotShape
+      value: 
+      objectReference: {fileID: 1722144922}
+    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: CTomatoShape
+      value: 
+      objectReference: {fileID: 594984927}
+    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: CEggplantShape
+      value: 
+      objectReference: {fileID: 865552115}
+    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: CMushroomShape
+      value: 
+      objectReference: {fileID: 1729398156}
+    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cIngredientShapes
+      value: 
+      objectReference: {fileID: 255252903}
+    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: ingredientSelected
+      value: 
+      objectReference: {fileID: 1987812630}
+    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pIngredientSelected
+      value: 
+      objectReference: {fileID: 1987812630}
+    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cursorIngrShape.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cIngredientShape.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pantryIngrBlocked.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pantryIngrDefault.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cursorIngrSelected.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pIngredientBlocked.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: pIngredientDefault.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: cIngredientSelected.Array.size
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8230787615522953325, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: CCarrotShape
