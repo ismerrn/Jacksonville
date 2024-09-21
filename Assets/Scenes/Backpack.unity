@@ -2447,11 +2447,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 175.7}
   m_SizeDelta: {x: 276.69995, y: 73.600006}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &553810328 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1139789430779291147, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-  m_PrefabInstance: {fileID: 7878552132799104395}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &594984927 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2608455778558938024, guid: c49debfc61d264c42be9563569dca23a, type: 3}
@@ -3877,11 +3872,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1217971631}
   m_CullTransparentMesh: 1
---- !u!1 &1240600946 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2770570261649180202, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-  m_PrefabInstance: {fileID: 7878552132799104395}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1256067631
 GameObject:
   m_ObjectHideFlags: 0
@@ -4309,11 +4299,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1325232337}
   m_CullTransparentMesh: 1
---- !u!1 &1336959895 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8091036857050587840, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-  m_PrefabInstance: {fileID: 7878552132799104395}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1356809738
 GameObject:
   m_ObjectHideFlags: 0
@@ -4448,28 +4433,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1356809738}
   m_CullTransparentMesh: 1
---- !u!1 &1398923838 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5905744340343933762, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-  m_PrefabInstance: {fileID: 7878552132799104395}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1398923840
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1398923838}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc74108e00d17f4408668f9037c1b9d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pIngredientChip:
-  - {fileID: 1240600946}
-  - {fileID: 1805759773}
-  - {fileID: 1336959895}
-  - {fileID: 553810328}
 --- !u!1 &1413034438
 GameObject:
   m_ObjectHideFlags: 0
@@ -5462,11 +5425,6 @@ Transform:
   - {fileID: 8870686470066914270}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1805759773 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1849559360176522050, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-  m_PrefabInstance: {fileID: 7878552132799104395}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1806808784
 GameObject:
   m_ObjectHideFlags: 0
@@ -7925,78 +7883,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2461130938353973062, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: PCarrot
-      value: 
-      objectReference: {fileID: 21300000, guid: 3e69887aa694b684aa8ec6a5d9bbb6a5, type: 3}
-    - target: {fileID: 2461130938353973062, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: PTomato
-      value: 
-      objectReference: {fileID: 21300000, guid: f230ac80034a56646933ec38bf8b7d38, type: 3}
-    - target: {fileID: 2461130938353973062, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: PEggplant
-      value: 
-      objectReference: {fileID: 21300000, guid: 9fb5b8f693ef05745bb8f3f0f9c631ba, type: 3}
-    - target: {fileID: 2461130938353973062, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: PMushroom
-      value: 
-      objectReference: {fileID: 21300000, guid: 9abadfbc3939fc945a4b2f3d589f0b11, type: 3}
-    - target: {fileID: 2461130938353973062, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: CCarrotShape
-      value: 
-      objectReference: {fileID: 1722144922}
-    - target: {fileID: 2461130938353973062, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: CTomatoShape
-      value: 
-      objectReference: {fileID: 594984927}
-    - target: {fileID: 2461130938353973062, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: CEggplantShape
-      value: 
-      objectReference: {fileID: 865552115}
-    - target: {fileID: 2461130938353973062, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: CMushroomShape
-      value: 
-      objectReference: {fileID: 1729398156}
-    - target: {fileID: 2461130938353973062, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: PCarrotBlocked
-      value: 
-      objectReference: {fileID: 21300000, guid: 6ac82a5633f8d9b4fb0321a2305d95b9, type: 3}
-    - target: {fileID: 2461130938353973062, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: PTomatoBlocked
-      value: 
-      objectReference: {fileID: 21300000, guid: 11722a27d6571e04698981f916eaf8d7, type: 3}
-    - target: {fileID: 2461130938353973062, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: PEggplantBlocked
-      value: 
-      objectReference: {fileID: 21300000, guid: d36bb8cfa80469c42b43413771db5976, type: 3}
-    - target: {fileID: 2461130938353973062, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: PMushroomBlocked
-      value: 
-      objectReference: {fileID: 21300000, guid: 8a00798121e9e0d47838eaac047b2764, type: 3}
-    - target: {fileID: 2461130938353973062, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cIngredientShapes
-      value: 
-      objectReference: {fileID: 255252903}
-    - target: {fileID: 2461130938353973062, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: ingredientSelected
-      value: 
-      objectReference: {fileID: 1987812630}
-    - target: {fileID: 2461130938353973062, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cursorIngrShape.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2461130938353973062, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pantryIngrBlocked.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2461130938353973062, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pantryIngrDefault.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2461130938353973062, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cursorIngrSelected.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: CCarrotShape
       value: 
@@ -8017,126 +7903,10 @@ PrefabInstance:
       propertyPath: cIngredientShapes
       value: 
       objectReference: {fileID: 255252903}
-    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: ingredientSelected
-      value: 
-      objectReference: {fileID: 1987812630}
     - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: pIngredientSelected
       value: 
       objectReference: {fileID: 1987812630}
-    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cursorIngrShape.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cIngredientShape.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pantryIngrBlocked.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pantryIngrDefault.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cursorIngrSelected.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pIngredientBlocked.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pIngredientDefault.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cIngredientSelected.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3619081169335345446, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: CCarrotShape
-      value: 
-      objectReference: {fileID: 1722144922}
-    - target: {fileID: 3619081169335345446, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: CTomatoShape
-      value: 
-      objectReference: {fileID: 594984927}
-    - target: {fileID: 3619081169335345446, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: CEggplantShape
-      value: 
-      objectReference: {fileID: 865552115}
-    - target: {fileID: 3619081169335345446, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: CMushroomShape
-      value: 
-      objectReference: {fileID: 1729398156}
-    - target: {fileID: 3619081169335345446, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cIngredientShapes
-      value: 
-      objectReference: {fileID: 255252903}
-    - target: {fileID: 3619081169335345446, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: ingredientSelected
-      value: 
-      objectReference: {fileID: 1987812630}
-    - target: {fileID: 3619081169335345446, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cursorIngrShape.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3619081169335345446, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pantryIngrBlocked.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3619081169335345446, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pantryIngrDefault.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3619081169335345446, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cursorIngrSelected.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5323609452206902384, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: CCarrotShape
-      value: 
-      objectReference: {fileID: 1722144922}
-    - target: {fileID: 5323609452206902384, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: CTomatoShape
-      value: 
-      objectReference: {fileID: 594984927}
-    - target: {fileID: 5323609452206902384, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: CEggplantShape
-      value: 
-      objectReference: {fileID: 865552115}
-    - target: {fileID: 5323609452206902384, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: CMushroomShape
-      value: 
-      objectReference: {fileID: 1729398156}
-    - target: {fileID: 5323609452206902384, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cIngredientShapes
-      value: 
-      objectReference: {fileID: 255252903}
-    - target: {fileID: 5323609452206902384, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: ingredientSelected
-      value: 
-      objectReference: {fileID: 1987812630}
-    - target: {fileID: 5323609452206902384, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cursorIngrShape.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5323609452206902384, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pantryIngrBlocked.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5323609452206902384, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pantryIngrDefault.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5323609452206902384, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cursorIngrSelected.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: CCarrotShape
       value: 
@@ -8157,46 +7927,10 @@ PrefabInstance:
       propertyPath: cIngredientShapes
       value: 
       objectReference: {fileID: 255252903}
-    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: ingredientSelected
-      value: 
-      objectReference: {fileID: 1987812630}
     - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: pIngredientSelected
       value: 
       objectReference: {fileID: 1987812630}
-    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cursorIngrShape.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cIngredientShape.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pantryIngrBlocked.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pantryIngrDefault.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cursorIngrSelected.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pIngredientBlocked.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pIngredientDefault.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cIngredientSelected.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 5905744340343933762, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: m_Name
       value: Pantry
@@ -8222,45 +7956,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 255252903}
     - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: ingredientSelected
-      value: 
-      objectReference: {fileID: 1987812630}
-    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: pIngredientSelected
       value: 
       objectReference: {fileID: 1987812630}
-    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cursorIngrShape.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cIngredientShape.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pantryIngrBlocked.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pantryIngrDefault.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cursorIngrSelected.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pIngredientBlocked.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pIngredientDefault.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cIngredientSelected.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 6384041572285821497, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: m_LocalPosition.x
       value: -854.8
@@ -8322,92 +8020,13 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 255252903}
     - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: ingredientSelected
-      value: 
-      objectReference: {fileID: 1987812630}
-    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: pIngredientSelected
       value: 
       objectReference: {fileID: 1987812630}
-    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cursorIngrShape.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cIngredientShape.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pantryIngrBlocked.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pantryIngrDefault.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cursorIngrSelected.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pIngredientBlocked.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pIngredientDefault.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cIngredientSelected.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8230787615522953325, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: CCarrotShape
-      value: 
-      objectReference: {fileID: 1722144922}
-    - target: {fileID: 8230787615522953325, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: CTomatoShape
-      value: 
-      objectReference: {fileID: 594984927}
-    - target: {fileID: 8230787615522953325, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: CEggplantShape
-      value: 
-      objectReference: {fileID: 865552115}
-    - target: {fileID: 8230787615522953325, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: CMushroomShape
-      value: 
-      objectReference: {fileID: 1729398156}
-    - target: {fileID: 8230787615522953325, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cIngredientShapes
-      value: 
-      objectReference: {fileID: 255252903}
-    - target: {fileID: 8230787615522953325, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: ingredientSelected
-      value: 
-      objectReference: {fileID: 1987812630}
-    - target: {fileID: 8230787615522953325, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cursorIngrShape.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8230787615522953325, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pantryIngrBlocked.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8230787615522953325, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: pantryIngrDefault.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8230787615522953325, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      propertyPath: cursorIngrSelected.Array.size
-      value: 4
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5905744340343933762, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1398923840}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
 --- !u!1001 &8819112208985533294
 PrefabInstance:
