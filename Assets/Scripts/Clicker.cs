@@ -13,16 +13,22 @@ public class Clicker : MonoBehaviour
     // Store the ingredient selected UI/Feedback
     public GameObject pIngredientSelected;
 
-    // Store the cursor's ingredients' shapes' parent
-    public GameObject cIngredientShapes;
+    // Store the shape selected UI/Feedback
+    public GameObject gFeedback;
 
     // Check if the ingredient has been clicked (default = false)
     public bool isIngrSelected = false;
 
 
     // ---------------------------------- SCRIPTS -----------------------------------------
+    // Access Game Controller script
+    public GameController GameControllerScript;
+
     // Access Pantry Behaviour script
     public Pantry pantryScript;
+
+    // Access Ingredient Selectable script
+    public IngSelectable IngrSelectableScript;
 
 
     // ---------------------------------- ARRAYS ------------------------------------------
@@ -53,15 +59,6 @@ public class Clicker : MonoBehaviour
     public Sprite CEggplantSelected;
     public Sprite CMushroomSelected;
 
-    // Array to store all the cursor ingredients' shapes
-    public GameObject[] cIngredientShape;
-
-    // Ingredients' Shapes
-    public GameObject CTomatoShape;
-    public GameObject CCarrotShape;
-    public GameObject CEggplantShape;
-    public GameObject CMushroomShape;
-
 
     // ---------------------------------- MOUSE ------------------------------------------
     // Store Mouse position every frame
@@ -78,8 +75,11 @@ public class Clicker : MonoBehaviour
         // Access Ingredient chip sprite renderer
         pIngredientRenderer = transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
 
-        // Access the Pantry Behaviour script
+        // Access the Pantry script
         pantryScript = FindObjectOfType<Pantry>();
+
+        // Access the Game Controller script
+        GameControllerScript = FindObjectOfType<GameController>();
 
 
         // ---------------------------------- ACTIVATION ----------------------------------------
@@ -105,12 +105,6 @@ public class Clicker : MonoBehaviour
         cIngredientSelected[1] = CCarrotSelected;
         cIngredientSelected[2] = CEggplantSelected;
         cIngredientSelected[3] = CMushroomSelected;
-
-        // Add all the ingredients' shapes to the Cursor array
-        cIngredientShape[0] = CTomatoShape;
-        cIngredientShape[1] = CCarrotShape;
-        cIngredientShape[2] = CEggplantShape;
-        cIngredientShape[3] = CMushroomShape;
     }
 
 
@@ -119,7 +113,7 @@ public class Clicker : MonoBehaviour
     {
         // Store a new vector to save the offset position regarding the cursor's position
         Vector3 offsetMousePos1 = new Vector3(100, -150, 1);
-        Vector3 offsetMousePos2 = new Vector3(-100, 150, 1);
+        Vector3 offsetMousePos2 = new Vector3(-200, 70, 1);
 
         // Track mouse position (related to the transform of the "World")
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -127,8 +121,8 @@ public class Clicker : MonoBehaviour
         // Set the position of the ingredient selected UI as the cursor's position + the offset position
         pIngredientSelected.transform.position = mousePos + offsetMousePos1;
 
-        // Set the position of the ingredient selected UI as the cursor's position + the offset position
-        cIngredientShapes.transform.position = mousePos + offsetMousePos2;
+        // Set the position of ingredient selected's grid shape (feedback) as the cursor's position + the offset position
+        gFeedback.transform.position = mousePos + offsetMousePos2;
     }
 
 
@@ -167,8 +161,8 @@ public class Clicker : MonoBehaviour
                     // Set it asto it's selected ingredient UI
                     pIngredientSelected.GetComponent<SpriteRenderer>().sprite = cIngredientSelected[i];
 
-                    // Active it's Shape's GO
-                    cIngredientShape[i].SetActive (true);
+                    // Start Spawn Ingredient Grid method (from Game Controller script) adding the meaning of i in this loop
+                    GameControllerScript.SpawnIngredientGrid(i);
 
                     // Mark it as NOT CLICKED anymore
                     isClicked = false;

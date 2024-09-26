@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1030550833800781289}
+  - component: {fileID: -4173187746077128658}
   m_Layer: 0
   m_Name: T (2x3)
   m_TagString: Shape
@@ -35,6 +36,28 @@ Transform:
   - {fileID: 8241845853879545556}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-4173187746077128658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1273258786303271045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0855dd6dbe63a547a4d0fdabfb831ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 0
+  objectIsSelected: 0
+  gIngredientChips: []
+  GTomatoChip: {fileID: 7567877174742192913, guid: 58ef5229d44951242aeb468726ef356e, type: 3}
+  GCarrotChip: {fileID: 262649883075510968, guid: 2659370e0bd328342a78e3955d0ff9af, type: 3}
+  GEggplantChip: {fileID: 169614142257500497, guid: 22fbf6da162f2c8489a7b01c2ba0fdd7, type: 3}
+  GMushroomChip: {fileID: 7813637699382073283, guid: bd89efa143bde724babb19273ea94e87, type: 3}
+  GameControllerScript: {fileID: 0}
 --- !u!1 &2919570713128603410
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,7 +201,7 @@ GameObject:
   - component: {fileID: 7514939020300019853}
   m_Layer: 0
   m_Name: 4
-  m_TagString: Untagged
+  m_TagString: Main Child
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

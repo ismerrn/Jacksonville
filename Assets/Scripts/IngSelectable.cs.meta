@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: a0855dd6dbe63a547a4d0fdabfb831ae
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - GTomatoChip: {fileID: 7567877174742192913, guid: 58ef5229d44951242aeb468726ef356e, type: 3}
+  - GCarrotChip: {fileID: 262649883075510968, guid: 2659370e0bd328342a78e3955d0ff9af, type: 3}
+  - GEggplantChip: {fileID: 169614142257500497, guid: 22fbf6da162f2c8489a7b01c2ba0fdd7, type: 3}
+  - GMushroomChip: {fileID: 7813637699382073283, guid: bd89efa143bde724babb19273ea94e87, type: 3}
+  - GameControllerScript: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

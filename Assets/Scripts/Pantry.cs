@@ -52,9 +52,6 @@ public class Pantry : MonoBehaviour
 
                 // Set the sprites of the none selected ingredients as default ones
                 pIngredientChip[i].GetComponent<SpriteRenderer>().sprite = pIngredientDefault[i];
-
-                // Deactivate the none selected ingredients' shapes
-                ClickerScript.cIngredientShape[i].SetActive(false);
             }
         }
     }
