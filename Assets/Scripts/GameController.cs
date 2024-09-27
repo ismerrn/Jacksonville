@@ -58,13 +58,6 @@ public class GameController : MonoBehaviour
         // Track mouse position (related to the transform of the "World")
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        // Set the ingredient selected's position to follow the mouse (with an offset)
-        pIngredientSelected.transform.position = mousePos + offsetMouse;
-
-        // Set the Ingredient Selected position (following the mouse)
-        SetOffsetIngr();
-
-
         // ---------------------------------- ON CLICK -------------------------------------------------
         // If pressed left click (only in the frame clicked)
         if (Input.GetMouseButtonDown(0))       
@@ -77,6 +70,20 @@ public class GameController : MonoBehaviour
                 // Start the place ingredient in grid method
                 GameController.selectedIngr.PlaceIngrGrid();
             }
+        }
+    }
+
+    void FixedUpdate()
+    {
+        // ---------------------------------- MOVE WITH CURSOR ------------------------------------------
+        // Set the ingredient selected's position to follow the mouse (with an offset)
+        pIngredientSelected.transform.position = mousePos + offsetMouse;
+
+        // If there's a Selected Ingredient
+        if (selectedIngr != null)
+        {
+            // Set the Ingredient Selected position (following the mouse)
+            SetOffsetIngr();
         }
     }
 
@@ -94,6 +101,7 @@ public class GameController : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
+
 
         // Create a copy of that Ingredient Grid chip as a Child of gFeedback GO
         selectedIngr = Instantiate(gChipsFeedback[i], gFeedback.transform).GetComponent<IngSelectable>();

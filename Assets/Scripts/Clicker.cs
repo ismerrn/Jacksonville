@@ -142,7 +142,7 @@ public class Clicker : MonoBehaviour
                     // Change the sprite for it's blocked one
                     pIngredientRenderer.sprite = pIngredientBlocked[i];
 
-                    // Set it asto it's selected ingredient UI
+                    // Set it as selected ingredient UI
                     pIngredientSelected.GetComponent<SpriteRenderer>().sprite = cIngredientSelected[i];
 
                     // Start Spawn Ingredient Grid method (from Game Controller script) adding the meaning of i in this loop
@@ -158,4 +158,15 @@ public class Clicker : MonoBehaviour
 
         }
     }
+
+    /*void ActiveChip (int i)
+    {
+
+    }
+
+    void DeactivateChip(int i)
+    {
+        // Change the sprite for it's blocked one
+        pIngredientRenderer.sprite = pIngredientBlocked[i];
+    }*/
 }

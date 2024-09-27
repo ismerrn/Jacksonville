@@ -11,18 +11,24 @@ public class IngSelectable : MonoBehaviour
 
 
     // ---------------------------------- SCRIPTS -----------------------------------------
-    // Access Game Controller script
+    // Reference to Game Controller script
     public GameController GameControllerScript;
 
 
     // ---------------------------------- ARRAYS ------------------------------------------
-    // Array to store all the ingredient chips sprites when placed in the Grid with a size of 4
+    // Store all the ingredient chips sprites when placed in the Grid with a size of 4
     public Sprite[] gIngrPlaced;
+
+
+    // ---------------------------------- BOOLS -------------------------------------------
+    // Store if the GO has been placed
+    public bool isPlaced = false;
 
 
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
     private void Start()
     {
+        // ---------------------------------- ACCESS SCRIPTS -------------------------------------------
         // Access the Game Controller script
         GameControllerScript = FindObjectOfType<GameController>();
     }
@@ -139,6 +145,9 @@ public class IngSelectable : MonoBehaviour
 
                     // Change the parent of this GO (from drawer grid to inventory grid)
                     transform.parent = hit.transform.parent;
+
+                    // Set the Ingredient as placed
+                    isPlaced = true;
 
                     // When placed, change its sprite to the placed sprite
                     ChangeSprite();
