@@ -15,6 +15,11 @@ public class IngSelectable : MonoBehaviour
     public GameController GameControllerScript;
 
 
+    // ---------------------------------- ARRAYS ------------------------------------------
+    // Array to store all the ingredient chips sprites when placed in the Grid with a size of 4
+    public Sprite[] gIngrPlaced;
+
+
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
     private void Start()
     {
@@ -135,6 +140,8 @@ public class IngSelectable : MonoBehaviour
                     // Change the parent of this GO (from drawer grid to inventory grid)
                     transform.parent = hit.transform.parent;
 
+                    // When placed, change its sprite to the placed sprite
+                    ChangeSprite();
                 }
 
                 // Loop through all the childs of the transform
@@ -158,4 +165,36 @@ public class IngSelectable : MonoBehaviour
         }
     }
 
+
+    // ---------------------------------- CHANGE INGREDIENT SPRITES -----------------------------------------------------
+    public void ChangeSprite ()
+    {
+        // If the ingredient placed is a Tomato
+        if (this.gameObject.tag == "Tomato")
+        {
+            // Update its sprite to the Tomato placed sprite
+            this.GetComponent<SpriteRenderer>().sprite = gIngrPlaced[0];
+        }
+
+        // If the ingredient placed is a Carrot
+        else if (this.gameObject.tag == "Carrot")
+        {
+            // Update its sprite to the Carrot placed sprite
+            this.GetComponent<SpriteRenderer>().sprite = gIngrPlaced[1];
+        }
+
+        // If the ingredient placed is a Eggplant
+        else if (this.gameObject.tag == "Eggplant")
+        {
+            // Update its sprite to the Tomato Eggplant sprite
+            this.GetComponent<SpriteRenderer>().sprite = gIngrPlaced[2];
+        }
+
+        // If the ingredient placed is a Mushroom
+        else if (this.gameObject.tag == "Mushroom")
+        {
+            // Update its sprite to the Mushroom placed sprite
+            this.GetComponent<SpriteRenderer>().sprite = gIngrPlaced[3];
+        }
+    }
 }

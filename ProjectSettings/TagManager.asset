@@ -7,6 +7,10 @@ TagManager:
   - Grid item
   - Shape
   - Main Child
+  - Carrot
+  - Eggplant
+  - Tomato
+  - Mushroom
   layers:
   - Default
   - TransparentFX
