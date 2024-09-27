@@ -3704,6 +3704,9 @@ MonoBehaviour:
   - {fileID: 439724980}
   - {fileID: 1739445029}
   - {fileID: 1052708853}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!4 &1173666311
 Transform:
   m_ObjectHideFlags: 0
@@ -7055,7 +7058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6456899674528440718, guid: 055ea35204ca8da4e9d0a24c6a52616c, type: 3}
       propertyPath: m_Name
-      value: Ingredient_selected
+      value: Ingredient Selected
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

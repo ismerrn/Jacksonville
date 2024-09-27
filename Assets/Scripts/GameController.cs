@@ -1,5 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEditor.PackageManager;
+using UnityEditor.SearchService;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -37,6 +40,13 @@ public class GameController : MonoBehaviour
     // Array to store all the Clicker scripts in the screne
     public Clicker[] ClickerScripts;
 
+    private IngSelectable IngSelectableScript;
+
+
+    // ---------------------------------- RAYCAST -----------------------------------------
+    // To specify layers to use in Physics.Raycast
+    public LayerMask layerMask;
+
 
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
     private void Start()
@@ -56,6 +66,11 @@ public class GameController : MonoBehaviour
     // ---------------------------------- EACH FRAME -------------------------------------------------------
     void Update()
     {
+        // ---------------------------------- ACCESS SCRIPTS -------------------------------------------
+        // Access the IngSelectable script
+        //IngSelectableScript = FindObjectOfType<IngSelectable>();
+
+
         // ---------------------------------- MOVE WITH CURSOR ------------------------------------------
         // Track mouse position (related to the transform of the "World")
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -63,15 +78,18 @@ public class GameController : MonoBehaviour
 
         // ---------------------------------- ON CLICK -------------------------------------------------
         // If pressed left click (only in the frame clicked)
-        if (Input.GetMouseButtonDown(0))       
+
+        //if(Input.GetKeyDown(KeyCode.A))
+        if (Input.GetMouseButtonDown(0))
         {
             // If there's an ingredient selected
-            if (GameController.selectedIngr != null)
+            if (selectedIngr != null)
             {
                 Debug.Log("3756 - Clicked with ingredient selected (GameController/Update)");
 
+                // ---------------------------------- PLACE INGREDIENTS (GRID) -----------------------------------------------------
                 // Start the place ingredient in grid method
-                GameController.selectedIngr.PlaceIngrGrid();
+                selectedIngr.PlaceIngrGrid();
             }
         }
 
@@ -89,6 +107,8 @@ public class GameController : MonoBehaviour
                 }
             }
         }
+
+        Debug.Log(selectedIngr);
     }
 
     // ---------------------------------- FRAME-RATE INDEPENDENT 4 PHYSICS CALCULATIONS --------------------

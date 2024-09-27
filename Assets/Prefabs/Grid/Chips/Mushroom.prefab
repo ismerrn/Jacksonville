@@ -202,16 +202,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0855dd6dbe63a547a4d0fdabfb831ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlaced: 0
   layerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  gFeedback: {fileID: 0}
   GameControllerScript: {fileID: 0}
+  gIngrPicked:
+  - {fileID: 21300000, guid: 7800066a3a299c84e9cbf28b4e101f2b, type: 3}
+  - {fileID: 21300000, guid: 7942196aa472a9a47a09a001f1538bdb, type: 3}
+  - {fileID: 21300000, guid: 39bb0969f76b0a647976a3266267d20a, type: 3}
+  - {fileID: 21300000, guid: cfb2276250959ac46baaa4b6c5d8e0d3, type: 3}
   gIngrPlaced:
   - {fileID: 21300000, guid: 8af9c4bfc6057724c8ef02fc6ecb3c28, type: 3}
   - {fileID: 21300000, guid: fe85f828cb875de4cb83eda8baf97bc3, type: 3}
   - {fileID: 21300000, guid: 99392ba5b08a48b4abf5d40373e16480, type: 3}
   - {fileID: 21300000, guid: 65b23b58e83c0a9499c3c2b0ac4ed5ae, type: 3}
-  isPlaced: 0
+  pContainers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1 &4922070753644535382
 GameObject:
   m_ObjectHideFlags: 0

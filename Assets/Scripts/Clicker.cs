@@ -125,7 +125,7 @@ public class Clicker : MonoBehaviour
 
 
     // ---------------------------------- CHANGE INGREDIENT'S SPRITES ---------------------------------------
-    void PIngredientUpdate ()
+    public void PIngredientUpdate ()
     {
         // ------------------------- CHECK PANTRY INGREDIENTS INTERACTION -----------------------------
         // Loop through the 4 Pantry's Ingredient sprites
