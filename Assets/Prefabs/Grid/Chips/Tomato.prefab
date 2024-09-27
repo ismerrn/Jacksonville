@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5356268004604909906}
   - component: {fileID: 1305988443789125451}
-  - component: {fileID: 8392573622209812521}
+  - component: {fileID: 7645173942659336568}
   - component: {fileID: 7722278309754474407}
   m_Layer: 0
   m_Name: Tomato
@@ -90,7 +90,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &8392573622209812521
+--- !u!60 &7645173942659336568
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,7 +125,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.76111114, y: 0.23888889}
     oldSize: {x: 270, y: 270}
     newSize: {x: 2.7, y: 2.7}
     adaptiveTilingThreshold: 0.5
@@ -134,23 +134,23 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -126, y: -4}
-      - {x: -135, y: -5}
-      - {x: -135, y: -135}
-      - {x: -4, y: -135}
-      - {x: -4, y: -4}
-    - - {x: 4, y: -4}
-      - {x: 4, y: -135}
-      - {x: 135, y: -135}
-      - {x: 135, y: -4}
-    - - {x: -135, y: 135}
-      - {x: -135, y: 4}
-      - {x: -4, y: 4}
-      - {x: -4, y: 135}
-    - - {x: 4, y: 135}
-      - {x: 4, y: 4}
-      - {x: 135, y: 4}
-      - {x: 135, y: 135}
+    - - {x: -196.50002, y: 66.5}
+      - {x: -205.50002, y: 65.5}
+      - {x: -205.50002, y: -64.5}
+      - {x: -74.500015, y: -64.5}
+      - {x: -74.500015, y: 66.5}
+    - - {x: -66.500015, y: 66.5}
+      - {x: -66.500015, y: -64.5}
+      - {x: 64.499985, y: -64.5}
+      - {x: 64.499985, y: 66.5}
+    - - {x: -205.50002, y: 205.5}
+      - {x: -205.50002, y: 74.5}
+      - {x: -74.500015, y: 74.5}
+      - {x: -74.500015, y: 205.5}
+    - - {x: -66.500015, y: 205.5}
+      - {x: -66.500015, y: 74.5}
+      - {x: 64.499985, y: 74.5}
+      - {x: 64.499985, y: 205.5}
   m_UseDelaunayMesh: 0
 --- !u!114 &7722278309754474407
 MonoBehaviour:
@@ -193,7 +193,7 @@ Transform:
   m_GameObject: {fileID: 4927461061753762412}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 70.4, y: -69.2, z: 100}
+  m_LocalPosition: {x: 0, y: 0, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -224,7 +224,7 @@ Transform:
   m_GameObject: {fileID: 4933571004244447696}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70.6, y: -69.2, z: 100}
+  m_LocalPosition: {x: 0, y: 141, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -255,7 +255,7 @@ Transform:
   m_GameObject: {fileID: 5514201060699487426}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -70.6, y: 71.8, z: 100}
+  m_LocalPosition: {x: -141, y: 141, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -286,7 +286,7 @@ Transform:
   m_GameObject: {fileID: 8825644460247385262}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 70.4, y: 71.8, z: 100}
+  m_LocalPosition: {x: -141, y: 0, z: 100}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

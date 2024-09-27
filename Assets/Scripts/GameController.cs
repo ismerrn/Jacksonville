@@ -32,7 +32,7 @@ public class GameController : MonoBehaviour
         // ---------------------------------- MOVE WITH CURSOR ------------------------------------------
         // Store a new vector to save the offset position regarding the cursor's position
         Vector3 offsetMousePos1 = new Vector3(100, -150, 1);
-        Vector3 offsetMousePos2 = new Vector3(-200, 70, 1);
+        Vector3 offsetMousePos2 = new Vector3(-135, 5, 1);
 
         // Track mouse position (related to the transform of the "World")
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
