@@ -20,28 +20,49 @@ public class GameController : MonoBehaviour
     // Check if the Cursor has some Ingredient clicked or not
     public static bool emptyCursor = true;
 
+    // Store the Mouse position each frame
+    private Vector3 mousePos;
+
+    // Set offsets for the mouse position
+    private Vector3 offsetMouse;
+    private Vector3 offsetMouseTomato;
+    private Vector3 offsetMouseCarrot;
+    private Vector3 offsetMouseEggplant;
+    private Vector3 offsetMouseMushroom;
+
 
     // ---------------------------------- ARRAYS ------------------------------------------
     // Array to store all the cursor ingredients' shapes
     public GameObject[] gChipsFeedback;
 
 
+    // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
+    private void Start()
+    {
+        // ---------------------------------- SET VALUES -------------------------------------------------
+        // Store the offset for the Ingredient Selected chip when following the cursor
+        offsetMouse = new Vector3(100, -150, 1);
+
+        // Store the offset for each ingredient when following the cursor
+        offsetMouseTomato = new Vector3(-135, 5, 1);
+        offsetMouseCarrot = new Vector3(-70, 65, 1);
+        offsetMouseEggplant = new Vector3(-135, 5, 1);
+        offsetMouseMushroom = new Vector3(-210, 5, 1);
+    }
+
+
     // ---------------------------------- EACH FRAME -------------------------------------------------------
     void Update()
     {
         // ---------------------------------- MOVE WITH CURSOR ------------------------------------------
-        // Store a new vector to save the offset position regarding the cursor's position
-        Vector3 offsetMousePos1 = new Vector3(100, -150, 1);
-        Vector3 offsetMousePos2 = new Vector3(-135, 5, 1);
-
         // Track mouse position (related to the transform of the "World")
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        // Set the position of the ingredient selected UI as the cursor's position + the offset position
-        pIngredientSelected.transform.position = mousePos + offsetMousePos1;
+        // Set the ingredient selected's position to follow the mouse (with an offset)
+        pIngredientSelected.transform.position = mousePos + offsetMouse;
 
-        // Set the position of ingredient selected's grid shape (feedback) as the cursor's position + the offset position
-        gFeedback.transform.position = mousePos + offsetMousePos2;
+        // Set the Ingredient Selected position (following the mouse)
+        SetOffsetIngr();
 
 
         // ---------------------------------- ON CLICK -------------------------------------------------
@@ -76,5 +97,38 @@ public class GameController : MonoBehaviour
 
         // Create a copy of that Ingredient Grid chip as a Child of gFeedback GO
         selectedIngr = Instantiate(gChipsFeedback[i], gFeedback.transform).GetComponent<IngSelectable>();
+    }
+
+
+    // ---------------------------------- CHANGE INGREDIENT SPRITES -----------------------------------------------------
+    public void SetOffsetIngr()
+    {
+        // If the ingredient selected is a Tomato
+        if (selectedIngr.gameObject.tag == "Tomato")
+        {
+            // Set the position of the Tomato selected with an offset regarding the mouse position
+            gFeedback.transform.position = mousePos + offsetMouseTomato;
+        }
+
+        // If the ingredient selected is a Carrot
+        else if (selectedIngr.gameObject.tag == "Carrot")
+        {
+            // Set the position of the Carrot selected with an offset regarding the mouse position
+            gFeedback.transform.position = mousePos + offsetMouseCarrot;
+        }
+
+        // If the ingredient selected is a Eggplant
+        else if (selectedIngr.gameObject.tag == "Eggplant")
+        {
+            // Set the position of the Eggplant selected with an offset regarding the mouse position
+            gFeedback.transform.position = mousePos + offsetMouseEggplant;
+        }
+
+        // If the ingredient selected is a Mushroom
+        else if (selectedIngr.gameObject.tag == "Mushroom")
+        {
+            // Set the position of the Mushroom selected with an offset regarding the mouse position
+            gFeedback.transform.position = mousePos + offsetMouseMushroom;
+        }
     }
 }
