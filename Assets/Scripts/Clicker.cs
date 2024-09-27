@@ -108,24 +108,6 @@ public class Clicker : MonoBehaviour
     }
 
 
-    // ---------------------------------- EACH FRAME -------------------------------------------------------
-    private void Update()
-    {
-        // Store a new vector to save the offset position regarding the cursor's position
-        Vector3 offsetMousePos1 = new Vector3(100, -150, 1);
-        Vector3 offsetMousePos2 = new Vector3(-200, 70, 1);
-
-        // Track mouse position (related to the transform of the "World")
-        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-        // Set the position of the ingredient selected UI as the cursor's position + the offset position
-        pIngredientSelected.transform.position = mousePos + offsetMousePos1;
-
-        // Set the position of ingredient selected's grid shape (feedback) as the cursor's position + the offset position
-        gFeedback.transform.position = mousePos + offsetMousePos2;
-    }
-
-
     // ---------------------------------- GO IS CLICKED -----------------------------------------------------
     void OnMouseDown()
     {

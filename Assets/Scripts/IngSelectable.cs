@@ -51,7 +51,7 @@ public class IngSelectable : MonoBehaviour
                 RaycastHit hit;
 
                 // Draw raycast in X direction (out hit = save hit, what we collide with)
-                if (Physics.Raycast(child.position, -transform.forward, out hit, 20f, layerMask))
+                if (Physics.Raycast(child.position, -transform.forward, out hit, 200f, layerMask))
                 {
                     Debug.Log("5");
 
@@ -121,7 +121,7 @@ public class IngSelectable : MonoBehaviour
                 RaycastHit hit;
 
                 // Draw raycast in X direction (out hit = save hit, what we collide with) only for the Main Child
-                if (Physics.Raycast(mainChild.transform.position, -transform.forward, out hit, 20f, layerMask))
+                if (Physics.Raycast(mainChild.transform.position, -transform.forward, out hit, 200f, layerMask))
                 {
                     Debug.Log("12");
 
@@ -142,7 +142,7 @@ public class IngSelectable : MonoBehaviour
                     RaycastHit hit2;
 
                     // Draw the raycast from each child (out hit = save hit, what we collide with)
-                    if (Physics.Raycast(child.position, -transform.forward, out hit2, 20f, layerMask))
+                    if (Physics.Raycast(child.position, -transform.forward, out hit2, 200f, layerMask))
                     {
                         Debug.Log("14");
 
