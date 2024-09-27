@@ -22,9 +22,6 @@ public class Pantry : MonoBehaviour
     // Reference to Clicker script
     public Clicker ClickerScript;
 
-    // Reference to IngSelectable script
-    public IngSelectable IngSelectableScript;
-
 
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
     void Start()
@@ -42,15 +39,6 @@ public class Pantry : MonoBehaviour
     }
 
 
-    // ---------------------------------- EACH FRAME -------------------------------------------------------
-    void Update()
-    {
-        // ---------------------------------- ACCESS --------------------------------------------
-        // Access the Clicker script
-        IngSelectableScript = FindObjectOfType<IngSelectable>();
-    }
-
-
     // ---------------------------------- DEACTIVATE INGREDIENTS ------------------------------------------
     public void UnblockIngredients(int index)
     {
@@ -65,16 +53,6 @@ public class Pantry : MonoBehaviour
 
                 // Set the sprites of the none selected ingredients as default ones
                 pIngredientChip[i].GetComponent<SpriteRenderer>().sprite = pIngredientDefault[i];
-            }
-
-            // If some Ingredient has been selected (clicker) and placed
-            else if (i == index && IngSelectableScript.isPlaced == true)
-            {
-                // Reset the sprite of the Selected Ingredient (pantry) to default (= clickable again)
-                pIngredientChip[i].GetComponent<SpriteRenderer>().sprite = pIngredientDefault[i];
-
-                // Set the Selected Ingredient UI as blank
-                ClickerScript.pIngredientSelected.GetComponent<SpriteRenderer>().sprite = null;
             }
         }
     }

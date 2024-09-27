@@ -5,8 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     // ---------------------------------- INGREDIENTS -------------------------------------
-    // Store the the Selected Ingredient (clicked)
-    // puede que NO sea static
+    // Store the the Selected Ingredient (clicked) (puede que NO sea static??)
     public static IngSelectable selectedIngr;
 
     // Store the pantry ingredient selected UI/Feedback
@@ -35,6 +34,9 @@ public class GameController : MonoBehaviour
     // Array to store all the cursor ingredients' shapes
     public GameObject[] gChipsFeedback;
 
+    // Array to store all the Clicker scripts in the screne
+    public Clicker[] ClickerScripts;
+
 
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
     private void Start()
@@ -58,6 +60,7 @@ public class GameController : MonoBehaviour
         // Track mouse position (related to the transform of the "World")
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+
         // ---------------------------------- ON CLICK -------------------------------------------------
         // If pressed left click (only in the frame clicked)
         if (Input.GetMouseButtonDown(0))       
@@ -71,8 +74,24 @@ public class GameController : MonoBehaviour
                 GameController.selectedIngr.PlaceIngrGrid();
             }
         }
+
+
+        // ---------------------------------- WHEN NOTHING IS SELECTED ----------------------------------
+        // If nothing is selected
+        if (emptyCursor == true)
+        {
+            // Loop through all the ClickerScripts on the scene
+            for (int i = 0; i < ClickerScripts.Length; i = i + 1)
+            {
+                if (ClickerScripts[i].isClicked == true)
+                {
+                    ClickerScripts[i].DeselectIngr(i);
+                }
+            }
+        }
     }
 
+    // ---------------------------------- FRAME-RATE INDEPENDENT 4 PHYSICS CALCULATIONS --------------------
     void FixedUpdate()
     {
         // ---------------------------------- MOVE WITH CURSOR ------------------------------------------

@@ -110,7 +110,7 @@ public class Clicker : MonoBehaviour
     }
 
 
-    // ---------------------------------- GO IS CLICKED -----------------------------------------------------
+    // ---------------------------------- INGREDIENT CHIP IS CLICKED -----------------------------------------------------
     void OnMouseDown()
     {
         // There has been a click, so activate it
@@ -119,7 +119,7 @@ public class Clicker : MonoBehaviour
         // Active the renderer of the ingredient selected
         pIngredientSelected.GetComponent<SpriteRenderer>().enabled = true;
 
-        // Change the Ingredient Sprite
+        // Update the pantry's ingredients chips (block/available to interact, set as selected...)
         PIngredientUpdate();
     }
 
@@ -127,10 +127,11 @@ public class Clicker : MonoBehaviour
     // ---------------------------------- CHANGE INGREDIENT'S SPRITES ---------------------------------------
     void PIngredientUpdate ()
     {
-        // Loop through 4 Ingredient sprites - to check which one is being clicked
+        // ------------------------- CHECK PANTRY INGREDIENTS INTERACTION -----------------------------
+        // Loop through the 4 Pantry's Ingredient sprites
         for (int i = 0; i < 4; i = i + 1)
         {
-            // If the ingredient clicked matches the ingredient of that round of the loop
+            // If the CLICKED INGREDIENT Matches the ingredient of that round of the LOOP
             if (pIngredientRenderer.sprite == pIngredientDefault[i])
             {
                 // And if the ingredient is marked as NOT SELECTED
@@ -139,7 +140,10 @@ public class Clicker : MonoBehaviour
                     // Mark the looped sprite as an ingredient SELECTED
                     pIngredientRenderer.transform.parent.GetComponent<Clicker>().isIngrSelected = true;
 
-                    // Change the sprite for it's blocked one
+                    // Select Ingredient (UI - block pantry ingredient & set the ingredient as selected in the cursor UI)
+                    SelectIngr(i);
+
+                    // Change the sprite for it's deactivated one (blocked)
                     pIngredientRenderer.sprite = pIngredientBlocked[i];
 
                     // Set it as selected ingredient UI
@@ -147,9 +151,6 @@ public class Clicker : MonoBehaviour
 
                     // Start Spawn Ingredient Grid method (from Game Controller script) adding the meaning of i in this loop
                     GameControllerScript.SpawnIngredientGrid(i);
-
-                    // Mark it as NOT CLICKED anymore
-                    isClicked = false;
 
                     // Start the method of unblocking ingredients
                     pantryScript.UnblockIngredients(i);
@@ -159,14 +160,34 @@ public class Clicker : MonoBehaviour
         }
     }
 
-    /*void ActiveChip (int i)
-    {
 
+    // ---------------------------------- SELECT THE INGREDIENT UI -------------------------------------------
+    void SelectIngr(int i)
+    {
+        // Change the sprite for it's deactivated one (blocked)
+        pIngredientRenderer.sprite = pIngredientBlocked[i];
+
+        // Set it as selected ingredient UI
+        pIngredientSelected.GetComponent<SpriteRenderer>().sprite = cIngredientSelected[i];
     }
 
-    void DeactivateChip(int i)
+
+    // ---------------------------------- DESELECT INGREDIENT UI ---------------------------------------------
+    public void DeselectIngr(int i)
     {
-        // Change the sprite for it's blocked one
-        pIngredientRenderer.sprite = pIngredientBlocked[i];
-    }*/
+        // Change the sprite for it's active one (default)
+        pIngredientRenderer.sprite = pIngredientDefault[i];
+
+        // Set the Selected Ingredient UI as blank
+        //pIngredientSelected.GetComponent<SpriteRenderer>().sprite = null;
+
+        // Deactivate the renderer of the ingredient selected (as none is selected for now)
+        pIngredientSelected.GetComponent<SpriteRenderer>().enabled = false;
+
+        // Mark it as NOT CLICKED anymore
+        isClicked = false;
+
+        // Set the Ingredient as not selected
+        isIngrSelected = false;
+    }
 }
