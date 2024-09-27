@@ -26,18 +26,20 @@ public class IngSelectable : MonoBehaviour
     // ---------------------------------- PLACE INGREDIENTS (GRID) -----------------------------------------------------
     public void PlaceIngrGrid()
     {
-        Debug.Log("1");
+        Debug.Log("1 - Entered the Place Ingredient in Grid method (IngSelectable/PlaceIngrGrid)");
 
+        // ---------------------------------- PICK INGREDIENT ------------------------------------------
         if (GameController.emptyCursor)
         {
             //
-            Debug.Log("2");
+            Debug.Log("2 - Enter Pick item (IngSelectable/PlaceIngrGrid/1erIf)");
         }
 
+        // ---------------------------------- DROP INGREDIENT ------------------------------------------
         // If cursor is occupied & the selected object is this GO
         else if (GameController.emptyCursor == false && GameController.selectedIngr == this)
         {
-            Debug.Log("3");
+            Debug.Log("3 - Enter drop item (IngSelectable/PlaceIngrGrid/1erElseIf)");
 
             // Store if the GO is placeable
             bool ingCanBPlaced = true;
@@ -53,12 +55,12 @@ public class IngSelectable : MonoBehaviour
                 // Draw raycast in X direction (out hit = save hit, what we collide with)
                 if (Physics.Raycast(child.position, -transform.forward, out hit, 200f, layerMask))
                 {
-                    Debug.Log("5");
+                    Debug.Log("5 - Draw raycast (IngSelectable/PlaceIngrGrid/1erElseIf)");
 
                     // If the Grid you collide with is not empty
                     if (!hit.transform.GetComponent<GridItem>().gridIsEmpty)
                     {
-                        Debug.Log("6");
+                        Debug.Log("6 - Detect if the raycast (4) collides with an occupied grid item (IngSelectable/PlaceIngrGrid/1erElseIf)");
 
                         // You can't place the object
                         ingCanBPlaced = false;
@@ -71,7 +73,7 @@ public class IngSelectable : MonoBehaviour
                 // If the raycast doesn't collide with anything
                 else
                 {
-                    Debug.Log("7");
+                    Debug.Log("7 - Tell the Ingredient can't b placed when raycast doesn't collide");
 
                     // You can't place the object
                     ingCanBPlaced = false;
@@ -82,10 +84,12 @@ public class IngSelectable : MonoBehaviour
 
             }
 
+
+            // ---------------------------------- PLACE INGREDIENT ------------------------------------------
             // If the GO is placeable --> already placing the GO
             if (ingCanBPlaced)
             {
-                Debug.Log("8");
+                Debug.Log("8 - Start placing ingredient (IngSelectable/PlaceIngrGrid/2ºIf)");
 
                 // The GO is not selected anymore
                 //objectIsSelected = false;
@@ -96,7 +100,7 @@ public class IngSelectable : MonoBehaviour
                 // Empty the selected object (none is selected)
                 GameController.selectedIngr = null;
 
-                // 
+                // Set a GO called mainChild (none is selected)
                 GameObject mainChild = null;
 
                 // Loop through all the childs of the transform
@@ -107,7 +111,7 @@ public class IngSelectable : MonoBehaviour
                     // If the child looped has the tag "Main Hijo"
                     if (child.CompareTag("Main Child"))
                     {
-                        Debug.Log("10");
+                        Debug.Log("10 - Detect what point of the raycast is the Main Child (IngSelectable/PlaceIngrGrid/2ºIf)");
 
                         // Store this GO in the mainChild
                         mainChild = child.gameObject;
@@ -123,10 +127,10 @@ public class IngSelectable : MonoBehaviour
                 // Draw raycast in X direction (out hit = save hit, what we collide with) only for the Main Child
                 if (Physics.Raycast(mainChild.transform.position, -transform.forward, out hit, 200f, layerMask))
                 {
-                    Debug.Log("12");
+                    Debug.Log("12 - Draw a Raycast from the Main Child to see where to place the Ingredient in the Grid (IngSelectable/PlaceIngrGrid/2ºIf)");
 
                     // Position of Grid hitted --> to place the GO
-                    transform.position = new Vector3(hit.transform.position.x, hit.transform.position.y, -10);
+                    transform.position = new Vector3(hit.transform.position.x, hit.transform.position.y, 0);
 
                     // Change the parent of this GO (from drawer grid to inventory grid)
                     transform.parent = hit.transform.parent;
@@ -144,7 +148,7 @@ public class IngSelectable : MonoBehaviour
                     // Draw the raycast from each child (out hit = save hit, what we collide with)
                     if (Physics.Raycast(child.position, -transform.forward, out hit2, 200f, layerMask))
                     {
-                        Debug.Log("14");
+                        Debug.Log("14 - Occupy the Grid Items where the Ingredient has been placed (IngSelectable/PlaceIngrGrid/2ºIf)");
 
                         // Store the Grid occupied as not empty
                         hit2.transform.GetComponent<GridItem>().gridIsEmpty = false;

@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class Clicker : MonoBehaviour
 {
+    // ESTO ES UN CÓDIGO DE CLICKER EN EL PANTRY
+
     // ---------------------------------- INGREDIENTS -------------------------------------
     // Sprite renderer access
     private SpriteRenderer pIngredientRenderer;

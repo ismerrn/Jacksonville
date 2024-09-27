@@ -6205,10 +6205,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5900871765734800157, guid: cb3cd29410e75a447b5771c90bc92dfd, type: 3}
-      propertyPath: m_EdgeRadius
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7794002216110021271, guid: cb3cd29410e75a447b5771c90bc92dfd, type: 3}
       propertyPath: m_Name
       value: Backpack

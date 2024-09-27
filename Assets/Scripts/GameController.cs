@@ -25,6 +25,7 @@ public class GameController : MonoBehaviour
     // Array to store all the cursor ingredients' shapes
     public GameObject[] gChipsFeedback;
 
+
     // ---------------------------------- EACH FRAME -------------------------------------------------------
     void Update()
     {
@@ -47,16 +48,17 @@ public class GameController : MonoBehaviour
         // If pressed left click (only in the frame clicked)
         if (Input.GetMouseButtonDown(0))       
         {
-            // If there's no ingredient selected
+            // If there's an ingredient selected
             if (GameController.selectedIngr != null)
             {
-                Debug.Log("3756");
+                Debug.Log("3756 - Clicked with ingredient selected (GameController/Update)");
 
                 // Start the place ingredient in grid method
                 GameController.selectedIngr.PlaceIngrGrid();
             }
         }
     }
+
 
     // ---------------------------------- SPAWN INGREDIENT COPIES ------------------------------------------
     public void SpawnIngredientGrid(int i)
