@@ -145,7 +145,7 @@ public class Clicker : MonoBehaviour
                     pIngredientRenderer.transform.parent.GetComponent<Clicker>().isIngrSelected = true;
 
                     // Select Ingredient (UI - block pantry ingredient & set the ingredient as selected in the cursor UI)
-                    SelectIngr(i);
+                    SelectIngrUI(i);
 
                     // Change the sprite for it's deactivated one (blocked)
                     pIngredientRenderer.sprite = pIngredientBlocked[i];
@@ -166,7 +166,7 @@ public class Clicker : MonoBehaviour
 
 
     // ---------------------------------- SELECT THE INGREDIENT UI -------------------------------------------
-    void SelectIngr(int i)
+    void SelectIngrUI(int i)
     {
         // Change the sprite for it's deactivated one (blocked)
         pIngredientRenderer.sprite = pIngredientBlocked[i];
@@ -177,7 +177,7 @@ public class Clicker : MonoBehaviour
 
 
     // ---------------------------------- DESELECT INGREDIENT UI ---------------------------------------------
-    public void DeselectIngr(int i)
+    public void UnselectIngrUI(int i)
     {
         // Change the sprite for it's active one (default)
         pIngredientRenderer.sprite = pIngredientDefault[i];

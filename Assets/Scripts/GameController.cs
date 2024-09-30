@@ -106,7 +106,7 @@ public class GameController : MonoBehaviour
                 if (ClickerScripts[i].isClicked == true)
                 {
                     // Deselect that ingredient
-                    ClickerScripts[i].DeselectIngr(i);
+                    ClickerScripts[i].UnselectIngrUI(i);
                 }
             }
         }
