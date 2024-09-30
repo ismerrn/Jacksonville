@@ -53,13 +53,13 @@ public class GameController : MonoBehaviour
     {
         // ---------------------------------- SET VALUES -------------------------------------------------
         // Store the offset for the Ingredient Selected chip when following the cursor
-        offsetMouse = new Vector3(100, -150, 1);
+        offsetMouse = new Vector3(130, -80, 1); // new Vector3(100, -150, 1)
 
         // Store the offset for each ingredient when following the cursor
-        offsetMouseTomato = new Vector3(-135, 5, 1);
-        offsetMouseCarrot = new Vector3(-70, 65, 1);
-        offsetMouseEggplant = new Vector3(-135, 5, 1);
-        offsetMouseMushroom = new Vector3(-210, 5, 1);
+        offsetMouseTomato = new Vector3(-125, -15, 1); // new Vector3(-135, 5, 1)
+        offsetMouseCarrot = new Vector3(-50, 50, 1); // new Vector3(-70, 65, 1)
+        offsetMouseEggplant = new Vector3(-125, -15, 1); // new Vector3(-135, 5, 1)
+        offsetMouseMushroom = new Vector3(-195, -15, 1); // new Vector3(-210, 5, 1)
     }
 
 
@@ -78,9 +78,7 @@ public class GameController : MonoBehaviour
 
         // ---------------------------------- ON CLICK -------------------------------------------------
         // If pressed left click (only in the frame clicked)
-
-        //if(Input.GetKeyDown(KeyCode.A))
-        if (Input.GetMouseButtonDown(0))
+        /*if (Input.GetMouseButtonDown(0))
         {
             // If there's an ingredient selected
             if (selectedIngr != null)
@@ -91,7 +89,7 @@ public class GameController : MonoBehaviour
                 // Start the place ingredient in grid method
                 selectedIngr.PlaceIngrGrid();
             }
-        }
+        }*/
 
 
         // ---------------------------------- WHEN NOTHING IS SELECTED ----------------------------------
