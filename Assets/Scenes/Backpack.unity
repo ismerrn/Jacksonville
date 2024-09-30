@@ -1382,6 +1382,7 @@ GameObject:
   - component: {fileID: 291359746}
   - component: {fileID: 291359745}
   - component: {fileID: 291359744}
+  - component: {fileID: 291359747}
   m_Layer: 5
   m_Name: Backpack
   m_TagString: Untagged
@@ -1452,7 +1453,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 291359745}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 291359747}
+        m_TargetAssemblyTypeName: UIButtons, Assembly-CSharp
+        m_MethodName: BackpackButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &291359745
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1491,6 +1504,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291359742}
   m_CullTransparentMesh: 1
+--- !u!114 &291359747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291359742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d99a5b06eceec49ae7cff1dbf8dfa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &330229141
 GameObject:
   m_ObjectHideFlags: 0
@@ -2392,6 +2417,7 @@ GameObject:
   - component: {fileID: 766137679}
   - component: {fileID: 766137678}
   - component: {fileID: 766137677}
+  - component: {fileID: 766137680}
   m_Layer: 5
   m_Name: Calendar
   m_TagString: Untagged
@@ -2462,7 +2488,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 766137678}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 766137680}
+        m_TargetAssemblyTypeName: UIButtons, Assembly-CSharp
+        m_MethodName: CalendarButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &766137678
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2501,6 +2539,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 766137675}
   m_CullTransparentMesh: 1
+--- !u!114 &766137680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766137675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d99a5b06eceec49ae7cff1dbf8dfa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &827142606
 GameObject:
   m_ObjectHideFlags: 0
@@ -3868,6 +3918,7 @@ GameObject:
   - component: {fileID: 1256067635}
   - component: {fileID: 1256067634}
   - component: {fileID: 1256067633}
+  - component: {fileID: 1256067636}
   m_Layer: 5
   m_Name: Map
   m_TagString: Untagged
@@ -3938,7 +3989,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1256067634}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1256067636}
+        m_TargetAssemblyTypeName: UIButtons, Assembly-CSharp
+        m_MethodName: MapButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1256067634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3977,6 +4040,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256067631}
   m_CullTransparentMesh: 1
+--- !u!114 &1256067636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1256067631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3d99a5b06eceec49ae7cff1dbf8dfa2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1258038032
 GameObject:
   m_ObjectHideFlags: 0
@@ -7366,6 +7441,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2656673094858355639, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3584443893735116808, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: gFeedback
       value: 
@@ -7398,6 +7477,10 @@ PrefabInstance:
       propertyPath: GameControllerScript
       value: 
       objectReference: {fileID: 1173666310}
+    - target: {fileID: 5565799661590762037, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5631465389703140547, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: gFeedback
       value: 
@@ -7433,6 +7516,10 @@ PrefabInstance:
     - target: {fileID: 5905744340343933762, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: m_Name
       value: Pantry
+      objectReference: {fileID: 0}
+    - target: {fileID: 5998543393162616833, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: m_Center.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6367342127418159498, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: gFeedback
@@ -7522,6 +7609,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6576976531666597756, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7459273133630813410, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
       propertyPath: gFeedback
       value: 
@@ -7570,6 +7661,10 @@ PrefabInstance:
       propertyPath: GameControllerScript
       value: 
       objectReference: {fileID: 1173666310}
+    - target: {fileID: 8278829721074341725, guid: c096f6a621c27d549b7316e650e90aba, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
