@@ -1,8 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.PackageManager;
-using UnityEditor.SearchService;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
@@ -76,20 +73,29 @@ public class GameController : MonoBehaviour
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 
-        // ---------------------------------- ON CLICK -------------------------------------------------
-        // If pressed left click (only in the frame clicked)
-        /*if (Input.GetMouseButtonDown(0))
+        // ---------------------------------- ON RIGHT CLICK -------------------------------------------------
+        // If pressed right click (only in the frame clicked)
+        if (Input.GetMouseButtonDown(1))
         {
-            // If there's an ingredient selected
-            if (selectedIngr != null)
+            // And If some ingredient has been selected
+            if (emptyCursor == false && selectedIngr != null)
             {
-                Debug.Log("3756 - Clicked with ingredient selected (GameController/Update)");
+                Debug.Log("II - Deselect ingredient [GameController/Update/Righ click input]");
 
-                // ---------------------------------- PLACE INGREDIENTS (GRID) -----------------------------------------------------
-                // Start the place ingredient in grid method
-                selectedIngr.PlaceIngrGrid();
+                // ---------------------------------- DESTROY CHILDS ------------------------------------------
+                // Delete the ingredient shape UI in the cursor
+                foreach (Transform child in gFeedback.transform)
+                {
+                    Destroy(child.gameObject);
+                }
+
+                // Deselect ingredient
+                selectedIngr = null;
+
+                // Set the cursor as empty
+                emptyCursor = true;
             }
-        }*/
+        }
 
 
         // ---------------------------------- WHEN NOTHING IS SELECTED ----------------------------------
@@ -99,8 +105,10 @@ public class GameController : MonoBehaviour
             // Loop through all the ClickerScripts on the scene
             for (int i = 0; i < ClickerScripts.Length; i = i + 1)
             {
+                // If one of this pantries has been clicked
                 if (ClickerScripts[i].isClicked == true)
                 {
+                    // Deselect that ingredient
                     ClickerScripts[i].DeselectIngr(i);
                 }
             }
