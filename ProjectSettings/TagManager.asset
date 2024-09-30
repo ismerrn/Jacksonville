@@ -11,6 +11,10 @@ TagManager:
   - Eggplant
   - Tomato
   - Mushroom
+  - Calendar
+  - Backpack
+  - Map
+  - Game Controller
   layers:
   - Default
   - TransparentFX

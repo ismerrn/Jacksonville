@@ -30,6 +30,13 @@ public class GameController : MonoBehaviour
     private Vector3 offsetMouseMushroom;
 
 
+    // ---------------------------------- CAMERA ------------------------------------------
+    // Set offsets for the camera position in each scene (Menu, Calendar, Backpack, Map, Execution)
+    private Vector3 calendarCamOffset;
+    private Vector3 backpackCamOffset;
+    private Vector3 mapCamOffset;
+
+
     // ---------------------------------- ARRAYS ------------------------------------------
     // Array to store all the cursor ingredients' shapes
     public GameObject[] gChipsFeedback;
@@ -57,17 +64,17 @@ public class GameController : MonoBehaviour
         offsetMouseCarrot = new Vector3(-50, 50, 1); // new Vector3(-70, 65, 1)
         offsetMouseEggplant = new Vector3(-125, -15, 1); // new Vector3(-135, 5, 1)
         offsetMouseMushroom = new Vector3(-195, -15, 1); // new Vector3(-210, 5, 1)
+
+        // Store the offset for each camera position in each scene
+        calendarCamOffset = new Vector3(-3000, 0, -4);
+        backpackCamOffset = new Vector3(0, 0, -4);
+        mapCamOffset = new Vector3(3000, 0, -4);
     }
 
 
     // ---------------------------------- EACH FRAME -------------------------------------------------------
     void Update()
     {
-        // ---------------------------------- ACCESS SCRIPTS -------------------------------------------
-        // Access the IngSelectable script
-        //IngSelectableScript = FindObjectOfType<IngSelectable>();
-
-
         // ---------------------------------- MOVE WITH CURSOR ------------------------------------------
         // Track mouse position (related to the transform of the "World")
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -82,18 +89,8 @@ public class GameController : MonoBehaviour
             {
                 Debug.Log("II - Deselect ingredient [GameController/Update/Righ click input]");
 
-                // ---------------------------------- DESTROY CHILDS ------------------------------------------
-                // Delete the ingredient shape UI in the cursor
-                foreach (Transform child in gFeedback.transform)
-                {
-                    Destroy(child.gameObject);
-                }
-
-                // Deselect ingredient
-                selectedIngr = null;
-
-                // Set the cursor as empty
-                emptyCursor = true;
+                // Unselect that ingredient
+                UnselectIngredient();
             }
         }
 
@@ -183,5 +180,21 @@ public class GameController : MonoBehaviour
             // Set the position of the Mushroom selected with an offset regarding the mouse position
             gFeedback.transform.position = mousePos + offsetMouseMushroom;
         }
+    }
+
+    public void UnselectIngredient()
+    {
+        // ---------------------------------- DESTROY CHILDS ------------------------------------------
+        // Delete the ingredient shape UI in the cursor
+        foreach (Transform child in gFeedback.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        // Deselect ingredient
+        selectedIngr = null;
+
+        // Set the cursor as empty
+        emptyCursor = true;
     }
 }
