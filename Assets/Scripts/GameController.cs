@@ -170,7 +170,7 @@ public class GameController : MonoBehaviour
             // If pressed right click (only in the frame clicked)
             if (Input.GetMouseButtonDown(1))
             {
-                // ---------------------------------- SET DEFAULT ----------------------------
+                // ---------------------------------- SET PATH TO DEFAULT -------------------
                 // Loop through the path chips
                 for (int i = 0; i < pathGrid.Count; i = i + 1)
                 {

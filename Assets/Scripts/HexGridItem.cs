@@ -38,7 +38,7 @@ public class HexGridItem : MonoBehaviour
             // And If the player has some steps left
             if (GameControllerScript.stepsLeft > 0)
             {
-                // If this grid isn't adjacent to the active one (check the distance between this hex grid and the active one)
+                // If this grid chip is adjacent to the active one (check the distance between this hex grid and the active one)
                 if (Vector3.Distance(GameController.activeGrid.transform.position, transform.position) < maxDistNeighborChips)
                 {
                     // Substract 1 step (used)
@@ -51,6 +51,36 @@ public class HexGridItem : MonoBehaviour
                     SetActive();
                 }
             }
+        }
+
+
+        // If the clicked grid chip is the origin one
+        if (this.tag == "Start")
+        {
+            // ---------------------------------- SET PATH TO DEFAULT -------------------
+            // Loop through the path chips
+            for (int i = 0; i < GameControllerScript.pathGrid.Count; i = i + 1)
+            {
+                // If the grid chip isn't the start of the path
+                if (GameControllerScript.pathGrid[i].tag != "Start")
+                {
+                    // Set all the path chips as default (not active/selectable)
+                    GameControllerScript.pathGrid[i].SetDefault();
+                }
+            }
+
+            // ---------------------------------- PATH ----------------------------------
+            // Restore the player's left steps
+            GameControllerScript.stepsLeft = GameControllerScript.stepsTotal;
+
+            // Delete all the path grid chips from the path
+            GameControllerScript.pathGrid.Clear();
+
+            // Set the origin/start Active Grid chip to be the first Active Grid again
+            GameController.activeGrid = GameObject.FindGameObjectWithTag("Start").GetComponent<HexGridItem>();
+
+            // Add the origin grid chip to the path
+            GameControllerScript.pathGrid.Add(GameController.activeGrid);
         }
     }
 
@@ -83,10 +113,10 @@ public class HexGridItem : MonoBehaviour
     }
 
 
-    // ---------------------------------- SET GRID CHIP TO SELECTABLE ----------------------------------------
+    // ---------------------------------- SET ADJACENT GRID CHIPS TO SELECTABLE ---------------------------------
     public void SetSelectable()
     {
-        // Update the sprite of the clicked hex grid to adjacent (selectable) sprite
+        // Update the active's adjacent grid chips to selectable
         gameObject.GetComponent<SpriteRenderer>().sprite = HexGridAdjacent;
     }
 }
