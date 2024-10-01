@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -42,6 +43,12 @@ public class GameController : MonoBehaviour
     private Vector3 backpackCamOffset;
     private Vector3 mapCamOffset;
 
+    // Check in which screen is the camera focusing on
+    public bool isInCalendar = false;
+    public bool isInBackpack = false;
+    public bool isInMap = false;
+
+
 
     // ---------------------------------- ARRAYS ------------------------------------------
     // Array to store all the cursor ingredients' shapes
@@ -68,7 +75,12 @@ public class GameController : MonoBehaviour
 
     // Store all the hex grid chips from the player's path
     public List<HexGridItem> pathGrid = new List<HexGridItem>();
-    
+
+    // Hex Grid states' sprites
+    public Sprite HexGridDef;
+    public Sprite HexGridActive;
+    public Sprite HexGridAdjacent;
+
 
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
     private void Start()
@@ -88,10 +100,21 @@ public class GameController : MonoBehaviour
         backpackCamOffset = new Vector3(0, 0, -4);
         mapCamOffset = new Vector3(3000, 0, -4);
 
-        // Set the first Active Grid to be the chip grid with the tag "Start"
+        // The game starts with the Calendar screen
+        isInCalendar = true;
+
+
+        // ---------------------------------- MAP PATH ----------------------------------------------------
+        // At the start of the round the steps left should be the same as the total steps
+        //stepsTotal = stepsLeft;
+
+        // Set the origin/start Active Grid chip to be the first Active Grid
         activeGrid = GameObject.FindGameObjectWithTag("Start").GetComponent<HexGridItem>();
 
-        // Add the grid chip where the player starts the round
+        // Update the sprite of first Active Grid to be active
+        activeGrid.GetComponent<SpriteRenderer>().sprite = HexGridActive;
+
+        // Add the origin Active Grid chip to the path list
         pathGrid.Add(activeGrid);
     }
 
@@ -104,38 +127,75 @@ public class GameController : MonoBehaviour
         mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
 
-        // ---------------------------------- ON RIGHT CLICK -------------------------------------------------
-        // If pressed right click (only in the frame clicked)
-        if (Input.GetMouseButtonDown(1))
+        // ---------------------------------- BACKPACK SCREEN ---------------------------------------
+        // If the Backpack is focusing Map screen
+        if (isInBackpack == true)
         {
-            // And If some ingredient has been selected
-            if (emptyCursor == false && selectedIngr != null)
+            // ---------------------------------- ON RIGHT CLICK ----------------------------------
+            // If pressed right click (only in the frame clicked)
+            if (Input.GetMouseButtonDown(1))
             {
-                Debug.Log("II - Deselect ingredient [GameController/Update/Righ click input]");
-
-                // Unselect that ingredient
-                UnselectIngredient();
-            }
-        }
-
-
-        // ---------------------------------- WHEN NOTHING IS SELECTED ----------------------------------
-        // If nothing is selected
-        if (emptyCursor == true)
-        {
-            // Loop through all the ClickerScripts on the scene
-            for (int i = 0; i < ClickerScripts.Length; i = i + 1)
-            {
-                // If one of this pantries has been clicked
-                if (ClickerScripts[i].isClicked == true)
+                // And If some ingredient has been selected
+                if (emptyCursor == false && selectedIngr != null)
                 {
-                    // Deselect that ingredient
-                    ClickerScripts[i].UnselectIngrUI(i);
+                    // Unselect that ingredient
+                    UnselectIngredient();
+                }
+            }
+
+
+            // ---------------------------------- WHEN NOTHING IS SELECTED ------------------------
+            // If nothing is selected
+            if (emptyCursor == true)
+            {
+                // Loop through all the ClickerScripts on the scene
+                for (int i = 0; i < ClickerScripts.Length; i = i + 1)
+                {
+                    // If one of this pantries has been clicked
+                    if (ClickerScripts[i].isClicked == true)
+                    {
+                        // Deselect that ingredient
+                        ClickerScripts[i].UnselectIngrUI(i);
+                    }
                 }
             }
         }
 
-        Debug.Log(selectedIngr);
+
+        // ---------------------------------- MAP SCREEN ---------------------------------------------
+        // If the Camera is focusing Map screen
+        else if (isInMap == true)
+        {
+            // ---------------------------------- ON RIGHT CLICK ----------------------------------
+            // If pressed right click (only in the frame clicked)
+            if (Input.GetMouseButtonDown(1))
+            {
+                // ---------------------------------- SET DEFAULT ----------------------------
+                // Loop through the path chips
+                for (int i = 0; i < pathGrid.Count; i = i + 1)
+                {
+                    // If the grid chip isn't the start of the path
+                    if (pathGrid[i].tag != "Start")
+                    {
+                        // Set all the path chips as default (not active/selectable)
+                        pathGrid[i].SetDefault();
+                    }
+                }
+
+                // ---------------------------------- PATH ----------------------------------
+                // Restore the player's left steps
+                stepsLeft = stepsTotal;
+
+                // Delete all the path grid chips from the path
+                pathGrid.Clear();
+
+                // Set the origin/start Active Grid chip to be the first Active Grid again
+                activeGrid = GameObject.FindGameObjectWithTag("Start").GetComponent<HexGridItem>();
+
+                // Add the origin grid chip to the path
+                pathGrid.Add(activeGrid);
+            }
+        }
     }
 
     // ---------------------------------- FRAME-RATE INDEPENDENT 4 PHYSICS CALCULATIONS --------------------
@@ -222,3 +282,4 @@ public class GameController : MonoBehaviour
         emptyCursor = true;
     }
 }
+

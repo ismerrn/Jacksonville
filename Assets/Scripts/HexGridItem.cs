@@ -14,7 +14,7 @@ public class HexGridItem : MonoBehaviour
     public GameController GameControllerScript;
 
 
-    // ---------------------------------- ARRAYS ------------------------------------------
+    // ---------------------------------- SPRITES -----------------------------------------
     // Hex Grid states' sprites
     public Sprite HexGridDef;
     public Sprite HexGridActive;
@@ -56,14 +56,18 @@ public class HexGridItem : MonoBehaviour
 
 
     // ---------------------------------- SET GRID CHIP TO DEFAULT ----------------------------------------------
-    void SetDefault()
+    public void SetDefault()
     {
+        // Set the clicked hex grid as not active
+        isActive = false;
 
+        // Update the sprite of the clicked hex grid to default sprite
+        gameObject.GetComponent<SpriteRenderer>().sprite = HexGridDef;
     }
 
 
     // ---------------------------------- SET GRID CHIP TO ACTIVE -----------------------------------------------
-    void SetActive()
+    public void SetActive()
     {
         // Set the clicked hex grid as active
         isActive = true;
@@ -80,8 +84,9 @@ public class HexGridItem : MonoBehaviour
 
 
     // ---------------------------------- SET GRID CHIP TO SELECTABLE ----------------------------------------
-    void SetSelectable()
+    public void SetSelectable()
     {
-
+        // Update the sprite of the clicked hex grid to adjacent (selectable) sprite
+        gameObject.GetComponent<SpriteRenderer>().sprite = HexGridAdjacent;
     }
 }
