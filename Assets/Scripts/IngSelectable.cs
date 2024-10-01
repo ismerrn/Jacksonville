@@ -63,13 +63,9 @@ public class IngSelectable : MonoBehaviour
 
     public void OnMouseDown()
     {
-        Debug.Log("1 - Entered the Place Ingredient in Grid method (IngSelectable/PlaceIngrGrid)");
-
         // ---------------------------------- PICK INGREDIENT FROM GRID --------------------------------
         if (GameController.emptyCursor)
         {
-            Debug.Log("2 - Enter Pick item (IngSelectable/PlaceIngrGrid/1erIf)");
-
             // Set a Pick Up index to check which Ingredient is being picked
             int pickUpIndex = 0;
 
@@ -80,21 +76,15 @@ public class IngSelectable : MonoBehaviour
             // Loop through every child of the ingredient
             foreach (Transform child in transform)
             {
-                Debug.Log("a");
-
                 // Draw a raycast
                 RaycastHit hit;
 
                 // Check if the raycasts hit
                 if (Physics.Raycast(child.position, -transform.forward, out hit, 200f, layerMask))
                 {
-                    Debug.Log("b");
-
                     // Check if: (Grid Item hitted exists) & (Grid Item hitted is not empty)
                     if (hit.transform.GetComponent<GridItem>() != null && !hit.transform.GetComponent<GridItem>().gridIsEmpty)
                     {
-                        Debug.Log("c");
-
                         // Set the hitted Grid Items as empty
                         hit.transform.GetComponent<GridItem>().gridIsEmpty = true;
                     }
@@ -102,16 +92,11 @@ public class IngSelectable : MonoBehaviour
 
             }
 
-            // Set the Selected Ingredient as the one picked from the grid
-            //GameController.selectedIngr = this;
-
 
             // ---------------------------------- CHECK WHICH INGREDIENT PICKED ------------------------------
             // If the ingredient selected is a Tomato
             if (this.gameObject.tag == "Tomato")
             {
-                Debug.Log("d");
-
                 // Set the Tomato index as the Pick Up Index
                 pickUpIndex = 0;
 
@@ -122,8 +107,6 @@ public class IngSelectable : MonoBehaviour
             // If the ingredient selected is a Carrot
             else if (this.gameObject.tag == "Carrot")
             {
-                Debug.Log("e");
-
                 // Set the Carrot index as the Pick Up Index
                 pickUpIndex = 1;
 
@@ -134,8 +117,6 @@ public class IngSelectable : MonoBehaviour
             // If the ingredient selected is a Eggplant
             else if (this.gameObject.tag == "Eggplant")
             {
-                Debug.Log("f");
-
                 // Set the Eggplant index as the Pick Up Index
                 pickUpIndex = 2;
 
@@ -146,8 +127,6 @@ public class IngSelectable : MonoBehaviour
             // If the ingredient selected is a Mushroom
             else if (this.gameObject.tag == "Mushroom")
             {
-                Debug.Log("g");
-
                 // Set the Mushroom index as the Pick Up Index
                 pickUpIndex = 3;
 
@@ -155,33 +134,22 @@ public class IngSelectable : MonoBehaviour
                 GameControllerScript.mushroomsPlaced--;
             }
 
-            Debug.Log("h");
-
-            Debug.Log(pickUpIndex);
 
             // ---------------------------------- SIMULATE INGREDIENT PICKED ----------------------------------------------
             // Spawn an Ingredient grid chip in the cursor (Grid Feedback)
             GameControllerScript.SpawnIngredientGrid(pickUpIndex);
 
-            Debug.Log("i");
-
             // Simulate an ingredient clicked
             pContainers[pickUpIndex].GetComponent<Clicker>().isClicked = true;
 
-            Debug.Log("j");
-
             // Active the renderer of the ingredient selected
             pIngrSelected.GetComponent<SpriteRenderer>().enabled = true;
-
-            Debug.Log("k");
 
             // Update the pantry's ingredients chips (block/available to interact, set as selected...)
             pContainers[pickUpIndex].GetComponent<Clicker>().PIngredientUpdate();
 
 
             // ---------------------------------- DESTROY INGREDIENT PICKED -----------------------------------------------
-            Debug.Log("l");
-
             // Destroy the Ingredient picked up (to change it for the new one spawned before)
             Destroy(this.gameObject);
         }
@@ -194,29 +162,21 @@ public class IngSelectable : MonoBehaviour
             // If cursor is occupied & the selected object is this Ingredient
             if (GameController.emptyCursor == false && GameController.selectedIngr == this)
             {
-                Debug.Log("3 - Enter drop item (IngSelectable/PlaceIngrGrid/1erElseIf)");
-
                 // Store if the GO is placeable
                 bool ingCanBPlaced = true;
 
                 // Loop through all the childs of the transform
                 foreach (Transform child in transform)
                 {
-                    Debug.Log("4");
-
                     // Draw the raycast
                     RaycastHit hit;
 
                     // Draw raycast in X direction (out hit = save hit, what we collide with)
                     if (Physics.Raycast(child.position, -transform.forward, out hit, 200f, layerMask))
                     {
-                        Debug.Log("5 - Draw raycast (IngSelectable/PlaceIngrGrid/1erElseIf)");
-
                         // If the Grid you collide with is not empty
                         if (!hit.transform.GetComponent<GridItem>().gridIsEmpty)
                         {
-                            Debug.Log("6 - Detect if the raycast (4) collides with an occupied grid item (IngSelectable/PlaceIngrGrid/1erElseIf)");
-
                             // You can't place the object
                             ingCanBPlaced = false;
 
@@ -228,8 +188,6 @@ public class IngSelectable : MonoBehaviour
                     // If the raycast doesn't collide with anything
                     else
                     {
-                        Debug.Log("7 - Tell the Ingredient can't b placed when raycast doesn't collide");
-
                         // You can't place the object
                         ingCanBPlaced = false;
 
@@ -244,8 +202,6 @@ public class IngSelectable : MonoBehaviour
                 // If the GO is placeable --> already placing the GO
                 if (ingCanBPlaced)
                 {
-                    Debug.Log("8 - Start placing ingredient (IngSelectable/PlaceIngrGrid/2ºIf)");
-
                     // Cursor is empty (can select another GO)
                     GameController.emptyCursor = true;
 
@@ -259,13 +215,9 @@ public class IngSelectable : MonoBehaviour
                     // Loop through all the childs of the transform
                     foreach (Transform child in transform)
                     {
-                        Debug.Log("9");
-
                         // If the child looped has the tag "Main Hijo"
                         if (child.CompareTag("Main Child"))
                         {
-                            Debug.Log("10 - Detect what point of the raycast is the Main Child (IngSelectable/PlaceIngrGrid/2ºIf)");
-
                             // Store this GO in the mainChild
                             mainChild = child.gameObject;
 
@@ -280,8 +232,6 @@ public class IngSelectable : MonoBehaviour
                     // Draw raycast in X direction (out hit = save hit, what we collide with) only for the Main Child
                     if (Physics.Raycast(mainChild.transform.position, -transform.forward, out hit, 200f, layerMask))
                     {
-                        Debug.Log("12 - Draw a Raycast from the Main Child to see where to place the Ingredient in the Grid (IngSelectable/PlaceIngrGrid/2ºIf)");
-
                         // Position of Grid hitted --> to place the GO
                         transform.position = new Vector3(hit.transform.position.x, hit.transform.position.y, 0);
 
@@ -298,8 +248,6 @@ public class IngSelectable : MonoBehaviour
                         // If the ingredient selected is a Tomato
                         if (this.gameObject.tag == "Tomato")
                         {
-                            Debug.Log("m");
-
                             // Substract 1 from the quantity of Tomatos placed in the Backpack Inventory
                             GameControllerScript.tomatosPlaced++;
                         }
@@ -307,8 +255,6 @@ public class IngSelectable : MonoBehaviour
                         // If the ingredient selected is a Carrot
                         else if (this.gameObject.tag == "Carrot")
                         {
-                            Debug.Log("n");
-
                             // Substract 1 from the quantity of Carrots placed in the Backpack Inventory
                             GameControllerScript.carrotsPlaced++;
                         }
@@ -316,8 +262,6 @@ public class IngSelectable : MonoBehaviour
                         // If the ingredient selected is a Eggplant
                         else if (this.gameObject.tag == "Eggplant")
                         {
-                            Debug.Log("ñ");
-
                             // Substract 1 from the quantity of Eggplants placed in the Backpack Inventory
                             GameControllerScript.eggplantsPlaced++;
                         }
@@ -325,8 +269,6 @@ public class IngSelectable : MonoBehaviour
                         // If the ingredient selected is a Mushroom
                         else if (this.gameObject.tag == "Mushroom")
                         {
-                            Debug.Log("o");
-
                             // Substract 1 from the quantity of Mushrooms placed in the Backpack Inventory
                             GameControllerScript.mushroomsPlaced++;
                         }
@@ -342,16 +284,12 @@ public class IngSelectable : MonoBehaviour
                     // Loop through all the childs of the transform
                     foreach (Transform child in transform)
                     {
-                        Debug.Log("13");
-
                         // Draw another raycast
                         RaycastHit hit2;
 
                         // Draw the raycast from each child (out hit = save hit, what we collide with)
                         if (Physics.Raycast(child.position, -transform.forward, out hit2, 200f, layerMask))
                         {
-                            Debug.Log("14 - Occupy the Grid Items where the Ingredient has been placed (IngSelectable/PlaceIngrGrid/2ºIf)");
-
                             // Store the Grid occupied as not empty
                             hit2.transform.GetComponent<GridItem>().gridIsEmpty = false;
                         }

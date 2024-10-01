@@ -1,13 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HexGridItem : MonoBehaviour
 {
     // ---------------------------------- BOOLS -------------------------------------------
-    // Store if the Grid has been selected (last one)
+    // Store if the Grid has been selected (last one) or it's adjacent to the last active one
     public bool isActive;
+    public bool isAdjacent;
+
+
+    // ---------------------------------- FLOAT -------------------------------------------
+    // The Maximum Distance of the Adjacent Chips for any chip is 160px
     private float maxDistNeighborChips = 160f;
+
+
+    // ---------------------------------- RAYCAST -----------------------------------------
+    // To specify layers to use in Physics.Raycast
+    public LayerMask layerMask;
+
 
     // ---------------------------------- SCRIPTS -----------------------------------------
     // Access Game Controller script
@@ -49,6 +62,9 @@ public class HexGridItem : MonoBehaviour
 
                     // Set the selected grid chip as Active
                     SetActive();
+
+                    // Set the chips as selectable
+                    GameControllerScript.SetSelectableAll();
                 }
             }
         }
@@ -81,6 +97,9 @@ public class HexGridItem : MonoBehaviour
 
             // Add the origin grid chip to the path
             GameControllerScript.pathGrid.Add(GameController.activeGrid);
+
+            // Set the origin chip's adjacents
+            GameControllerScript.SetSelectableAll();
         }
     }
 
@@ -88,8 +107,11 @@ public class HexGridItem : MonoBehaviour
     // ---------------------------------- SET GRID CHIP TO DEFAULT ----------------------------------------------
     public void SetDefault()
     {
-        // Set the clicked hex grid as not active
+        // Set this as not active chip
         isActive = false;
+
+        // Set this as not adjacent to active chip
+        isAdjacent = false;
 
         // Update the sprite of the clicked hex grid to default sprite
         gameObject.GetComponent<SpriteRenderer>().sprite = HexGridDef;
@@ -110,6 +132,9 @@ public class HexGridItem : MonoBehaviour
 
         // Store this new Active Grid in the Path (to store the path)
         GameControllerScript.pathGrid.Add(this);
+
+        // Check which chips are adjacents
+        //CheckAdjacent();
     }
 
 
@@ -118,5 +143,17 @@ public class HexGridItem : MonoBehaviour
     {
         // Update the active's adjacent grid chips to selectable
         gameObject.GetComponent<SpriteRenderer>().sprite = HexGridAdjacent;
+
+        // If this grid chip isn't the Active grid chip
+        /*if (GameController.activeGrid != this)
+        {
+            // And if this grid chip is adjacent to the active one (check the distance between this hex grid and the active one)
+            if (Vector3.Distance(GameController.activeGrid.transform.position, transform.position) < maxDistNeighborChips)
+            {
+                // Update the active's adjacent grid chips to selectable
+                gameObject.GetComponent<SpriteRenderer>().sprite = HexGridAdjacent;
+            }
+        }*/
+
     }
 }

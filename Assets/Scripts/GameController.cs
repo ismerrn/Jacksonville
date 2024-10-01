@@ -81,6 +81,13 @@ public class GameController : MonoBehaviour
     public Sprite HexGridActive;
     public Sprite HexGridAdjacent;
 
+    // Store all the Hex Grid Items
+    public HexGridItem[] allHexGrids;
+
+    // The Maximum Distance of the Adjacent Chips for any chip is 160px
+    private float maxDistNeighborChips = 160f;
+
+
 
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
     private void Start()
@@ -103,8 +110,10 @@ public class GameController : MonoBehaviour
         // The game starts with the Calendar screen
         isInCalendar = true;
 
-
         // ---------------------------------- MAP PATH ----------------------------------------------------
+        // Store all the Hex Grids in its array
+        allHexGrids = FindObjectsOfType<HexGridItem>();
+
         // At the start of the round the steps left should be the same as the total steps
         //stepsTotal = stepsLeft;
 
@@ -116,6 +125,9 @@ public class GameController : MonoBehaviour
 
         // Add the origin Active Grid chip to the path list
         pathGrid.Add(activeGrid);
+
+        // Set the origin chip's adjacents
+        //SetSelectableAll();
     }
 
 
@@ -194,6 +206,9 @@ public class GameController : MonoBehaviour
 
                 // Add the origin grid chip to the path
                 pathGrid.Add(activeGrid);
+
+                // Set the origin chip's adjacents
+                SetSelectableAll();
             }
         }
     }
@@ -266,6 +281,8 @@ public class GameController : MonoBehaviour
         }
     }
 
+
+    // ---------------------------------- UNSELECT INGREDIENT -------------------------------------------------------------
     public void UnselectIngredient()
     {
         // ---------------------------------- DESTROY CHILDS ------------------------------------------
@@ -280,6 +297,35 @@ public class GameController : MonoBehaviour
 
         // Set the cursor as empty
         emptyCursor = true;
+    }
+
+
+    // ---------------------------------- SET CHIPS AS SELECTABLE -----------------------------------------------------------
+    public void SetSelectableAll()
+    {
+        // Loop throught all the Hex Grid chips
+        for (int i = 0; i < allHexGrids.Length; i = i + 1)
+        {
+            if (!pathGrid.Contains(allHexGrids[i]))
+            {
+                // If the looped grid chip is adjacent to the active one (check the distance between this hex grid and the active one)
+                if (Vector3.Distance(activeGrid.transform.position, allHexGrids[i].gameObject.transform.position) < maxDistNeighborChips)
+                {
+                    // If the chips aren't the active chip
+                    if (activeGrid != allHexGrids[i])
+                    {
+                        // Update the active's adjacent grid chips to selectable
+                        allHexGrids[i].gameObject.GetComponent<SpriteRenderer>().sprite = HexGridAdjacent;
+                    }
+                }
+
+                else
+                {
+                    // Update the sprite of the chips outside of the range as Default
+                    allHexGrids[i].gameObject.GetComponent<SpriteRenderer>().sprite = HexGridDef;
+                }
+            }
+        }
     }
 }
 
