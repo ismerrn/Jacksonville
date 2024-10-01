@@ -14,6 +14,12 @@ public class GameController : MonoBehaviour
     // Store the shape selected UI/Feedback
     public GameObject gFeedback;
 
+    // Store the number of each type of Ingredients already placed in the backpack inventory
+    public int tomatosPlaced = 0;
+    public int carrotsPlaced = 0;
+    public int eggplantsPlaced = 0;
+    public int mushroomsPlaced = 0;
+
 
     // ---------------------------------- MOUSE ------------------------------------------
     // Check if the Cursor has some Ingredient clicked or not
