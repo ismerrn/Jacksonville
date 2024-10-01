@@ -127,7 +127,7 @@ public class GameController : MonoBehaviour
         pathGrid.Add(activeGrid);
 
         // Set the origin chip's adjacents
-        //SetSelectableAll();
+        SetSelectableAll();
     }
 
 
