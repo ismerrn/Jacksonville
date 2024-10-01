@@ -15,6 +15,7 @@ TagManager:
   - Backpack
   - Map
   - Game Controller
+  - Start
   layers:
   - Default
   - TransparentFX

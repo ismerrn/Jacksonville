@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     // ---------------------------------- INGREDIENTS -------------------------------------
-    // Store the the Selected Ingredient (clicked) (puede que NO sea static??)
+    // Store the Selected Ingredient (clicked) (puede que NO sea static??)
     public static IngSelectable selectedIngr;
 
     // Store the pantry ingredient selected UI/Feedback
@@ -58,6 +58,18 @@ public class GameController : MonoBehaviour
     public LayerMask layerMask;
 
 
+    // ---------------------------------- MAP -------------------------------------
+    // Store the number of Steps (Total --> each round, Left --> not used this round)
+    public int stepsTotal = 3;
+    public int stepsLeft = 3;
+
+    // Store the Active Hex Grid
+    public static HexGridItem activeGrid;
+
+    // Store all the hex grid chips from the player's path
+    public List<HexGridItem> pathGrid = new List<HexGridItem>();
+    
+
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
     private void Start()
     {
@@ -75,6 +87,12 @@ public class GameController : MonoBehaviour
         calendarCamOffset = new Vector3(-3000, 0, -4);
         backpackCamOffset = new Vector3(0, 0, -4);
         mapCamOffset = new Vector3(3000, 0, -4);
+
+        // Set the first Active Grid to be the chip grid with the tag "Start"
+        activeGrid = GameObject.FindGameObjectWithTag("Start").GetComponent<HexGridItem>();
+
+        // Add the grid chip where the player starts the round
+        pathGrid.Add(activeGrid);
     }
 
 

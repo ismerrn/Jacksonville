@@ -1,0 +1,87 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class HexGridItem : MonoBehaviour
+{
+    // ---------------------------------- BOOLS -------------------------------------------
+    // Store if the Grid has been selected (last one)
+    public bool isActive;
+    private float maxDistNeighborChips = 160f;
+
+    // ---------------------------------- SCRIPTS -----------------------------------------
+    // Access Game Controller script
+    public GameController GameControllerScript;
+
+
+    // ---------------------------------- ARRAYS ------------------------------------------
+    // Hex Grid states' sprites
+    public Sprite HexGridDef;
+    public Sprite HexGridActive;
+    public Sprite HexGridAdjacent;
+
+
+    // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
+    void Start()
+    {
+        // Access the Game Controller script
+        GameControllerScript = FindObjectOfType<GameController>();
+    }
+
+
+    // ---------------------------------- HEX GRID IS CLICKED -----------------------------------------------
+    void OnMouseDown()
+    {
+        // If this hex grid is not the active one
+        if (!isActive)
+        {
+            // And If the player has some steps left
+            if (GameControllerScript.stepsLeft > 0)
+            {
+                // If this grid isn't adjacent to the active one (check the distance between this hex grid and the active one)
+                if (Vector3.Distance(GameController.activeGrid.transform.position, transform.position) < maxDistNeighborChips)
+                {
+                    // Substract 1 step (used)
+                    GameControllerScript.stepsLeft--;
+
+                    // Set the last active hex grid as not active
+                    GameController.activeGrid.isActive = false;
+
+                    // Set the selected grid chip as Active
+                    SetActive();
+                }
+            }
+        }
+    }
+
+
+    // ---------------------------------- SET GRID CHIP TO DEFAULT ----------------------------------------------
+    void SetDefault()
+    {
+
+    }
+
+
+    // ---------------------------------- SET GRID CHIP TO ACTIVE -----------------------------------------------
+    void SetActive()
+    {
+        // Set the clicked hex grid as active
+        isActive = true;
+
+        // Store the clicked hex grid as active
+        GameController.activeGrid = this;
+
+        // Update the sprite of the clicked hex grid to active sprite
+        gameObject.GetComponent<SpriteRenderer>().sprite = HexGridActive;
+
+        // Store this new Active Grid in the Path (to store the path)
+        GameControllerScript.pathGrid.Add(this);
+    }
+
+
+    // ---------------------------------- SET GRID CHIP TO SELECTABLE ----------------------------------------
+    void SetSelectable()
+    {
+
+    }
+}
