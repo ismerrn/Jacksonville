@@ -306,6 +306,7 @@ public class GameController : MonoBehaviour
         // Loop throught all the Hex Grid chips
         for (int i = 0; i < allHexGrids.Length; i = i + 1)
         {
+            // The looped chip is not from the path
             if (!pathGrid.Contains(allHexGrids[i]))
             {
                 // If the looped grid chip is adjacent to the active one (check the distance between this hex grid and the active one)
@@ -324,6 +325,22 @@ public class GameController : MonoBehaviour
                     // Update the sprite of the chips outside of the range as Default
                     allHexGrids[i].gameObject.GetComponent<SpriteRenderer>().sprite = HexGridDef;
                 }
+            }
+        }
+    }
+
+
+    // ---------------------------------- SET DEFAULT WHEN NO STEPS LEFT ---------------------------------------------------------
+    public void NoStepsLeft()
+    {
+        // Loop throught all the Hex Grid chips
+        for (int i = 0; i < allHexGrids.Length; i = i + 1)
+        {
+            // The looped chip is not from the path
+            if (!pathGrid.Contains(allHexGrids[i]))
+            {
+                // Update the sprite of all the chips as Default
+                allHexGrids[i].gameObject.GetComponent<SpriteRenderer>().sprite = HexGridDef;
             }
         }
     }

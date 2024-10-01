@@ -62,8 +62,20 @@ public class HexGridItem : MonoBehaviour
                     // Set the selected grid chip as Active
                     SetActive();
 
-                    // Set the chips as selectable
-                    GameControllerScript.SetSelectableAll();
+
+                    // If the player has some steps left to move
+                    if (GameControllerScript.stepsLeft > 0)
+                    {
+                        // Set the adjacent chips of the active one as selectable
+                        GameControllerScript.SetSelectableAll();
+                    }
+
+                    // Or else
+                    else
+                    {
+                        // Set all the chips to default except from the path ones
+                        GameControllerScript.NoStepsLeft();
+                    }
                 }
             }
         }
