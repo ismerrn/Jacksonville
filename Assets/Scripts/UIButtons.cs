@@ -41,40 +41,9 @@ public class UIButtons : MonoBehaviour
         GameControllerScript = gameController.GetComponent<GameController>();
 
         // Store the offset for each camera position in each scene
-        calendarCamOffset = new Vector3(-3000, 0, -4);
         backpackCamOffset = new Vector3(0, 0, -4);
         mapCamOffset = new Vector3(3000, 0, -4);
-    }
-
-
-    // When Calendar Button (in-game) gets clicked
-    public void CalendarButton()
-    {
-        Debug.Log("Change to Calendar screen");
-
-        // ---------------------------------- EMPTY CURSOR UI -----------------------------------
-        // If there's an ingredient selected
-        if (GameController.emptyCursor == false)
-        {
-            // Unselect Ingredient
-            GameControllerScript.UnselectIngredient();
-        }
-
-
-        // ---------------------------------- CHANGE CAMERA POSITION ----------------------------
-        // Set the Main Camera's position as the Calendar screen position
-        mainCamera.transform.position = calendarCamOffset;
-
-
-        // ---------------------------------- SET CAMERA BOOLS ----------------------------------
-        // Store that Camera is focusing the Calendar screen
-        GameControllerScript.isInCalendar = true;
-
-        // Store that Camera isn't focusing in the Backpack screen
-        GameControllerScript.isInBackpack = false;
-
-        // Store that Camera isn't focusing in the Map screen
-        GameControllerScript.isInMap = false;
+        calendarCamOffset = new Vector3(6000, 0, -4);
     }
 
 
@@ -139,6 +108,37 @@ public class UIButtons : MonoBehaviour
 
         // Store that Camera is focusing the Map screen
         GameControllerScript.isInMap = true;
+    }
+
+
+    // When Calendar Button (in-game) gets clicked
+    public void CalendarButton()
+    {
+        Debug.Log("Change to Calendar screen");
+
+        // ---------------------------------- EMPTY CURSOR UI -----------------------------------
+        // If there's an ingredient selected
+        if (GameController.emptyCursor == false)
+        {
+            // Unselect Ingredient
+            GameControllerScript.UnselectIngredient();
+        }
+
+
+        // ---------------------------------- CHANGE CAMERA POSITION ----------------------------
+        // Set the Main Camera's position as the Calendar screen position
+        mainCamera.transform.position = calendarCamOffset;
+
+
+        // ---------------------------------- SET CAMERA BOOLS ----------------------------------
+        // Store that Camera is focusing the Calendar screen
+        GameControllerScript.isInCalendar = true;
+
+        // Store that Camera isn't focusing in the Backpack screen
+        GameControllerScript.isInBackpack = false;
+
+        // Store that Camera isn't focusing in the Map screen
+        GameControllerScript.isInMap = false;
     }
 
 
