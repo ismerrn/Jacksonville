@@ -87,6 +87,14 @@ public class GameController : MonoBehaviour
     // The Maximum Distance of the Adjacent Chips for any chip is 160px
     private float maxDistNeighborChips = 160f;
 
+    // Reference to the Player chip GO
+    //public GameObject playerChip;
+
+
+    // ---------------------------------- CALENDAR -------------------------------
+    // Store the number of Steps (Total --> each round, Left --> not used this round)
+
+
 
 
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
@@ -297,6 +305,9 @@ public class GameController : MonoBehaviour
 
         // Set the cursor as empty
         emptyCursor = true;
+
+        // Deactivate the renderer of the ingredient selected (as none is selected for now)
+        pIngredientSelected.GetComponent<SpriteRenderer>().enabled = false;
     }
 
 

@@ -16,6 +16,8 @@ TagManager:
   - Map
   - Game Controller
   - Start
+  - Inn
+  - House
   layers:
   - Default
   - TransparentFX

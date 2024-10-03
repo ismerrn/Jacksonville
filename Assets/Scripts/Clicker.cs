@@ -113,8 +113,6 @@ public class Clicker : MonoBehaviour
     // ---------------------------------- INGREDIENT CHIP IS CLICKED -----------------------------------------------------
     void OnMouseDown()
     {
-        Debug.Log("Caaaashate");
-
         // There has been a click, so activate it
         isClicked = true;
 
@@ -129,8 +127,6 @@ public class Clicker : MonoBehaviour
     // ---------------------------------- CHANGE INGREDIENT'S SPRITES ---------------------------------------
     public void PIngredientUpdate ()
     {
-        Debug.Log("antihero");
-
         // ------------------------- CHECK PANTRY INGREDIENTS INTERACTION -----------------------------
         // Loop through the 4 Pantry's Ingredient sprites
         for (int i = 0; i < 4; i = i + 1)

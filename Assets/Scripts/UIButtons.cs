@@ -6,6 +6,11 @@ using UnityEngine;
 
 public class UIButtons : MonoBehaviour
 {
+    // ---------------------------------- DELIVERY -----------------------------------------
+    // Store if the Delivery Button has been clicked
+    public bool isDeliveryClicked = false;
+
+
     // ---------------------------------- CAMERA ------------------------------------------
     // Reference to the Main Camera (with the Canvas as a child object)
     private GameObject mainCamera;
@@ -27,6 +32,14 @@ public class UIButtons : MonoBehaviour
     private GameController GameControllerScript;
 
 
+    // ---------------------------------- PLAYER ----------------------------------------------------
+    // Reference to the Player chip GO
+    private GameObject playerChip;
+
+    // Reference to the Player Script
+    private Player PlayerScript;
+
+
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
     void Start()
     {
@@ -37,8 +50,14 @@ public class UIButtons : MonoBehaviour
         // Access Game Controller GO
         gameController = GameObject.Find("Game Controller");
 
+        // Access Player chip GO
+        playerChip = GameObject.Find("Player chip");
+
         // Access the Game Controller Script from the Game Controller GO
         GameControllerScript = gameController.GetComponent<GameController>();
+
+        // Access the Player Script from the Player chip GO
+        PlayerScript = playerChip.GetComponent<Player>();
 
         // Store the offset for each camera position in each scene
         backpackCamOffset = new Vector3(0, 0, -4);
@@ -57,6 +76,8 @@ public class UIButtons : MonoBehaviour
         // If there's an ingredient selected
         if (GameController.emptyCursor == false)
         {
+            Debug.Log("Swap screen to Backpack with cursor occupied");
+
             // Unselect Ingredient
             GameControllerScript.UnselectIngredient();
         }
@@ -89,6 +110,8 @@ public class UIButtons : MonoBehaviour
         // If there's an ingredient selected
         if (GameController.emptyCursor == false)
         {
+            Debug.Log("Swap screen to Map with cursor occupied");
+
             // Unselect Ingredient
             GameControllerScript.UnselectIngredient();
         }
@@ -120,6 +143,8 @@ public class UIButtons : MonoBehaviour
         // If there's an ingredient selected
         if (GameController.emptyCursor == false)
         {
+            Debug.Log("Swap screen to Calendar with cursor occupied");
+
             // Unselect Ingredient
             GameControllerScript.UnselectIngredient();
         }
@@ -139,6 +164,28 @@ public class UIButtons : MonoBehaviour
 
         // Store that Camera isn't focusing in the Map screen
         GameControllerScript.isInMap = false;
+    }
+
+
+    // When Deliver Button (in-game - map) gets clicked
+    public void DeliverButton()
+    {
+        Debug.Log("Deliver quest");
+
+        isDeliveryClicked = true;
+
+        // ---------------------------------- EMPTY CURSOR UI -----------------------------------
+        // If there's an ingredient selected
+        if (GameController.emptyCursor == false)
+        {
+            Debug.Log("Swap screen to Calendar with cursor occupied");
+
+            // Unselect Ingredient
+            GameControllerScript.UnselectIngredient();
+        }
+
+        // Active the execution phase
+        // Make the player chip move throught the pathway making actions (deliver, buy, inn, etc.)
     }
 
 
