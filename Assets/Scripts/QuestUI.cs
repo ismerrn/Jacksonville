@@ -19,8 +19,8 @@ public class QuestUI : MonoBehaviour
     {
         // ---------------------------------- SET ARRAYS -----------------------------------------------
         // Store the number of each Ingredient placed in the Backpack
-        ingredientsOrders[0] = ingrOrder1;
-        ingredientsOrders[1] = ingrOrder2;
-        ingredientsOrders[2] = ingrOrder3;
+        //ingredientsOrders[0] = ingrOrder1;
+        //ingredientsOrders[1] = ingrOrder2;
+        //ingredientsOrders[2] = ingrOrder3;
     }
 }

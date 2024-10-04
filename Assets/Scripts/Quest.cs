@@ -66,6 +66,9 @@ public class Quest : MonoBehaviour
             CheckAndDeliver(i);
             CheckAndDeliver(i);
         }
+
+        // After delivering ingredients, update the quests' UI
+        GameControllerScript.CheckIngrUpdate();
     }
 
 

@@ -16,13 +16,16 @@ public class GameController : MonoBehaviour
     public GameObject gFeedback;
 
     // Array to store all the ingredients placed in the backpack
-    public int[] ingredientsPlaced;
+    //public int[] ingredientsPlaced;
 
     // Store the number of each type of Ingredients already placed in the backpack inventory
     public int tomatosPlaced = 0;
     public int carrotsPlaced = 0;
     public int eggplantsPlaced = 0;
     public int mushroomsPlaced = 0;
+
+    // Array to store all the ingredients ordered in quests
+    public OrderIngr[] ingrOrders;
 
 
     // ---------------------------------- MOUSE ------------------------------------------
@@ -41,6 +44,12 @@ public class GameController : MonoBehaviour
 
 
     // ---------------------------------- CAMERA ------------------------------------------
+    // Reference to the Main Camera (with the Canvas as a child object)
+    private GameObject mainCamera;
+
+    // Reference to the Main Camera's position
+    private Vector3 mainCameraPos;
+
     // Set offsets for the camera position in each scene (Menu, Calendar, Backpack, Map, Execution)
     private Vector3 calendarCamOffset;
     private Vector3 backpackCamOffset;
@@ -90,8 +99,21 @@ public class GameController : MonoBehaviour
     // The Maximum Distance of the Adjacent Chips for any chip is 160px
     private float maxDistNeighborChips = 160f;
 
+
+    // ---------------------------------- GAME CONTROLLER ------------------------------------------
+    // Reference to the Game Controller GO
+    private GameObject gameController;
+
+    // Reference to the Game Controller Script
+    private GameController GameControllerScript;
+
+
+    // ---------------------------------- PLAYER ----------------------------------------------------
     // Reference to the Player chip GO
-    //public GameObject playerChip;
+    private GameObject playerChip;
+
+    // Reference to the Player Script
+    private Player PlayerScript;
 
 
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
@@ -115,13 +137,29 @@ public class GameController : MonoBehaviour
         // The game starts with the Calendar screen
         isInCalendar = true;
 
+        // Store all the Order Ingredients
+        ingrOrders = FindObjectsOfType<OrderIngr>();
+
+
+        // ---------------------------------- CAMERA ------------------------------------------------------
+        // Access Main Camera GO
+        mainCamera = GameObject.Find("Main Camera");
+
+        // Access Player chip GO
+        playerChip = GameObject.Find("Player chip");
+
+        // Access the Player Script from the Player chip GO
+        PlayerScript = playerChip.GetComponent<Player>();
+
+        // Store the offset for each camera position in each scene
+        backpackCamOffset = new Vector3(0, 0, -4);
+        mapCamOffset = new Vector3(3000, 0, -4);
+        calendarCamOffset = new Vector3(6000, 0, -4);
+
 
         // ---------------------------------- MAP PATH ----------------------------------------------------
         // Store all the Hex Grids in its array
         allHexGrids = FindObjectsOfType<HexGridItem>();
-
-        // At the start of the round the steps left should be the same as the total steps
-        //stepsTotal = stepsLeft;
 
         // Set the origin/start Active Grid chip to be the first Active Grid
         activeGrid = GameObject.FindGameObjectWithTag("Start").GetComponent<HexGridItem>();
@@ -138,10 +176,10 @@ public class GameController : MonoBehaviour
 
         // ---------------------------------- BACKPACK ----------------------------------------------------
         // Store the number of each Ingredient placed in the backpack
-        ingredientsPlaced[0] = tomatosPlaced;
+        /*ingredientsPlaced[0] = tomatosPlaced;
         ingredientsPlaced[1] = carrotsPlaced;
         ingredientsPlaced[2] = eggplantsPlaced;
-        ingredientsPlaced[3] = mushroomsPlaced;
+        ingredientsPlaced[3] = mushroomsPlaced;*/
     }
 
 
@@ -360,6 +398,138 @@ public class GameController : MonoBehaviour
                 allHexGrids[i].gameObject.GetComponent<SpriteRenderer>().sprite = HexGridDef;
             }
         }
+    }
+
+
+    // ---------------------------------- GIVE INFO TO UPDATE ORDER INGR ---------------------------------------------------------
+    // Give the information to update de Order Ingredient UI (text)
+    public void CheckIngrUpdate()
+    {
+        // Loop through all the Order Ingredients
+        for (int i = 0; i < ingrOrders.Length; i = i + 1)
+        {
+            // Update their info to update their UIs
+            ingrOrders[i].GetComponent<OrderIngr>().UpdateQuantity();
+        }
+    }
+
+
+    // ---------------------------------- RESET DAY ------------------------------------------------------------------------------
+    // Reset the day as new one
+    public void ResetDay()
+    {
+        // At the start of the day reset steps
+        stepsLeft = stepsTotal;
+
+        // Vaciar mochila
+
+        // Set the Camera in the Calendar Screen
+        CameraToCalendar();
+
+        // Reset path array
+        pathGrid.Clear();
+
+        // Go through each Hex Grid
+        for (int i = 0; i < allHexGrids.Length; i = i + 1)
+        {
+            // And update their sprite to the default one
+            allHexGrids[i].SetDefault();
+        }
+
+        // Set the origin/start Active Grid chip to be the first Active Grid
+        activeGrid = GameObject.FindGameObjectWithTag("Start").GetComponent<HexGridItem>();
+
+        // Update the sprite of first Active Grid to be active
+        activeGrid.GetComponent<SpriteRenderer>().sprite = HexGridActive;
+
+        // Add the origin Active Grid chip to the path list
+        pathGrid.Add(activeGrid);
+
+        // Reset the Player chip to the Start path position
+        playerChip.transform.position = activeGrid.transform.position;
+
+        EmptyInventory();
+    }
+
+
+    // ---------------------------------- CAMERA FOCUS CALENDAR -----------------------------------------------------------------
+    // Move Camera to Calendar screen position
+    public void CameraToCalendar()
+    {
+        // ---------------------------------- EMPTY CURSOR UI -----------------------------------
+        // If there's an ingredient selected
+        if (emptyCursor == false)
+        {
+            Debug.Log("Swap screen to Calendar with cursor occupied");
+
+            // Unselect Ingredient
+            UnselectIngredient();
+        }
+
+
+        // ---------------------------------- CHANGE CAMERA POSITION ----------------------------
+        // Set the Main Camera's position as the Calendar screen position
+        mainCamera.transform.position = calendarCamOffset;
+
+
+        // ---------------------------------- SET CAMERA BOOLS ----------------------------------
+        // Store that Camera is focusing the Calendar screen
+        isInCalendar = true;
+
+        // Store that Camera isn't focusing in the Backpack screen
+        isInBackpack = false;
+
+        // Store that Camera isn't focusing in the Map screen
+        isInMap = false;
+    }
+
+
+    // ---------------------------------- EMPTY INVENTORY -----------------------------------------------------------------------
+    public void EmptyInventory()
+    {
+        // ---------------------------------- ACCESS --------------------------------------------
+        // Store all the Ingredients that are currently in the Backpack
+        IngSelectable[] ingrInBackpack = FindObjectsOfType<IngSelectable>();
+
+        // Store all the Grid chips of the Backpack
+        GridItem[] backpackGridChips = FindObjectsOfType<GridItem>();
+
+        Debug.Log("Vacia el inventario cohoné");
+
+        // ---------------------------------- EMPTY BACKPACK'S INGREDIENTS PLACED ---------------
+        // Empty Inventory (destroy all the ingredients that are currently in Backpack)
+        for (int i = 0; i < ingrInBackpack.Length; i = i + 1)
+        {
+            Debug.Log("Quita los ingredientes");
+
+            Destroy(ingrInBackpack[i].gameObject);
+        }
+
+
+        // ---------------------------------- EMPTY BACKPACK GRID CHIPS -------------------------
+        // Empty all the Backpack's grid chips
+        for (int i = 0; i < backpackGridChips.Length; i = i + 1)
+        {
+            Debug.Log("Vacia las chips");
+
+            backpackGridChips[i].GetComponent<GridItem>().gridIsEmpty = true;
+        }
+
+
+        // ---------------------------------- EMPTY COUNTERS ------------------------------------
+        // Empty all the Backpack's Ingredients counters
+        tomatosPlaced = 0;
+        carrotsPlaced = 0;
+        eggplantsPlaced = 0;
+        mushroomsPlaced = 0;
+
+        // Empty all the Backpack's Ingredients counters
+        /*for (int i = 0; i < ingredientsPlaced.Length; i = i + 1)
+        {
+            Debug.Log("Vacia los contadores");
+
+            ingredientsPlaced[i] = 0;
+        }*/
     }
 }
 

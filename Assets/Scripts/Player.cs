@@ -94,6 +94,12 @@ public class Player : MonoBehaviour
                 Debug.Log("Toma Tim");
                 collision.GetComponent<Quest>().DeliverQuest();
             }
+
+            if (collision.name == "Felix")
+            {
+                Debug.Log("Toma Felix");
+                collision.GetComponent<Quest>().DeliverQuest();
+            }
         }
 
 
@@ -133,6 +139,9 @@ public class Player : MonoBehaviour
             // What to do when it's there's no path left
             else
             {
+                // Este 0 puedes estar rompiendo algo
+                index = 0;
+
                 // Set the Delivery Button as not clicked
                 deliveryButton.GetComponent<UIButtons>().isDeliveryClicked = false;
 
@@ -143,6 +152,7 @@ public class Player : MonoBehaviour
                 CalendarScript.TimePass();
 
                 // Crear una función (y llamarla) que resetee el día
+                GameControllerScript.ResetDay();
             }
         }
     }

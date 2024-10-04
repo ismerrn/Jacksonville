@@ -87,8 +87,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4681510046379869837, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
       propertyPath: m_Name
-      value: 5
+      value: Quest 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5555117720006532880, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4bf924bb7a63e4441921fd4e0966e6ad, type: 3}
+    - target: {fileID: 5742654807906365895, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b75dcf935e681ca45a92148ae0ba7cdc, type: 3}
+    - target: {fileID: 7906481341587784392, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 18ee9a47a661a0c44ba356f6475e30e3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -149,8 +161,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4681510046379869837, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
       propertyPath: m_Name
-      value: 3
+      value: Quest 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5555117720006532880, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d81423aaf8e5442458bdcbd73852f733, type: 3}
+    - target: {fileID: 5742654807906365895, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4bf924bb7a63e4441921fd4e0966e6ad, type: 3}
+    - target: {fileID: 7471445199638080133, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b75dcf935e681ca45a92148ae0ba7cdc, type: 3}
+    - target: {fileID: 7906481341587784392, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 300c4d47a474a774c84c5694c4c83d20, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -211,7 +239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4681510046379869837, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
       propertyPath: m_Name
-      value: 1
+      value: Quest 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -273,8 +301,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4681510046379869837, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
       propertyPath: m_Name
-      value: 2
+      value: Quest 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5742654807906365895, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d81423aaf8e5442458bdcbd73852f733, type: 3}
+    - target: {fileID: 7471445199638080133, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4bf924bb7a63e4441921fd4e0966e6ad, type: 3}
+    - target: {fileID: 7906481341587784392, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d2414b32ec0a1854b8cebc4b32878541, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -335,8 +375,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4681510046379869837, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
       propertyPath: m_Name
-      value: 6
+      value: Quest 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5742654807906365895, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b75dcf935e681ca45a92148ae0ba7cdc, type: 3}
+    - target: {fileID: 7471445199638080133, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 4bf924bb7a63e4441921fd4e0966e6ad, type: 3}
+    - target: {fileID: 7906481341587784392, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2e2e97e680f14c749a2c8d4febba6b7c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -397,8 +449,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4681510046379869837, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
       propertyPath: m_Name
-      value: 4
+      value: Quest 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5555117720006532880, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d81423aaf8e5442458bdcbd73852f733, type: 3}
+    - target: {fileID: 5742654807906365895, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b75dcf935e681ca45a92148ae0ba7cdc, type: 3}
+    - target: {fileID: 7906481341587784392, guid: 86c728bb6bb18db4aa3f290938f9259b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c1ce8823f63f9584f8085a30fb3fda5b, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
