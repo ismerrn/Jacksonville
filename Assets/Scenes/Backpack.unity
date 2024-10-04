@@ -4455,6 +4455,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6278670457291733553, guid: 76a1d54cdc33dd8459355d99ae3d7bb5, type: 3}
   m_PrefabInstance: {fileID: 310228377}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &327588039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 327588040}
+  m_Layer: 0
+  m_Name: activeSeason
+  m_TagString: Spring
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &327588040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327588039}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1173666311}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &330229141
 GameObject:
   m_ObjectHideFlags: 0
@@ -12609,6 +12640,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1173666311}
   - component: {fileID: 1173666310}
+  - component: {fileID: 1173666312}
   m_Layer: 0
   m_Name: Game Controller
   m_TagString: Game Controller
@@ -12630,6 +12662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pIngredientSelected: {fileID: 1987812630}
   gFeedback: {fileID: 928195369}
+  ingredientsPlaced: 
   tomatosPlaced: 0
   carrotsPlaced: 0
   eggplantsPlaced: 0
@@ -12669,9 +12702,30 @@ Transform:
   m_LocalPosition: {x: -55.16988, y: -5.988471, z: -4.912476}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 327588040}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1173666312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173666309}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83d3ef0cc772030498f3dbb11c9641cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seasonsInYear: 4
+  weeksInSeason: 4
+  daysInWeek: 7
+  daysUsed: 0
+  weeksUsed: 0
+  seasonsUsed: 0
+  yearsUsed: 0
+  seasons: []
 --- !u!1 &1177515185
 GameObject:
   m_ObjectHideFlags: 0

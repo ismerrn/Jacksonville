@@ -94,12 +94,6 @@ public class GameController : MonoBehaviour
     //public GameObject playerChip;
 
 
-    // ---------------------------------- CALENDAR -------------------------------
-    // Store the number of Steps (Total --> each round, Left --> not used this round)
-
-
-
-
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
     void Start()
     {

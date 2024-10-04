@@ -31,6 +31,9 @@ public class Player : MonoBehaviour
     // Access Game Controller script
     private GameController GameControllerScript;
 
+    // Access Calendar script
+    private Calendar CalendarScript;
+
 
     // ---------------------------------- DELIVERY BUTTON ------------------------------------------
     // Reference to the Game Controller GO
@@ -46,6 +49,9 @@ public class Player : MonoBehaviour
 
         // Access the Game Controller Script from the Game Controller GO
         GameControllerScript = gameController.GetComponent<GameController>();
+
+        // Access the Calendar Script from the Game Controller GO
+        CalendarScript = gameController.GetComponent<Calendar>();
     }
 
 
@@ -117,8 +123,10 @@ public class Player : MonoBehaviour
         // If it's near, go next
         if (distance <= 0.05)
         {
+            // If there's still some path chips left to walk
             if (index < GameControllerScript.pathGrid.Count-1)
             {
+                // Go next chip
                 index++;
             }
 
@@ -126,7 +134,15 @@ public class Player : MonoBehaviour
             else
             {
                 // Set the Delivery Button as not clicked
-                //deliveryButton.GetComponent<UIButtons>().isDeliveryClicked = false;
+                deliveryButton.GetComponent<UIButtons>().isDeliveryClicked = false;
+
+                // Go next day
+                CalendarScript.daysUsed++;
+
+                // Make the time pass
+                CalendarScript.TimePass();
+
+                // Crear una función (y llamarla) que resetee el día
             }
         }
     }

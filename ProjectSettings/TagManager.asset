@@ -21,6 +21,10 @@ TagManager:
   - Order 1
   - Order 2
   - Order 3
+  - Spring
+  - Summer
+  - Autumn
+  - Winter
   layers:
   - Default
   - TransparentFX

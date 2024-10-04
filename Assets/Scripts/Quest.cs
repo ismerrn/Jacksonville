@@ -40,15 +40,6 @@ public class Quest : MonoBehaviour
         questIngredients[1] = questCarrots;
         questIngredients[2] = questEggplants;
         questIngredients[3] = questMushrooms;
-
-        //questIngredients = new int[4] {questTomatos, questCarrots, questEggplants, questMushrooms};
-    }
-
-
-    // ---------------------------------- EACH FRAME -------------------------------------------------------
-    void Update()
-    {
-        
     }
 
 
@@ -66,39 +57,20 @@ public class Quest : MonoBehaviour
         // Loop through the 4 ingredients
         for (int i = 0; i < 4; i = i + 1)
         {
-            Debug.Log("Loop through the 4 ingredients");
-
-            // If (there's ingredients left to deliver)
-            if (questIngredients[i] > 0)
-            {
-                Debug.Log("Still quest ingredients to deliver");
-
-                // And If (there's ingredients left in the backpack)
-                if (backpackIngredients[i] > 0)
-                {
-                    Debug.Log("Still ingredients in the backpack to deliver");
-
-                    // Substract 1 from the backpack and 1 from the quest (there's 1 ingredient less to deliver)
-                    backpackIngredients[i]--;
-                    questIngredients[i]--;
-
-                    UpdateIngrPlaced();
-
-                    // Update the number of ingredients placed in the Game Controller script
-                    //GameControllerScript.UpdateIngredientsPlaced(i);
-                }
-            }
-
-            // If (there's no ingredients left to deliver)
-            /*else
-            {
-                // Check quest UI order
-                // Deactivate the renderer of the ingredient selected (as none is selected for now)
-                //pIngredientSelected.GetComponent<SpriteRenderer>().enabled = true;
-            }*/
+            // Check 6 times (bc could be up to 6 orders of the same ingredient) if there's ingredients to deliver and the player has them in their backpack
+            // And deliver them
+            CheckAndDeliver(i);
+            CheckAndDeliver(i);
+            CheckAndDeliver(i);
+            CheckAndDeliver(i);
+            CheckAndDeliver(i);
+            CheckAndDeliver(i);
         }
     }
 
+
+    // ---------------------------------- UPDATE NMB OF INGREDIENTS PLACED AFTER DELIVERY  -----------------
+    // Update nmbs of ingredients that are placed in the backpack after delivering them to villagers
     void UpdateIngrPlaced()
     {
         // Store the number of each Ingredient placed in the Backpack
@@ -113,5 +85,33 @@ public class Quest : MonoBehaviour
         questEggplants = questIngredients[2];
         questMushrooms = questIngredients[3];
     }
-    
+
+
+    // ---------------------------------- CHECK INGREDIENTS + DELIVER --------------------------------------
+    // Check ingredients needed and available, and deliver if possible
+    void CheckAndDeliver(int i)
+    {
+        // If (there's quest's ingredients left to deliver)
+        if (questIngredients[i] > 0)
+        {
+            // And If (there's ingredients left in the backpack)
+            if (backpackIngredients[i] > 0)
+            {
+                // Substract 1 from the backpack and 1 from the quest (there's 1 ingredient less to deliver)
+                backpackIngredients[i]--;
+                questIngredients[i]--;
+
+                // After delivering ingredients, update how much ingredients are left in the backpack and/or to deliver in the quest
+                UpdateIngrPlaced();
+            }
+        }
+
+        // If (there's no ingredients left to deliver)
+        /*else
+        {
+            // Check quest UI order
+            // Deactivate the renderer of the ingredient selected (as none is selected for now)
+            //pIngredientSelected.GetComponent<SpriteRenderer>().enabled = true;
+        }*/
+    }
 }
