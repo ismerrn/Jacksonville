@@ -13887,6 +13887,108 @@ RectTransform:
   m_AnchoredPosition: {x: -751, y: 448}
   m_SizeDelta: {x: 338, y: 86}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1001 &1290804751
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1622207795}
+    m_Modifications:
+    - target: {fileID: 88020687301699155, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_Offset.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 88020687301699155, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 88020687301699155, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 88020687301699155, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 88020687301699155, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questUI
+      value: 
+      objectReference: {fileID: 1595339116}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questCarrots
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questEggplants
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questMushrooms
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688254956407598187, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 300c4d47a474a774c84c5694c4c83d20, type: 3}
+    - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5354007124470236277, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_Name
+      value: Felix
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+--- !u!4 &1290804752 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+  m_PrefabInstance: {fileID: 1290804751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1298175286
 GameObject:
   m_ObjectHideFlags: 0
@@ -17187,6 +17289,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 25
       objectReference: {fileID: 0}
+    - target: {fileID: 1665504123742740147, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
+      propertyPath: m_SortingOrder
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 2087220860209861395, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
       propertyPath: m_Name
       value: Quest 2
@@ -17278,6 +17384,10 @@ PrefabInstance:
     - target: {fileID: 3582096899653834582, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
       propertyPath: m_SortingOrder
       value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3892744926284843197, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3893931611224019969, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
       propertyPath: m_SortingOrder
@@ -17423,6 +17533,21 @@ PrefabInstance:
 --- !u!4 &1595339114 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5717453426377498526, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
+  m_PrefabInstance: {fileID: 1595339113}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1595339115 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2087220860209861395, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
+  m_PrefabInstance: {fileID: 1595339113}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1595339116 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 276682658939813911, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
+  m_PrefabInstance: {fileID: 1595339113}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1595339117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 637303186650792032, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
   m_PrefabInstance: {fileID: 1595339113}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1597841834
@@ -17850,7 +17975,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 7142989081525668931, guid: 3a0f63d1a4884934480722a0b3cb6a63, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1290804752}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a0f63d1a4884934480722a0b3cb6a63, type: 3}
 --- !u!4 &1622207795 stripped
@@ -21579,11 +21707,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 88020687301699155, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 45
+      value: 52
       objectReference: {fileID: 0}
     - target: {fileID: 88020687301699155, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questUI
+      value: 
+      objectReference: {fileID: 1595339115}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questTomatos
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questEggplants
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questMushrooms
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3688254956407598187, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_Sprite
@@ -24953,6 +25097,22 @@ PrefabInstance:
     - target: {fileID: 88020687301699155, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questUI
+      value: 
+      objectReference: {fileID: 1595339117}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questCarrots
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questTomatos
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questEggplants
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_LocalPosition.x

@@ -10,12 +10,12 @@ public class Player : MonoBehaviour
     public float executionSpeed = 500;
 
     // Set the time the Player chip will stop in each collision (House, Inn, Event, etc.)
-    public float pathStopTime = 1f;
+    public float pathStopTime = 2f;
 
 
     // ---------------------------------- INT ------------------------------------------------------
     // Store positions of path grids
-    public int index = 0;
+    private int index = 0;
 
 
     // ---------------------------------- BOOL -----------------------------------------------------
@@ -80,11 +80,13 @@ public class Player : MonoBehaviour
             if (collision.name == "Mark")
             {
                 Debug.Log("Toma Mark");
+                collision.GetComponent<Quest>().DeliverQuest();
             }
 
             if (collision.name == "Tim")
             {
                 Debug.Log("Toma Tim");
+                collision.GetComponent<Quest>().DeliverQuest();
             }
         }
 

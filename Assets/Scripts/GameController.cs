@@ -98,7 +98,7 @@ public class GameController : MonoBehaviour
 
 
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
-    private void Start()
+    void Start()
     {
         // ---------------------------------- SET VALUES -------------------------------------------------
         // Store the offset for the Ingredient Selected chip when following the cursor

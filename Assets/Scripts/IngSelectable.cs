@@ -41,7 +41,7 @@ public class IngSelectable : MonoBehaviour
 
 
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
-    private void Start()
+    void Start()
     {
         // ---------------------------------- ACCESS ---------------------------------------------------
         // Access the Game Controller script

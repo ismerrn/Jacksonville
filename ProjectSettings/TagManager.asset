@@ -18,6 +18,9 @@ TagManager:
   - Start
   - Inn
   - House
+  - Order 1
+  - Order 2
+  - Order 3
   layers:
   - Default
   - TransparentFX
