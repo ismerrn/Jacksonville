@@ -15,6 +15,9 @@ public class GameController : MonoBehaviour
     // Store the shape selected UI/Feedback
     public GameObject gFeedback;
 
+    // Array to store all the ingredients placed in the backpack
+    public int[] ingredientsPlaced;
+
     // Store the number of each type of Ingredients already placed in the backpack inventory
     public int tomatosPlaced = 0;
     public int carrotsPlaced = 0;
@@ -118,6 +121,7 @@ public class GameController : MonoBehaviour
         // The game starts with the Calendar screen
         isInCalendar = true;
 
+
         // ---------------------------------- MAP PATH ----------------------------------------------------
         // Store all the Hex Grids in its array
         allHexGrids = FindObjectsOfType<HexGridItem>();
@@ -136,6 +140,14 @@ public class GameController : MonoBehaviour
 
         // Set the origin chip's adjacents
         SetSelectableAll();
+
+
+        // ---------------------------------- BACKPACK ----------------------------------------------------
+        // Store the number of each Ingredient placed in the backpack
+        ingredientsPlaced[0] = tomatosPlaced;
+        ingredientsPlaced[1] = carrotsPlaced;
+        ingredientsPlaced[2] = eggplantsPlaced;
+        ingredientsPlaced[3] = mushroomsPlaced;
     }
 
 

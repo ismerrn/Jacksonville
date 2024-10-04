@@ -8,12 +8,6 @@ public class Quest : MonoBehaviour
     // Store backpack ingredients
     public int[] backpackIngredients;
 
-    // Store all the backpack ingredients and its quantities
-    public int backpackTomatos = 0;
-    public int backpackCarrots = 0;
-    public int backpackEggplants = 0;
-    public int backpackMushrooms = 0;
-
 
     // ---------------------------------- QUEST --------------------------------------------
     // Storequest ingredients
@@ -41,47 +35,20 @@ public class Quest : MonoBehaviour
         // Access the Game Controller script
         GameControllerScript = FindObjectOfType<GameController>();
 
-        // ---------------------------------- SET ARRAYS -----------------------------------------------
-        // Store the number of each Ingredient placed in the Backpack
-        backpackIngredients[0] = backpackTomatos;
-        backpackIngredients[1] = backpackCarrots;
-        backpackIngredients[2] = backpackEggplants;
-        backpackIngredients[3] = backpackMushrooms;
-
         // Store the number of each Ingredient needed for the quest
         questIngredients[0] = questTomatos;
         questIngredients[1] = questCarrots;
         questIngredients[2] = questEggplants;
         questIngredients[3] = questMushrooms;
+
+        //questIngredients = new int[4] {questTomatos, questCarrots, questEggplants, questMushrooms};
     }
 
 
     // ---------------------------------- EACH FRAME -------------------------------------------------------
     void Update()
     {
-        // Store the number of each type of Ingredients already placed in the backpack inventory
-        backpackTomatos = GameControllerScript.tomatosPlaced;
-        backpackCarrots = GameControllerScript.carrotsPlaced;
-        backpackEggplants = GameControllerScript.eggplantsPlaced;
-        backpackMushrooms = GameControllerScript.mushroomsPlaced;
-
-        // Loop through the 4 ingredients
-        /*for (int i = 0; i < 4; i = i + 1)
-        {
-            // If the player has same number of X ingredient in the backpack as needed in this quest
-            if (questIngredients[i] >= backpackIngredients[i])
-            {
-                // Activate the check of that order
-                //pIngredientSelected.GetComponent<SpriteRenderer>().enabled = true;
-            }
-
-            // If (there's no ingredients left to deliver)
-            else
-            {
-                // Deactivate the check of that order
-                //pIngredientSelected.GetComponent<SpriteRenderer>().enabled = false;
-            }
-        }*/
+        
     }
 
 
@@ -89,18 +56,36 @@ public class Quest : MonoBehaviour
     // Do the deliver of the quest
     public void DeliverQuest()
     {
+        // ---------------------------------- SET ARRAYS -----------------------------------------------
+        // Store the number of each Ingredient placed in the Backpack
+        backpackIngredients[0] = GameControllerScript.tomatosPlaced;
+        backpackIngredients[1] = GameControllerScript.carrotsPlaced;
+        backpackIngredients[2] = GameControllerScript.eggplantsPlaced;
+        backpackIngredients[3] = GameControllerScript.mushroomsPlaced;
+
         // Loop through the 4 ingredients
         for (int i = 0; i < 4; i = i + 1)
         {
+            Debug.Log("Loop through the 4 ingredients");
+
             // If (there's ingredients left to deliver)
             if (questIngredients[i] > 0)
             {
+                Debug.Log("Still quest ingredients to deliver");
+
                 // And If (there's ingredients left in the backpack)
                 if (backpackIngredients[i] > 0)
                 {
+                    Debug.Log("Still ingredients in the backpack to deliver");
+
                     // Substract 1 from the backpack and 1 from the quest (there's 1 ingredient less to deliver)
                     backpackIngredients[i]--;
                     questIngredients[i]--;
+
+                    UpdateIngrPlaced();
+
+                    // Update the number of ingredients placed in the Game Controller script
+                    //GameControllerScript.UpdateIngredientsPlaced(i);
                 }
             }
 
@@ -113,4 +98,20 @@ public class Quest : MonoBehaviour
             }*/
         }
     }
+
+    void UpdateIngrPlaced()
+    {
+        // Store the number of each Ingredient placed in the Backpack
+        GameControllerScript.tomatosPlaced = backpackIngredients[0];
+        GameControllerScript.carrotsPlaced = backpackIngredients[1];
+        GameControllerScript.eggplantsPlaced = backpackIngredients[2];
+        GameControllerScript.mushroomsPlaced = backpackIngredients[3];
+
+        // Store the number of each Ingredient needed for the quest
+        questTomatos = questIngredients[0];
+        questCarrots = questIngredients[1];
+        questEggplants = questIngredients[2];
+        questMushrooms = questIngredients[3];
+    }
+    
 }
