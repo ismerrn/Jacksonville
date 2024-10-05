@@ -140,9 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea78cdba1cd816242857b8f13713bae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownerName: 
+  ownerName: Niggel
   owner: {fileID: 0}
-  ingrIndex: 0
+  ingrIndex: 2
   ingrQuantity: {fileID: 0}
 --- !u!1 &17569726
 GameObject:
@@ -2722,7 +2722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea78cdba1cd816242857b8f13713bae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownerName: 
+  ownerName: Bobby
   owner: {fileID: 0}
   ingrIndex: 0
   ingrQuantity: {fileID: 0}
@@ -2951,9 +2951,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea78cdba1cd816242857b8f13713bae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownerName: 
+  ownerName: Niggel
   owner: {fileID: 0}
-  ingrIndex: 0
+  ingrIndex: 1
   ingrQuantity: {fileID: 0}
 --- !u!1 &291359742
 GameObject:
@@ -5058,9 +5058,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea78cdba1cd816242857b8f13713bae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownerName: 
+  ownerName: Bobby
   owner: {fileID: 0}
-  ingrIndex: 0
+  ingrIndex: 3
   ingrQuantity: {fileID: 0}
 --- !u!1001 &553181330
 PrefabInstance:
@@ -5149,9 +5149,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea78cdba1cd816242857b8f13713bae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownerName: 
+  ownerName: Niggel
   owner: {fileID: 0}
-  ingrIndex: 0
+  ingrIndex: 3
   ingrQuantity: {fileID: 0}
 --- !u!1 &565203232 stripped
 GameObject:
@@ -7868,9 +7868,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea78cdba1cd816242857b8f13713bae8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownerName: 
+  ownerName: Bobby
   owner: {fileID: 0}
-  ingrIndex: 0
+  ingrIndex: 1
   ingrQuantity: {fileID: 0}
 --- !u!1 &924725167
 GameObject:

@@ -45,7 +45,7 @@ public class HexGridItem : MonoBehaviour
     void OnMouseDown()
     {
         // If this hex grid is not the active one
-        if (GameControllerScript.isExecutionPhase == false && !isActive)
+        if (!isActive && GameControllerScript.isExecutionPhase == false)
         {
             // And If the player has some steps left
             if (GameControllerScript.stepsLeft > 0)
@@ -85,7 +85,7 @@ public class HexGridItem : MonoBehaviour
 
 
         // If the clicked grid chip is the origin one
-        if (this.tag == "Start")
+        if (this.tag == "Start" && GameControllerScript.isExecutionPhase == false)
         {
             // ---------------------------------- SET PATH TO DEFAULT -------------------
             // Loop through the path chips
@@ -102,6 +102,9 @@ public class HexGridItem : MonoBehaviour
             // ---------------------------------- PATH ----------------------------------
             // Restore the player's left steps
             GameControllerScript.stepsLeft = GameControllerScript.stepsTotal;
+
+            // Restart the Steps Left text
+            GameControllerScript.stepsLeftTxt.text = "" + GameControllerScript.stepsLeft;
 
             // Delete all the path grid chips from the path
             GameControllerScript.pathGrid.Clear();

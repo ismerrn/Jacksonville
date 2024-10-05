@@ -286,6 +286,9 @@ public class GameController : MonoBehaviour
                 // Restore the player's left steps
                 stepsLeft = stepsTotal;
 
+                // Reset the Steps Left text
+                stepsLeftTxt.text = "" + stepsLeft;
+
                 // Delete all the path grid chips from the path
                 pathGrid.Clear();
 
