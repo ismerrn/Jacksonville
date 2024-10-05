@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Calendar : MonoBehaviour
 {
-    // ---------------------------------- TIME --------------------------------------------
+    // ---------------------------------- TIME MANAGEMENT ------------------------------------------
+    // ---------------------------------- Checkers ----------------------------------------
     // Store the total Seasons of a Year (4)
     public int seasonsInYear = 4;
 
@@ -15,6 +17,11 @@ public class Calendar : MonoBehaviour
     // Store the total Days of a Week (7)
     public int daysInWeek = 7;
 
+    // Store the 4 different types of seasons
+    public string[] seasons;
+
+
+    // ---------------------------------- Counters ----------------------------------------
     // Store the number of Days past/used in each "run"
     public int daysUsed = 0;
 
@@ -30,8 +37,13 @@ public class Calendar : MonoBehaviour
     // Store the activeSeason
     public GameObject activeSeason;
 
-    // Store the 4 different types of seasons
-    public string[] seasons;
+
+
+    // ---------------------------------- COMPACTED CALENDAR ---------------------------------------
+    // ---------------------------------- Texts -------------------------------------------
+    // Store the Current Day Text from the Compacted Calendar
+    public TextMeshProUGUI currentDayTxt;
+
 
 
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------

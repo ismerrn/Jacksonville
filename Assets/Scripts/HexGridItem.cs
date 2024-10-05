@@ -57,7 +57,7 @@ public class HexGridItem : MonoBehaviour
                     GameControllerScript.stepsLeft--;
 
                     // Update the Steps UI with the Steps Left
-                    GameControllerScript.stepsUI.text = "" + GameControllerScript.stepsLeft;
+                    GameControllerScript.stepsLeftTxt.text = "" + GameControllerScript.stepsLeft;
 
                     // Set the last active hex grid as not active
                     GameController.activeGrid.isActive = false;

@@ -7,7 +7,44 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    // ---------------------------------- INGREDIENTS -------------------------------------
+    // ---------------------------------- GAME PHASES ----------------------------------------------
+    // Check if the game has entered the Execution Phase
+    public bool isExecutionPhase = false;
+
+
+
+    // ---------------------------------- CAMERA ---------------------------------------------------
+    // Reference to the Main Camera (with the Canvas as a child object)
+    public GameObject mainCamera;
+
+    // Reference to the Main Camera's position
+    private Vector3 mainCameraPos;
+
+    // Set offsets for the camera position in each scene (Menu, Calendar, Backpack, Map, Execution)
+    private Vector3 calendarCamOffset;
+    private Vector3 backpackCamOffset;
+    private Vector3 mapCamOffset;
+
+    // Check in which screen is the camera focusing on
+    public bool isInCalendar = false;
+    public bool isInBackpack = false;
+    public bool isInMap = false;
+
+
+
+    // ---------------------------------- CALENDAR -------------------------------------------------
+    // Store the Calendar Script
+    public Calendar CalendarScript;
+
+    // ---------------------------------- Compacted ---------------------------------------
+    // Store the Current Day Text from the Compacted Calendar
+    public TextMeshProUGUI currentDayTxt;
+
+
+
+
+    // ---------------------------------- BACKPACK -------------------------------------------------
+    // ---------------------------------- Ingredients -------------------------------------
     // Store the Selected Ingredient (clicked) (puede que NO sea static??)
     public static IngSelectable selectedIngr;
 
@@ -30,7 +67,7 @@ public class GameController : MonoBehaviour
     public OrderIngr[] ingrOrders;
 
 
-    // ---------------------------------- MOUSE ------------------------------------------
+    // ---------------------------------- Mouse ------------------------------------------
     // Check if the Cursor has some Ingredient clicked or not
     public static bool emptyCursor = true;
 
@@ -45,26 +82,7 @@ public class GameController : MonoBehaviour
     private Vector3 offsetMouseMushroom;
 
 
-    // ---------------------------------- CAMERA ------------------------------------------
-    // Reference to the Main Camera (with the Canvas as a child object)
-    public GameObject mainCamera;
-
-    // Reference to the Main Camera's position
-    private Vector3 mainCameraPos;
-
-    // Set offsets for the camera position in each scene (Menu, Calendar, Backpack, Map, Execution)
-    private Vector3 calendarCamOffset;
-    private Vector3 backpackCamOffset;
-    private Vector3 mapCamOffset;
-
-    // Check in which screen is the camera focusing on
-    public bool isInCalendar = false;
-    public bool isInBackpack = false;
-    public bool isInMap = false;
-
-
-
-    // ---------------------------------- ARRAYS ------------------------------------------
+    // ---------------------------------- Arrays ------------------------------------------
     // Array to store all the cursor ingredients' shapes
     public GameObject[] gChipsFeedback;
 
@@ -74,24 +92,25 @@ public class GameController : MonoBehaviour
     private IngSelectable IngSelectableScript;
 
 
-    // ---------------------------------- RAYCAST -----------------------------------------
+    // ---------------------------------- Raycast -----------------------------------------
     // To specify layers to use in Physics.Raycast
     public LayerMask layerMask;
 
 
-    // ---------------------------------- MAP -------------------------------------
+
+    // ---------------------------------- MAP ------------------------------------------------------
+    // ---------------------------------- Steps -------------------------------------------
     // Store the number of Steps (Total --> each round, Left --> not used this round)
     public int stepsTotal = 3;
     public int stepsLeft = 3;
 
     // Store Order's Text with the quantity of ingredients needed
-    public TextMeshProUGUI stepsUI;
+    public TextMeshProUGUI stepsLeftTxt;
 
+
+    // ---------------------------------- Grid --------------------------------------------
     // Store the Active Hex Grid
     public static HexGridItem activeGrid;
-
-    // Store the Delivery button
-    public GameObject deliveryButton;
 
     // Store all the hex grid chips from the player's path
     public List<HexGridItem> pathGrid = new List<HexGridItem>();
@@ -108,17 +127,18 @@ public class GameController : MonoBehaviour
     private float maxDistNeighborChips = 160f;
 
 
-    // ---------------------------------- GAME PHASES ----------------------------------------------
-    // Check if the game has entered the Execution Phase
-    public bool isExecutionPhase = false;
-
-
-    // ---------------------------------- PLAYER ----------------------------------------------------
+    // ---------------------------------- Player ------------------------------------------
     // Reference to the Player chip GO
     private GameObject playerChip;
 
     // Reference to the Player Script
     private Player PlayerScript;
+
+
+    // ---------------------------------- Buttons -----------------------------------------
+    // Store the Delivery button
+    public GameObject deliveryButton;
+
 
 
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
@@ -146,7 +166,7 @@ public class GameController : MonoBehaviour
         ingrOrders = FindObjectsOfType<OrderIngr>();
 
         // At the start set the steps UI to the steps total
-        stepsUI.text = "" + stepsTotal;
+        stepsLeftTxt.text = "" + stepsTotal;
 
 
         // ---------------------------------- CAMERA ------------------------------------------------------
@@ -427,11 +447,14 @@ public class GameController : MonoBehaviour
         // Deactivate the deliver button
         deliveryButton.SetActive(true);
 
+        // At the start set the steps UI to the steps total
+        currentDayTxt.text = "" + CalendarScript.daysUsed;
+
         // At the start of the day reset steps
         stepsLeft = stepsTotal;
 
         // Update the Steps UI with the Steps Left
-        stepsUI.text = "" + stepsLeft;
+        stepsLeftTxt.text = "" + stepsLeft;
 
         // Vaciar mochila
 

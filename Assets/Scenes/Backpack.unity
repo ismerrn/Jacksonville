@@ -10967,6 +10967,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77100dbb278a2bb478f4d1eaaf66fb8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isExecutionPhase: 0
+  mainCamera: {fileID: 519420028}
+  isInCalendar: 0
+  isInBackpack: 0
+  isInMap: 0
+  CalendarScript: {fileID: 1173666312}
+  currentDayTxt: {fileID: 896249400}
   pIngredientSelected: {fileID: 1987812630}
   gFeedback: {fileID: 928195369}
   tomatosPlaced: 0
@@ -10974,9 +10981,6 @@ MonoBehaviour:
   eggplantsPlaced: 0
   mushroomsPlaced: 0
   ingrOrders: []
-  isInCalendar: 0
-  isInBackpack: 0
-  isInMap: 0
   gChipsFeedback:
   - {fileID: 1523323116267875732, guid: 3a2862f83764ae8458e8a06a2f1ccb6f, type: 3}
   - {fileID: 6752160681708607011, guid: 89976ca4822327f4db4ba81235e06fb8, type: 3}
@@ -10992,13 +10996,13 @@ MonoBehaviour:
     m_Bits: 4294967295
   stepsTotal: 3
   stepsLeft: 3
-  deliveryButton: {fileID: 202824487}
+  stepsLeftTxt: {fileID: 230865613}
   pathGrid: []
   HexGridDef: {fileID: 21300000, guid: adc40d7fc84241f4ab859a4a9211d543, type: 3}
   HexGridActive: {fileID: 21300000, guid: 41686ce4b7b54094abf338754a26dd0e, type: 3}
   HexGridAdjacent: {fileID: 21300000, guid: bfdb750757577ad489ef576216480e62, type: 3}
   allHexGrids: []
-  isExecutionPhase: 0
+  deliveryButton: {fileID: 202824487}
 --- !u!4 &1173666311
 Transform:
   m_ObjectHideFlags: 0
@@ -11030,12 +11034,13 @@ MonoBehaviour:
   seasonsInYear: 4
   weeksInSeason: 4
   daysInWeek: 7
+  seasons: []
   daysUsed: 0
   weeksUsed: 0
   seasonsUsed: 0
   yearsUsed: 0
   activeSeason: {fileID: 327588039}
-  seasons: []
+  currentDayTxt: {fileID: 896249400}
 --- !u!1 &1177515185
 GameObject:
   m_ObjectHideFlags: 0
@@ -15045,6 +15050,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 1016446920823816460, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 542922db10411ae4cb2343885c349931, type: 3}
     - target: {fileID: 1030222725204987222, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
       propertyPath: m_text
       value: x2
@@ -15197,6 +15206,10 @@ PrefabInstance:
       propertyPath: m_text
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8133641748791098669, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d81423aaf8e5442458bdcbd73852f733, type: 3}
     - target: {fileID: 8228214973148677926, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
       propertyPath: m_text
       value: x4
