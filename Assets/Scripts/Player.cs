@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         // If the Delivery Button has been clicked
-        if (deliveryButton.GetComponent<UIButtons>().isDeliveryClicked == true)
+        if (deliveryButton.GetComponent<DeliverBut>().isDeliveryClicked == true)
         {
             // If the Player chip doesn't collide in the path with any event (House, Inn, etc.)
             if (!hasCollidedHouse && !hasCollidedInn)
@@ -117,6 +117,12 @@ public class Player : MonoBehaviour
     // ---------------------------------- START THE EXECUTION (RESULT) PHASE ------------------------------------------------------
     public void ExecutionPhase()
     {
+        // Lock the Cursor
+        //Cursor.lockState = CursorLockMode.Locked;
+
+        // The game enters in the Execution Phase
+        GameControllerScript.isExecutionPhase = true;
+
         // Store the next chip position
         Vector3 destination = GameControllerScript.pathGrid[index].transform.position;
 
@@ -143,7 +149,7 @@ public class Player : MonoBehaviour
                 index = 0;
 
                 // Set the Delivery Button as not clicked
-                deliveryButton.GetComponent<UIButtons>().isDeliveryClicked = false;
+                deliveryButton.GetComponent<DeliverBut>().isDeliveryClicked = false;
 
                 // Go next day
                 CalendarScript.daysUsed++;

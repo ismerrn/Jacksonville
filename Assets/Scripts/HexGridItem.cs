@@ -45,7 +45,7 @@ public class HexGridItem : MonoBehaviour
     void OnMouseDown()
     {
         // If this hex grid is not the active one
-        if (!isActive)
+        if (GameControllerScript.isExecutionPhase == false && !isActive)
         {
             // And If the player has some steps left
             if (GameControllerScript.stepsLeft > 0)
@@ -55,6 +55,9 @@ public class HexGridItem : MonoBehaviour
                 {
                     // Substract 1 step (used)
                     GameControllerScript.stepsLeft--;
+
+                    // Update the Steps UI with the Steps Left
+                    GameControllerScript.stepsUI.text = "" + GameControllerScript.stepsLeft;
 
                     // Set the last active hex grid as not active
                     GameController.activeGrid.isActive = false;

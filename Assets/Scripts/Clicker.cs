@@ -113,14 +113,17 @@ public class Clicker : MonoBehaviour
     // ---------------------------------- INGREDIENT CHIP IS CLICKED -----------------------------------------------------
     void OnMouseDown()
     {
-        // There has been a click, so activate it
-        isClicked = true;
+        if (GameControllerScript.isExecutionPhase == false)
+        {
+            // There has been a click, so activate it
+            isClicked = true;
 
-        // Active the renderer of the ingredient selected
-        pIngredientSelected.GetComponent<SpriteRenderer>().enabled = true;
+            // Active the renderer of the ingredient selected
+            pIngredientSelected.GetComponent<SpriteRenderer>().enabled = true;
 
-        // Update the pantry's ingredients chips (block/available to interact, set as selected...)
-        PIngredientUpdate();
+            // Update the pantry's ingredients chips (block/available to interact, set as selected...)
+            PIngredientUpdate();
+        }
     }
 
 

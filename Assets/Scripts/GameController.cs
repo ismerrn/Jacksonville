@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -45,7 +47,7 @@ public class GameController : MonoBehaviour
 
     // ---------------------------------- CAMERA ------------------------------------------
     // Reference to the Main Camera (with the Canvas as a child object)
-    private GameObject mainCamera;
+    public GameObject mainCamera;
 
     // Reference to the Main Camera's position
     private Vector3 mainCameraPos;
@@ -82,8 +84,14 @@ public class GameController : MonoBehaviour
     public int stepsTotal = 3;
     public int stepsLeft = 3;
 
+    // Store Order's Text with the quantity of ingredients needed
+    public TextMeshProUGUI stepsUI;
+
     // Store the Active Hex Grid
     public static HexGridItem activeGrid;
+
+    // Store the Delivery button
+    public GameObject deliveryButton;
 
     // Store all the hex grid chips from the player's path
     public List<HexGridItem> pathGrid = new List<HexGridItem>();
@@ -100,12 +108,9 @@ public class GameController : MonoBehaviour
     private float maxDistNeighborChips = 160f;
 
 
-    // ---------------------------------- GAME CONTROLLER ------------------------------------------
-    // Reference to the Game Controller GO
-    private GameObject gameController;
-
-    // Reference to the Game Controller Script
-    private GameController GameControllerScript;
+    // ---------------------------------- GAME PHASES ----------------------------------------------
+    // Check if the game has entered the Execution Phase
+    public bool isExecutionPhase = false;
 
 
     // ---------------------------------- PLAYER ----------------------------------------------------
@@ -140,10 +145,13 @@ public class GameController : MonoBehaviour
         // Store all the Order Ingredients
         ingrOrders = FindObjectsOfType<OrderIngr>();
 
+        // At the start set the steps UI to the steps total
+        stepsUI.text = "" + stepsTotal;
+
 
         // ---------------------------------- CAMERA ------------------------------------------------------
         // Access Main Camera GO
-        mainCamera = GameObject.Find("Main Camera");
+        //mainCamera = GameObject.Find("Main Camera");
 
         // Access Player chip GO
         playerChip = GameObject.Find("Player chip");
@@ -172,14 +180,6 @@ public class GameController : MonoBehaviour
 
         // Set the origin chip's adjacents
         SetSelectableAll();
-
-
-        // ---------------------------------- BACKPACK ----------------------------------------------------
-        // Store the number of each Ingredient placed in the backpack
-        /*ingredientsPlaced[0] = tomatosPlaced;
-        ingredientsPlaced[1] = carrotsPlaced;
-        ingredientsPlaced[2] = eggplantsPlaced;
-        ingredientsPlaced[3] = mushroomsPlaced;*/
     }
 
 
@@ -196,8 +196,8 @@ public class GameController : MonoBehaviour
         if (isInBackpack == true)
         {
             // ---------------------------------- ON RIGHT CLICK ----------------------------------
-            // If pressed right click (only in the frame clicked)
-            if (Input.GetMouseButtonDown(1))
+            // If pressed right click (only in the frame clicked) + the game's not in the Execution phase
+            if (Input.GetMouseButtonDown(1) && isExecutionPhase == false)
             {
                 // And If some ingredient has been selected
                 if (emptyCursor == false && selectedIngr != null)
@@ -231,8 +231,8 @@ public class GameController : MonoBehaviour
         else if (isInMap == true)
         {
             // ---------------------------------- ON RIGHT CLICK ----------------------------------
-            // If pressed right click (only in the frame clicked)
-            if (Input.GetMouseButtonDown(1))
+            // If pressed right click (only in the frame clicked) + the game's not in the Execution phase
+            if (Input.GetMouseButtonDown(1) && isExecutionPhase == false)
             {
                 // ---------------------------------- SET PATH TO DEFAULT -------------------
                 // Loop through the path chips
@@ -418,8 +418,20 @@ public class GameController : MonoBehaviour
     // Reset the day as new one
     public void ResetDay()
     {
+        // Unlock Cursor
+        //Cursor.lockState = CursorLockMode.None;
+
+        // The game enters in the Execution Phase
+        isExecutionPhase = false;
+
+        // Deactivate the deliver button
+        deliveryButton.SetActive(true);
+
         // At the start of the day reset steps
         stepsLeft = stepsTotal;
+
+        // Update the Steps UI with the Steps Left
+        stepsUI.text = "" + stepsLeft;
 
         // Vaciar mochila
 
@@ -449,38 +461,6 @@ public class GameController : MonoBehaviour
         playerChip.transform.position = activeGrid.transform.position;
 
         EmptyInventory();
-    }
-
-
-    // ---------------------------------- CAMERA FOCUS CALENDAR -----------------------------------------------------------------
-    // Move Camera to Calendar screen position
-    public void CameraToCalendar()
-    {
-        // ---------------------------------- EMPTY CURSOR UI -----------------------------------
-        // If there's an ingredient selected
-        if (emptyCursor == false)
-        {
-            Debug.Log("Swap screen to Calendar with cursor occupied");
-
-            // Unselect Ingredient
-            UnselectIngredient();
-        }
-
-
-        // ---------------------------------- CHANGE CAMERA POSITION ----------------------------
-        // Set the Main Camera's position as the Calendar screen position
-        mainCamera.transform.position = calendarCamOffset;
-
-
-        // ---------------------------------- SET CAMERA BOOLS ----------------------------------
-        // Store that Camera is focusing the Calendar screen
-        isInCalendar = true;
-
-        // Store that Camera isn't focusing in the Backpack screen
-        isInBackpack = false;
-
-        // Store that Camera isn't focusing in the Map screen
-        isInMap = false;
     }
 
 
@@ -530,6 +510,114 @@ public class GameController : MonoBehaviour
 
             ingredientsPlaced[i] = 0;
         }*/
+    }
+
+
+    // ---------------------------------- CAMERA FOCUS CALENDAR -----------------------------------------------------------------
+    // Move Camera to Calendar screen position
+    public void CameraToCalendar()
+    {
+        // If the game is not in the Execution phase
+        if (isExecutionPhase == false)
+        {
+            // ---------------------------------- EMPTY CURSOR UI -----------------------------------
+            // If there's an ingredient selected
+            if (emptyCursor == false)
+            {
+                Debug.Log("Swap screen to Calendar with cursor occupied");
+
+                // Unselect Ingredient
+                UnselectIngredient();
+            }
+
+
+            // ---------------------------------- CHANGE CAMERA POSITION ----------------------------
+            // Set the Main Camera's position as the Calendar screen position
+            mainCamera.transform.position = calendarCamOffset;
+
+
+            // ---------------------------------- SET CAMERA BOOLS ----------------------------------
+            // Store that Camera is focusing the Calendar screen
+            isInCalendar = true;
+
+            // Store that Camera isn't focusing in the Backpack screen
+            isInBackpack = false;
+
+            // Store that Camera isn't focusing in the Map screen
+            isInMap = false;
+        }
+    }
+
+
+    // ---------------------------------- CAMERA FOCUS BACKPACK -----------------------------------------------------------------
+    // Move Camera to Backpack screen position
+    public void CameraToBackpack()
+    {
+        // If the game is not in the Execution phase
+        if (isExecutionPhase == false)
+        {
+            // ---------------------------------- EMPTY CURSOR UI -----------------------------------
+            // If there's an ingredient selected
+            if (emptyCursor == false)
+            {
+                Debug.Log("Swap screen to Calendar with cursor occupied");
+
+                // Unselect Ingredient
+                UnselectIngredient();
+            }
+
+
+            // ---------------------------------- CHANGE CAMERA POSITION ----------------------------
+            // Set the Main Camera's position as the Calendar screen position
+            mainCamera.transform.position = backpackCamOffset;
+
+
+            // ---------------------------------- SET CAMERA BOOLS ----------------------------------
+            // Store that Camera is focusing the Calendar screen
+            isInCalendar = false;
+
+            // Store that Camera isn't focusing in the Backpack screen
+            isInBackpack = true;
+
+            // Store that Camera isn't focusing in the Map screen
+            isInMap = false;
+        }
+    }
+
+
+    // ---------------------------------- CAMERA FOCUS MAP ----------------------------------------------------------------------
+    // Move Camera to Map screen position
+    public void CameraToMap()
+    {
+        // If the game is not in the Execution phase
+        if (isExecutionPhase == false)
+        {
+            // ---------------------------------- EMPTY CURSOR UI -----------------------------------
+            // If there's an ingredient selected
+            if (emptyCursor == false)
+            {
+                Debug.Log("Swap screen to Calendar with cursor occupied");
+
+                // Unselect Ingredient
+                UnselectIngredient();
+            }
+
+
+            // ---------------------------------- CHANGE CAMERA POSITION ----------------------------
+            // Set the Main Camera's position as the Calendar screen position
+            mainCamera.transform.position = mapCamOffset;
+
+
+            // ---------------------------------- SET CAMERA BOOLS ----------------------------------
+            // Store that Camera is focusing the Calendar screen
+            isInCalendar = false;
+
+            // Store that Camera isn't focusing in the Backpack screen
+            isInBackpack = false;
+
+            // Store that Camera isn't focusing in the Map screen
+            isInMap = true;
+        }
     }
 }
 

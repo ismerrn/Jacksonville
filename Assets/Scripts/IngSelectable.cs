@@ -64,7 +64,7 @@ public class IngSelectable : MonoBehaviour
     public void OnMouseDown()
     {
         // ---------------------------------- PICK INGREDIENT FROM GRID --------------------------------
-        if (GameController.emptyCursor)
+        if (GameController.emptyCursor && GameControllerScript.isExecutionPhase == false)
         {
             // Set a Pick Up index to check which Ingredient is being picked
             int pickUpIndex = 0;
