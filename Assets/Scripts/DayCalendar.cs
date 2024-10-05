@@ -5,10 +5,22 @@ using UnityEngine;
 public class DayCalendar : MonoBehaviour
 {
     // ---------------------------------- DAY CHIP STATES ------------------------------------------
+    // ---------------------------------- Identity ----------------------------------------
+    // Set an ID in the Unity inspector so we can recognize each day (day 01 - Day ID: 1)
+    public int dayID;
+
+    // Set an ID in the Unity inspector so we can recognize each week (day 01 - Week ID: 1, day 08 - Week ID: 2)
+    public int weekID;
+
+
     // ---------------------------------- States ------------------------------------------
     private DayCalendar[] calendarChips;
 
+
     // ---------------------------------- States ------------------------------------------
+    // Check if the chip has been clicked
+    public bool isToday = false;
+
     // Check if the chip has been clicked
     public bool isClicked = false;
 
@@ -19,41 +31,50 @@ public class DayCalendar : MonoBehaviour
     // Sprites from days passed and missions failed/accomplished
 
 
+
+    // ---------------------------------- GAME CONTROLLER ------------------------------------------
+    // Reference to the Game Controller GO
+    private GameObject gameController;
+
+    // Access Game Controller script
+    private GameController GameControllerScript;
+
+
+
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
     void Start()
     {
+        // ---------------------------------- ACCESS --------------------------------------------
+        // Access Game Controller GO
+        gameController = GameObject.Find("Game Controller");
+
+        // Access the Game Controller Script from the Game Controller GO
+        GameControllerScript = gameController.GetComponent<GameController>();
+
         // Store all the day chips in an array
         calendarChips = FindObjectsOfType<DayCalendar>();
     }
 
 
+
     // ---------------------------------- DAY IS CLICKED -----------------------------------------------------------------
     void OnMouseDown()
     {
+        // Deselect any chip that was selected before
+        GameControllerScript.DeselectCalendarChip();
+
         // If hasn't been clicked before
         if (isClicked == false)
         {
-            Debug.Log("has been clicked");
-
             // Select it
-            SelectChip();
+            SelectCalendarChip();
         }
     }
 
 
-    public void DeselectChip()
-    {
-        // Access the Sprite Renderer of the clicked chip
-        SpriteRenderer daySpriteRenderer = GetComponent<SpriteRenderer>();
 
-        // Set it as not clicked
-        isClicked = false;
-
-        // Update its state to Selected (by changing its sprite)
-        daySpriteRenderer.sprite = dayDefault;
-    }
-
-    public void SelectChip()
+    // ---------------------------------- DAY IS SELECTED ----------------------------------------------------------------
+    public void SelectCalendarChip()
     {
         // Access the Sprite Renderer of the clicked chip
         SpriteRenderer daySpriteRenderer = GetComponent<SpriteRenderer>();

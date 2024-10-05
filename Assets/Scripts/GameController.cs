@@ -33,9 +33,6 @@ public class GameController : MonoBehaviour
 
 
     // ---------------------------------- CALENDAR -------------------------------------------------
-    // Store the Calendar Script
-    public Calendar CalendarScript;
-
     // ---------------------------------- Compacted ---------------------------------------
     // Store the Current Day Text from the Compacted Calendar
     public TextMeshProUGUI currentDayTxt;
@@ -45,7 +42,20 @@ public class GameController : MonoBehaviour
 
 
     // ---------------------------------- General -----------------------------------------
-    private DayCalendar[] calendarChips;
+    // Store the current Day
+    public GameObject activeDay;
+
+    // Store the Calendar Script
+    public Calendar CalendarScript;
+
+    // Store every Calendar chip
+    public DayCalendar[] calendarChips;
+
+    // Store the sprite of each day chip state
+    public Sprite dayDefault;
+    public Sprite dayToday;
+    public Sprite daySelected;
+    // Sprites from days passed and missions failed/accomplished
 
 
 
@@ -296,6 +306,8 @@ public class GameController : MonoBehaviour
         }
     }
 
+
+
     // ---------------------------------- FRAME-RATE INDEPENDENT 4 PHYSICS CALCULATIONS --------------------
     void FixedUpdate()
     {
@@ -310,6 +322,66 @@ public class GameController : MonoBehaviour
             SetOffsetIngr();
         }
     }
+
+
+
+    // ---------------------------------- ASSIGN THE TODAY CHIP --------------------------------------------
+    public void AssignToday()
+    {
+        // Loop through all the Calendar chips (28)
+        for (int i = 0; i < calendarChips.Length; i = i + 1)
+        {
+            // Find the week currently going on
+            if (calendarChips[i].GetComponent<DayCalendar>().weekID == CalendarScript.weeksUsed)
+            {
+                // Find the day currently playing
+                if (calendarChips[i].GetComponent<DayCalendar>().dayID == CalendarScript.daysUsed)
+                {
+                    // Store that day chip as the active day
+                    activeDay = calendarChips[i].gameObject;
+
+                    // Set it as Today (by changing its sprite)
+                    activeDay.GetComponent<SpriteRenderer>().sprite = dayToday;
+                }
+
+                // If it's not the current day
+                else
+                {
+                    // And If it hasn't been selected/clicked
+                    if (calendarChips[i].GetComponent<DayCalendar>().isClicked == false)
+                    {
+                        // Set it as Default (by changing its sprite)
+                        calendarChips[i].GetComponent<SpriteRenderer>().sprite = dayDefault;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    // ---------------------------------- DESELECT CALENDAR CHIPS ------------------------------------------
+    // Deselect Calendar chips when another has been clicked
+    public void DeselectCalendarChip()
+    {
+        // Loop through all the Calendar chips (28)
+        for (int i = 0; i < calendarChips.Length; i = i + 1)
+        {
+            // Find the selected one
+            if (calendarChips[i].isClicked == true)
+            {
+                // Access its Sprite Renderer
+                SpriteRenderer daySpriteRenderer = calendarChips[i].GetComponent<SpriteRenderer>();
+
+                // Set it as not clicked
+                calendarChips[i].isClicked = false;
+
+                // Update its state to Default (by changing its sprite)
+                daySpriteRenderer.sprite = dayDefault;
+            }
+        }
+    }
+
 
 
     // ---------------------------------- SPAWN INGREDIENT COPIES ------------------------------------------

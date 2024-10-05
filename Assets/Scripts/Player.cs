@@ -154,11 +154,14 @@ public class Player : MonoBehaviour
                 // Go next day
                 CalendarScript.daysUsed++;
 
-                // Make the time pass
+                // Make the time pass (day > week > month > year)
                 CalendarScript.TimePass();
 
-                // Make the time pass
-                CalendarScript.DaysPass();
+                // Assign the new Today day chip
+                GameControllerScript.AssignToday();
+
+                // Make the week day pass
+                CalendarScript.WeekDayPass();
 
                 // Crear una función (y llamarla) que resetee el día
                 GameControllerScript.ResetDay();

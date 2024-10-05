@@ -400,6 +400,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Day 15
       objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -703,6 +711,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 75a66cdeb8e45fd4c91723db280cdb54, type: 3}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1264,6 +1280,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 1660ac3a8f207bc439373788123c95cb, type: 3}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1688,6 +1712,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162978405}
   m_CullTransparentMesh: 1
+--- !u!1 &166462776 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4291045221176007676, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+  m_PrefabInstance: {fileID: 5679769921481259377}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &167168874
 GameObject:
   m_ObjectHideFlags: 0
@@ -3352,6 +3381,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 751f3746ddc21a8498f25fdf8fba34dd, type: 3}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3491,6 +3528,14 @@ PrefabInstance:
     - target: {fileID: 4291045221176007676, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
       propertyPath: m_Name
       value: Day 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3688,6 +3733,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Day 11
       objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3779,6 +3832,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 2e2e97e680f14c749a2c8d4febba6b7c, type: 3}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3843,6 +3904,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5659638668933197678, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4833,6 +4902,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 18ee9a47a661a0c44ba356f6475e30e3, type: 3}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5758,6 +5835,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: c1ce8823f63f9584f8085a30fb3fda5b, type: 3}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6132,6 +6217,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: f5c837d599c95104ab1ca211126753c9, type: 3}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6202,6 +6295,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: d2414b32ec0a1854b8cebc4b32878541, type: 3}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6402,6 +6503,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Day 2
       objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6591,6 +6700,14 @@ PrefabInstance:
     - target: {fileID: 4291045221176007676, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
       propertyPath: m_Name
       value: Day 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7372,6 +7489,14 @@ PrefabInstance:
     - target: {fileID: 4291045221176007676, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
       propertyPath: m_Name
       value: Day 24
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9454,9 +9579,14 @@ MonoBehaviour:
   isInCalendar: 0
   isInBackpack: 0
   isInMap: 0
-  CalendarScript: {fileID: 1173666312}
   currentDayTxt: {fileID: 896249400}
   currentWeekDayTxt: {fileID: 1107222884}
+  activeDay: {fileID: 166462776}
+  CalendarScript: {fileID: 1173666312}
+  calendarChips: []
+  dayDefault: {fileID: 21300000, guid: fe408547448187a4fa4518b28f90b27e, type: 3}
+  dayToday: {fileID: 21300000, guid: 99cf6becf78024643bffd9842d0238a6, type: 3}
+  daySelected: {fileID: 21300000, guid: 1e300e840b9a77946855615d00932c86, type: 3}
   pIngredientSelected: {fileID: 1987812630}
   gFeedback: {fileID: 928195369}
   tomatosPlaced: 0
@@ -9577,6 +9707,14 @@ PrefabInstance:
     - target: {fileID: 4291045221176007676, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
       propertyPath: m_Name
       value: Day 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9878,6 +10016,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Day 18
       objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -10176,6 +10322,14 @@ PrefabInstance:
     - target: {fileID: 4291045221176007676, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
       propertyPath: m_Name
       value: Day 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11269,6 +11423,14 @@ PrefabInstance:
     - target: {fileID: 4291045221176007676, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
       propertyPath: m_Name
       value: Day 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13275,6 +13437,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Day 9
       objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13544,6 +13714,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Day 4
       objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13738,6 +13916,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Day 27
       objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -13857,6 +14043,14 @@ PrefabInstance:
     - target: {fileID: 4291045221176007676, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
       propertyPath: m_Name
       value: Day 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14089,6 +14283,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Day 22
       objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -14150,6 +14352,18 @@ PrefabInstance:
     - target: {fileID: 4291045221176007676, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
       propertyPath: m_Name
       value: Day 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: isToday
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16805,6 +17019,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Day 17
       objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17038,6 +17260,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 300c4d47a474a774c84c5694c4c83d20, type: 3}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17360,13 +17590,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3076009213827031917, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 99cf6becf78024643bffd9842d0238a6, type: 3}
     - target: {fileID: 4291045221176007676, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
       propertyPath: m_Name
       value: Day 1
       objectReference: {fileID: 0}
     - target: {fileID: 4291045221176007676, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
       propertyPath: m_TagString
-      value: Today
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: dayID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: weekID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: isToday
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

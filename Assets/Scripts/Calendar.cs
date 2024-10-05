@@ -138,7 +138,7 @@ public class Calendar : MonoBehaviour
 
 
     // ---------------------------------- UPDATE DAYS ELEMENTS ---------------------------------------------
-    public void DaysPass()
+    public void WeekDayPass()
     {
         // ---------------------------------- MAKE DAYS PASS ---------------------------------------------
         // Loop 7 times (7 week days)
