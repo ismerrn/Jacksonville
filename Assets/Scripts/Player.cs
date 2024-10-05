@@ -91,6 +91,7 @@ public class Player : MonoBehaviour
             // Unset the collision in the defined Path Stop Time (1sec)
             Invoke("ResumePath", pathStopTime);
 
+
             // If player's path goes through Mark's house
             if (collision.name == "Mark")
             {
@@ -122,6 +123,32 @@ public class Player : MonoBehaviour
             if (collision.name == "Felix")
             {
                 Debug.Log("Toma Felix");
+
+                // If there's still days left to accomplish Felix's quest
+                if (gameController.GetComponent<Calendar>().daysUsed <= collision.GetComponent<Quest>().questDay)
+                {
+                    // Deliver the ingredients available and needed
+                    collision.GetComponent<Quest>().DeliverQuest();
+                }
+            }
+
+            // If player's path goes through Felix's house
+            if (collision.name == "Bobby")
+            {
+                Debug.Log("Toma Bobby");
+
+                // If there's still days left to accomplish Felix's quest
+                if (gameController.GetComponent<Calendar>().daysUsed <= collision.GetComponent<Quest>().questDay)
+                {
+                    // Deliver the ingredients available and needed
+                    collision.GetComponent<Quest>().DeliverQuest();
+                }
+            }
+
+            // If player's path goes through Felix's house
+            if (collision.name == "Niggel")
+            {
+                Debug.Log("Toma Niggel");
 
                 // If there's still days left to accomplish Felix's quest
                 if (gameController.GetComponent<Calendar>().daysUsed <= collision.GetComponent<Quest>().questDay)
