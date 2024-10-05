@@ -34,8 +34,6 @@ public class DeliverBut : MonoBehaviour
     // When Deliver Button (in-game - map) gets clicked
     public void DeliverButton()
     {
-        Debug.Log("Deliver quest");
-
         // Set the Delivery button as clicked
         isDeliveryClicked = true;
 
@@ -43,8 +41,6 @@ public class DeliverBut : MonoBehaviour
         // If there's an ingredient selected
         if (GameController.emptyCursor == false)
         {
-            Debug.Log("Swap screen to Calendar with cursor occupied");
-
             // Unselect Ingredient
             GameControllerScript.UnselectIngredient();
         }

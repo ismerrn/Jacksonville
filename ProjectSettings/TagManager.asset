@@ -25,6 +25,13 @@ TagManager:
   - Summer
   - Autumn
   - Winter
+  - Monday
+  - Tuesday
+  - Wednesday
+  - Thursday
+  - Friday
+  - Saturday
+  - Sunday
   layers:
   - Default
   - TransparentFX

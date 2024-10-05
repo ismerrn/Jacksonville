@@ -20,6 +20,9 @@ public class Calendar : MonoBehaviour
     // Store the 4 different types of seasons
     public string[] seasons;
 
+    // Store the 7 different types of week days
+    public string[] weekDays;
+
 
     // ---------------------------------- Counters ----------------------------------------
     // Store the number of Days past/used in each "run"
@@ -34,15 +37,18 @@ public class Calendar : MonoBehaviour
     // Store the number of Years past/used in each "run"
     public int yearsUsed = 0;
 
-    // Store the activeSeason
+    // Store the current Season
     public GameObject activeSeason;
+
+    // Store the current Week Day
+    public GameObject activeWeekDay;
 
 
 
     // ---------------------------------- COMPACTED CALENDAR ---------------------------------------
     // ---------------------------------- Texts -------------------------------------------
     // Store the Current Day Text from the Compacted Calendar
-    public TextMeshProUGUI currentDayTxt;
+    //public TextMeshProUGUI currentDayTxt;
 
 
 
@@ -61,6 +67,9 @@ public class Calendar : MonoBehaviour
 
         // Store the Season's names in the array Seasons
         seasons = new string[4] {"Spring", "Summer", "Autumn", "Winter"};
+
+        // Store the Week Days' names in the array Week Days
+        weekDays = new string[7] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
     }
 
 
@@ -68,10 +77,10 @@ public class Calendar : MonoBehaviour
     public void TimePass()
     {
         // ---------------------------------- MAKE TIME PASS ---------------------------------------------
-        // Loop 4 times
+        // Loop 4 times (4 seasons)
         for (int i = 0; i < seasons.Length; i = i + 1)
         {
-            // Check which season is active
+            // Check the current season
             if (activeSeason.tag == seasons[i])
             {
                 // Make the time pass according to that season
@@ -79,7 +88,7 @@ public class Calendar : MonoBehaviour
                 if (weeksUsed <= weeksInSeason)
                 {
                     // And If the player has played 7 days
-                    if (daysUsed == daysInWeek)
+                    if (daysUsed > daysInWeek)
                     {
                         // Go next week
                         weeksUsed++;
@@ -122,6 +131,40 @@ public class Calendar : MonoBehaviour
                         // Reset days of week spent (start at day 1)
                         daysUsed = 1;
                     }
+                }
+            }
+        }
+    }
+
+
+    // ---------------------------------- UPDATE DAYS ELEMENTS ---------------------------------------------
+    public void DaysPass()
+    {
+        // ---------------------------------- MAKE DAYS PASS ---------------------------------------------
+        // Loop 7 times (7 week days)
+        for (int i = 0; i < weekDays.Length; i = i + 1)
+        {
+            // Check which week day
+            if (activeWeekDay.tag == weekDays[i])
+            {
+                // If it's a day from Monday to Saturday (i = 1-6)
+                if (i < daysInWeek-1)
+                {
+                    Debug.Log(i);
+
+                    // Set the Week Day to the next one
+                    activeWeekDay.tag = weekDays[i + 1];
+
+                    break;
+                }
+
+                // But If it's Sunday (i = 7)
+                else if (i == daysInWeek-1)
+                {
+                    // Set the Week Day to Monday
+                    activeWeekDay.tag = weekDays[0];
+
+                    break;
                 }
             }
         }

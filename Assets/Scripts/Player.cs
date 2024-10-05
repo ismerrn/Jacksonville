@@ -157,6 +157,9 @@ public class Player : MonoBehaviour
                 // Make the time pass
                 CalendarScript.TimePass();
 
+                // Make the time pass
+                CalendarScript.DaysPass();
+
                 // Crear una función (y llamarla) que resetee el día
                 GameControllerScript.ResetDay();
             }

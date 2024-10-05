@@ -40,6 +40,9 @@ public class GameController : MonoBehaviour
     // Store the Current Day Text from the Compacted Calendar
     public TextMeshProUGUI currentDayTxt;
 
+    // Store the Current Week Day Text from the Compacted Calendar
+    public TextMeshProUGUI currentWeekDayTxt;
+
 
 
 
@@ -438,28 +441,44 @@ public class GameController : MonoBehaviour
     // Reset the day as new one
     public void ResetDay()
     {
-        // Unlock Cursor
-        //Cursor.lockState = CursorLockMode.None;
-
+        // ---------------------------------- CHANGE GAME PHASE ---------------------------------------
         // The game enters in the Execution Phase
         isExecutionPhase = false;
 
-        // Deactivate the deliver button
-        deliveryButton.SetActive(true);
 
-        // At the start set the steps UI to the steps total
-        currentDayTxt.text = "" + CalendarScript.daysUsed;
+        // ---------------------------------- UPDATE COMPACTED CALENDAR UI ----------------------------
+        if (CalendarScript.daysUsed < 10)
+        {
+            // Update the Current Day text
+            currentDayTxt.text = "0" + CalendarScript.daysUsed;
+        }
 
+        else
+        {
+            // Update the Current Day text
+            currentDayTxt.text = "" + CalendarScript.daysUsed;
+        }
+
+        // Update the Week Day text
+        currentWeekDayTxt.text = "" + CalendarScript.activeWeekDay.tag;
+
+
+        // ---------------------------------- RESET STEPS AVAILABLE -----------------------------------
         // At the start of the day reset steps
         stepsLeft = stepsTotal;
 
         // Update the Steps UI with the Steps Left
         stepsLeftTxt.text = "" + stepsLeft;
 
-        // Vaciar mochila
 
+        // ---------------------------------- RESET CAMERA TO MAIN POS --------------------------------
         // Set the Camera in the Calendar Screen
         CameraToCalendar();
+
+
+        // ---------------------------------- RESET MAP -----------------------------------------------
+        // Reactivate the deliver button
+        deliveryButton.SetActive(true);
 
         // Reset path array
         pathGrid.Clear();
@@ -483,6 +502,9 @@ public class GameController : MonoBehaviour
         // Reset the Player chip to the Start path position
         playerChip.transform.position = activeGrid.transform.position;
 
+
+        // ---------------------------------- EMPTY INVENTORY -----------------------------------------
+        // Empty the inventory of all the ingredients that remain stored in it
         EmptyInventory();
     }
 
@@ -497,14 +519,10 @@ public class GameController : MonoBehaviour
         // Store all the Grid chips of the Backpack
         GridItem[] backpackGridChips = FindObjectsOfType<GridItem>();
 
-        Debug.Log("Vacia el inventario cohoné");
-
         // ---------------------------------- EMPTY BACKPACK'S INGREDIENTS PLACED ---------------
         // Empty Inventory (destroy all the ingredients that are currently in Backpack)
         for (int i = 0; i < ingrInBackpack.Length; i = i + 1)
         {
-            Debug.Log("Quita los ingredientes");
-
             Destroy(ingrInBackpack[i].gameObject);
         }
 
@@ -513,8 +531,6 @@ public class GameController : MonoBehaviour
         // Empty all the Backpack's grid chips
         for (int i = 0; i < backpackGridChips.Length; i = i + 1)
         {
-            Debug.Log("Vacia las chips");
-
             backpackGridChips[i].GetComponent<GridItem>().gridIsEmpty = true;
         }
 
@@ -547,8 +563,6 @@ public class GameController : MonoBehaviour
             // If there's an ingredient selected
             if (emptyCursor == false)
             {
-                Debug.Log("Swap screen to Calendar with cursor occupied");
-
                 // Unselect Ingredient
                 UnselectIngredient();
             }
@@ -583,8 +597,6 @@ public class GameController : MonoBehaviour
             // If there's an ingredient selected
             if (emptyCursor == false)
             {
-                Debug.Log("Swap screen to Calendar with cursor occupied");
-
                 // Unselect Ingredient
                 UnselectIngredient();
             }
@@ -619,8 +631,6 @@ public class GameController : MonoBehaviour
             // If there's an ingredient selected
             if (emptyCursor == false)
             {
-                Debug.Log("Swap screen to Calendar with cursor occupied");
-
                 // Unselect Ingredient
                 UnselectIngredient();
             }
