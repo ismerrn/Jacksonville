@@ -170,11 +170,6 @@ public class GameController : MonoBehaviour
 
         // ---------------------------------- CAMERA ------------------------------------------------------
         // Store the offset for each camera position in each scene
-        /*calendarCamOffset = new Vector3(-3000, 0, -4);
-        backpackCamOffset = new Vector3(0, 0, -4);
-        mapCamOffset = new Vector3(3000, 0, -4);*/
-
-        // Store the offset for each camera position in each scene
         backpackCamOffset = new Vector3(0, 0, -4);
         mapCamOffset = new Vector3(3000, 0, -4);
         calendarCamOffset = new Vector3(6000, 0, -4);

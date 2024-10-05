@@ -235,8 +235,6 @@ public class IngSelectable : MonoBehaviour
                         // Position of Grid hitted --> to place the GO
                         transform.position = new Vector3(hit.transform.position.x, hit.transform.position.y, 0);
 
-                        Debug.Log("Higos con bacon");
-
                         // Change the parent of this GO (from drawer grid to inventory grid)
                         transform.parent = hit.transform.parent;
 

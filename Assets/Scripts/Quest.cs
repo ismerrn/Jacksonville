@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Quest : MonoBehaviour
@@ -19,13 +20,22 @@ public class Quest : MonoBehaviour
     public int questEggplants;
     public int questMushrooms;
 
-    // Store the Quest UI associated to this quest
+    // Store the day the Quest is required (update Inspector Unity)
+    public int questDay;
+
+    // Reference the Quest UI associated to this quest
     public GameObject questUI;
+
+    // Reference the Quest's Days Left text
+    public TextMeshProUGUI questDaysLeftTxt;
 
 
     // ---------------------------------- GAME CONTROLLER ----------------------------------
     // Reference to Game Controller script
     public GameController GameControllerScript;
+
+    // Reference to Calendar script
+    public Calendar CalendarScript;
 
 
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
@@ -34,6 +44,12 @@ public class Quest : MonoBehaviour
         // ---------------------------------- ACCESS ---------------------------------------------------
         // Access the Game Controller script
         GameControllerScript = FindObjectOfType<GameController>();
+
+        // Access the Calendar script
+        CalendarScript = FindObjectOfType<Calendar>();
+
+        // Store the Days Left from the Quest UI (1st child)
+        questDaysLeftTxt = questUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 
         // Store the number of each Ingredient needed for the quest
         questIngredients[0] = questTomatos;
@@ -116,5 +132,31 @@ public class Quest : MonoBehaviour
             // Deactivate the renderer of the ingredient selected (as none is selected for now)
             //pIngredientSelected.GetComponent<SpriteRenderer>().enabled = true;
         }*/
+    }
+
+
+    // ---------------------------------- UPDATE QUEST UI - DAYS LEFT --------------------------------------
+    // Update the Days Left in the Quest UI
+    public void UpdateDaysLeft()
+    {
+        // Reference to store time left to accomplish this quest
+        int daysLeftForQuest;
+
+        // Calculate the Days Left for the Quest to expire (+1 because the current day counts too)
+        daysLeftForQuest = questDay - CalendarScript.daysUsed + 1;
+
+        // If there's days left in Positive numbers (0, 1, 2, etc.)
+        if (daysLeftForQuest >= 0)
+        {
+            // Update the Days Left text in the Quest UI
+            questDaysLeftTxt.text = "" + daysLeftForQuest;
+        }
+
+        // If there's days left in Negative numbers
+        else
+        {
+            // Update the Days Left text in the Quest UI
+            questDaysLeftTxt.text = "" + 0;
+        }
     }
 }

@@ -40,6 +40,11 @@ public class Player : MonoBehaviour
     public Button deliveryButton;
 
 
+    // ---------------------------------- QUEST ----------------------------------------------------
+    // References to Villagers' Quest scripts
+    public Quest[] villagersQuests;
+
+
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
     void Start()
     {
@@ -52,6 +57,9 @@ public class Player : MonoBehaviour
 
         // Access the Calendar Script from the Game Controller GO
         CalendarScript = gameController.GetComponent<Calendar>();
+
+        // Store all the Villagers' Quest scripts
+        villagersQuests = FindObjectsOfType<Quest>();
     }
 
 
@@ -83,22 +91,44 @@ public class Player : MonoBehaviour
             // Unset the collision in the defined Path Stop Time (1sec)
             Invoke("ResumePath", pathStopTime);
 
+            // If player's path goes through Mark's house
             if (collision.name == "Mark")
             {
                 Debug.Log("Toma Mark");
-                collision.GetComponent<Quest>().DeliverQuest();
+
+                // If there's still days left to accomplish Mark's quest
+                if (gameController.GetComponent<Calendar>().daysUsed <= collision.GetComponent<Quest>().questDay)
+                {
+                    // Deliver the ingredients available and needed
+                    collision.GetComponent<Quest>().DeliverQuest();
+                }
             }
 
+            // If player's path goes through Tim's house
             if (collision.name == "Tim")
             {
                 Debug.Log("Toma Tim");
-                collision.GetComponent<Quest>().DeliverQuest();
+
+                // If there's still days left to accomplish Tim's quest
+                if (gameController.GetComponent<Calendar>().daysUsed <= collision.GetComponent<Quest>().questDay)
+                {
+                    // Deliver the ingredients available and needed
+                    collision.GetComponent<Quest>().DeliverQuest();
+                }
+                    
             }
 
+            // If player's path goes through Felix's house
             if (collision.name == "Felix")
             {
                 Debug.Log("Toma Felix");
-                collision.GetComponent<Quest>().DeliverQuest();
+
+                // If there's still days left to accomplish Felix's quest
+                if (gameController.GetComponent<Calendar>().daysUsed <= collision.GetComponent<Quest>().questDay)
+                {
+                    // Deliver the ingredients available and needed
+                    collision.GetComponent<Quest>().DeliverQuest();
+                }
             }
         }
 
@@ -117,9 +147,6 @@ public class Player : MonoBehaviour
     // ---------------------------------- START THE EXECUTION (RESULT) PHASE ------------------------------------------------------
     public void ExecutionPhase()
     {
-        // Lock the Cursor
-        //Cursor.lockState = CursorLockMode.Locked;
-
         // The game enters in the Execution Phase
         GameControllerScript.isExecutionPhase = true;
 
@@ -156,6 +183,13 @@ public class Player : MonoBehaviour
 
                 // Make the time pass (day > week > month > year)
                 CalendarScript.TimePass();
+
+                // Loop through all the Villagers' Quest scripts
+                for (int i = 0; i < villagersQuests.Length; i = i + 1)
+                {
+                    // And Update it's days left
+                    villagersQuests[i].UpdateDaysLeft();
+                }
 
                 // Assign the new Today day chip
                 GameControllerScript.AssignToday();
