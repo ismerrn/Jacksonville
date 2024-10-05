@@ -150,8 +150,6 @@ public class Calendar : MonoBehaviour
                 // If it's a day from Monday to Saturday (i = 1-6)
                 if (i < daysInWeek-1)
                 {
-                    Debug.Log(i);
-
                     // Set the Week Day to the next one
                     activeWeekDay.tag = weekDays[i + 1];
 

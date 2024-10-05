@@ -32,6 +32,7 @@ TagManager:
   - Friday
   - Saturday
   - Sunday
+  - Today
   layers:
   - Default
   - TransparentFX

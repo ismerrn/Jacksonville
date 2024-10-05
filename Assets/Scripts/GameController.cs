@@ -44,6 +44,9 @@ public class GameController : MonoBehaviour
     public TextMeshProUGUI currentWeekDayTxt;
 
 
+    // ---------------------------------- General -----------------------------------------
+    private DayCalendar[] calendarChips;
+
 
 
     // ---------------------------------- BACKPACK -------------------------------------------------
@@ -56,9 +59,6 @@ public class GameController : MonoBehaviour
 
     // Store the shape selected UI/Feedback
     public GameObject gFeedback;
-
-    // Array to store all the ingredients placed in the backpack
-    //public int[] ingredientsPlaced;
 
     // Store the number of each type of Ingredients already placed in the backpack inventory
     public int tomatosPlaced = 0;
@@ -147,7 +147,7 @@ public class GameController : MonoBehaviour
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
     void Start()
     {
-        // ---------------------------------- SET VALUES -------------------------------------------------
+        // ---------------------------------- MOUSE -------------------------------------------------------
         // Store the offset for the Ingredient Selected chip when following the cursor
         offsetMouse = new Vector3(130, -80, 1); // new Vector3(100, -150, 1)
 
@@ -157,35 +157,43 @@ public class GameController : MonoBehaviour
         offsetMouseEggplant = new Vector3(-125, -15, 1); // new Vector3(-135, 5, 1)
         offsetMouseMushroom = new Vector3(-195, -15, 1); // new Vector3(-210, 5, 1)
 
-        // Store the offset for each camera position in each scene
-        calendarCamOffset = new Vector3(-3000, 0, -4);
-        backpackCamOffset = new Vector3(0, 0, -4);
-        mapCamOffset = new Vector3(3000, 0, -4);
-
-        // The game starts with the Calendar screen
-        isInCalendar = true;
-
-        // Store all the Order Ingredients
-        ingrOrders = FindObjectsOfType<OrderIngr>();
-
-        // At the start set the steps UI to the steps total
-        stepsLeftTxt.text = "" + stepsTotal;
-
 
         // ---------------------------------- CAMERA ------------------------------------------------------
-        // Access Main Camera GO
-        //mainCamera = GameObject.Find("Main Camera");
-
-        // Access Player chip GO
-        playerChip = GameObject.Find("Player chip");
-
-        // Access the Player Script from the Player chip GO
-        PlayerScript = playerChip.GetComponent<Player>();
+        // Store the offset for each camera position in each scene
+        /*calendarCamOffset = new Vector3(-3000, 0, -4);
+        backpackCamOffset = new Vector3(0, 0, -4);
+        mapCamOffset = new Vector3(3000, 0, -4);*/
 
         // Store the offset for each camera position in each scene
         backpackCamOffset = new Vector3(0, 0, -4);
         mapCamOffset = new Vector3(3000, 0, -4);
         calendarCamOffset = new Vector3(6000, 0, -4);
+
+        // The game starts with the Calendar screen
+        isInCalendar = true;
+
+
+        // ---------------------------------- QUEST ORDERS ------------------------------------------------
+        // Store all the Order Ingredients
+        ingrOrders = FindObjectsOfType<OrderIngr>();
+
+
+        // ---------------------------------- STEPS UI ----------------------------------------------------
+        // At the start set the steps UI to the steps total
+        stepsLeftTxt.text = "" + stepsTotal;
+
+
+        // ---------------------------------- CALENDAR ----------------------------------------------------
+        // Store all the day chips in an array
+        calendarChips = FindObjectsOfType<DayCalendar>();
+
+
+        // ---------------------------------- PLAYER CHIP (MAP) -------------------------------------------
+        // Access Player chip GO
+        playerChip = GameObject.Find("Player chip");
+
+        // Access the Player Script from the Player chip GO
+        PlayerScript = playerChip.GetComponent<Player>();
 
 
         // ---------------------------------- MAP PATH ----------------------------------------------------
