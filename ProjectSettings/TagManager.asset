@@ -34,6 +34,11 @@ TagManager:
   - Sunday
   - Today
   - Mission Day
+  - Mark
+  - Tim
+  - Felix
+  - Bobby
+  - Niggel
   layers:
   - Default
   - TransparentFX

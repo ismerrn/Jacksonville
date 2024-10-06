@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class DayCalendar : MonoBehaviour
 {
+    // ---------------------------------- CALENDAR PANEL -------------------------------------------
+    // Store the Calendar Panel script
+    private CalendarPanel CalendarPanelScript;
+
     // ---------------------------------- DAY CHIP STATES ------------------------------------------
     // ---------------------------------- Identity ----------------------------------------
     // Set an ID in the Unity inspector so we can recognize each day (day 01 - Day ID: 1)
@@ -52,6 +56,9 @@ public class DayCalendar : MonoBehaviour
         // Access the Game Controller Script from the Game Controller GO
         GameControllerScript = gameController.GetComponent<GameController>();
 
+        // Access the Calendar Panel script
+        CalendarPanelScript = FindObjectOfType<CalendarPanel>();
+
         // ---------------------------------- STORE ---------------------------------------------
         // Store all the day chips in an array
         calendarChips = FindObjectsOfType<DayCalendar>();
@@ -81,6 +88,13 @@ public class DayCalendar : MonoBehaviour
         {
             // Select it
             SelectCalendarChip();
+
+            // If the Selected Day is a Mission Day
+            if (gameObject.tag == "Mission Day")
+            {
+                // Check which Quest to display in +Details UI panel
+                CalendarPanelScript.CheckQuestToDisplay();
+            }
         }
     }
 

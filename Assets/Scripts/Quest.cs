@@ -26,6 +26,12 @@ public class Quest : MonoBehaviour
     // Reference the Quest UI associated to this quest
     public GameObject questUI;
 
+    // Add this before a String to add a Text box UI in the Inspector so you can add enter spaces and +
+    [TextArea]
+
+    // Store the quest description text
+    public string questDescription;
+
     // Reference the Quest's Days Left text
     public TextMeshProUGUI questDaysLeftTxt;
 
