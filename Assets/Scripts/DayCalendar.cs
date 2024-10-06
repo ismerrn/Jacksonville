@@ -13,13 +13,14 @@ public class DayCalendar : MonoBehaviour
     public int weekID;
 
 
-    // ---------------------------------- States ------------------------------------------
+    // ---------------------------------- Store -------------------------------------------
+    // Reference to all Calendar chips
     private DayCalendar[] calendarChips;
 
 
     // ---------------------------------- States ------------------------------------------
     // Check if the chip has been clicked
-    public bool isToday = false;
+    public bool isToday;
 
     // Check if the chip has been clicked
     public bool isClicked = false;
@@ -51,8 +52,20 @@ public class DayCalendar : MonoBehaviour
         // Access the Game Controller Script from the Game Controller GO
         GameControllerScript = gameController.GetComponent<GameController>();
 
+        // ---------------------------------- STORE ---------------------------------------------
         // Store all the day chips in an array
         calendarChips = FindObjectsOfType<DayCalendar>();
+
+        // Loop through all the Calendar chips
+        for (int i = 0; i < calendarChips.Length; i = i + 1)
+        {
+            // The ones with the Villager icon active (Missions)
+            if (calendarChips[i].transform.GetChild(0).gameObject.activeSelf)
+            {
+                // Add them the tag "Mission Day"
+                calendarChips[i].tag = "Mission Day";
+            }
+        }
     }
 
 

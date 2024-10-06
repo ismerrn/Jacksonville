@@ -218,9 +218,6 @@ public class Player : MonoBehaviour
                     villagersQuests[i].UpdateDaysLeft();
                 }
 
-                // Assign the new Today day chip
-                GameControllerScript.AssignToday();
-
                 // Make the week day pass
                 CalendarScript.WeekDayPass();
 

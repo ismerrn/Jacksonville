@@ -33,6 +33,7 @@ TagManager:
   - Saturday
   - Sunday
   - Today
+  - Mission Day
   layers:
   - Default
   - TransparentFX

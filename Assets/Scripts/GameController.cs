@@ -329,31 +329,99 @@ public class GameController : MonoBehaviour
         // Loop through all the Calendar chips (28)
         for (int i = 0; i < calendarChips.Length; i = i + 1)
         {
-            // Find the week currently going on
-            if (calendarChips[i].GetComponent<DayCalendar>().weekID == CalendarScript.weeksUsed)
+            // Find the week & day currently happening
+            if (calendarChips[i].GetComponent<DayCalendar>().weekID == CalendarScript.weeksUsed && calendarChips[i].GetComponent<DayCalendar>().dayID == CalendarScript.daysUsed)
             {
-                // Find the day currently playing
-                if (calendarChips[i].GetComponent<DayCalendar>().dayID == CalendarScript.daysUsed)
+                // Set as a Today chip
+                calendarChips[i].GetComponent<DayCalendar>().isToday = true;
+
+                // Store that day chip as the active day
+                activeDay = calendarChips[i].gameObject;
+
+                // Update its Sprite to Today sprite
+                DayUpdateSprite(i);
+            }
+
+            // For the rest of the days
+            else
+            {
+                //Debug.Log(indexChip);
+
+                // Set as a Default chip
+                calendarChips[i].GetComponent<DayCalendar>().isToday = false;
+
+                // Update its Sprite to Default sprite
+                DayUpdateSprite(i);
+            }
+        }
+    }
+
+
+
+    // ---------------------------------- ASSIGN THE CALENDAR CHIP UI --------------------------------------
+    // Depending of the state of the Calendar chip (Today, Default or Selected), assign it a different UI display
+    public void DayUpdateSprite(int i)
+    {
+        // If it's a Today chip
+        if (calendarChips[i].gameObject == activeDay && calendarChips[i].GetComponent<DayCalendar>().isToday == true)
+        {
+            // And If it's a Mission day
+            if (activeDay.tag == "Mission Day")
+            {
+                Debug.Log("Es día de Misión");
+
+                // Deactivate the Default Villager icon
+                activeDay.transform.GetChild(0).gameObject.SetActive(false);
+
+                // Activate the Today Villager icon
+                activeDay.transform.GetChild(1).gameObject.SetActive(true);
+
+                // Set it as Today (by changing its sprite)
+                activeDay.GetComponent<SpriteRenderer>().sprite = dayToday;
+            }
+
+            // Or If it's a Regular day
+            else
+            {
+                Debug.Log("Es día Normal");
+
+                // Set it as Today (by changing its sprite)
+                activeDay.GetComponent<SpriteRenderer>().sprite = dayToday;
+            }
+        }
+
+        // If it's a Default chip
+        else
+        {
+            // If it hasn't been selected
+            if (calendarChips[i].GetComponent<DayCalendar>().isClicked == false)
+            {
+                // And If it's a Mission day
+                if (calendarChips[i].tag == "Mission Day")
                 {
-                    // Store that day chip as the active day
-                    activeDay = calendarChips[i].gameObject;
+                    Debug.Log("Es día de Misión");
+
+                    // Activate the Default Villager icon
+                    calendarChips[i].transform.GetChild(0).gameObject.SetActive(true);
+
+                    // Deactivate the Today Villager icon
+                    calendarChips[i].transform.GetChild(1).gameObject.SetActive(false);
 
                     // Set it as Today (by changing its sprite)
-                    activeDay.GetComponent<SpriteRenderer>().sprite = dayToday;
+                    calendarChips[i].GetComponent<SpriteRenderer>().sprite = dayDefault;
                 }
 
-                // If it's not the current day
+                // Or If it's a Regular day
                 else
                 {
-                    // And If it hasn't been selected/clicked
-                    if (calendarChips[i].GetComponent<DayCalendar>().isClicked == false)
-                    {
-                        // Set it as Default (by changing its sprite)
-                        calendarChips[i].GetComponent<SpriteRenderer>().sprite = dayDefault;
-                    }
+                    Debug.Log("Es día Normal");
+
+                    // Set it as Today (by changing its sprite)
+                    calendarChips[i].GetComponent<SpriteRenderer>().sprite = dayDefault;
                 }
             }
         }
+
     }
 
 
@@ -584,6 +652,11 @@ public class GameController : MonoBehaviour
         // ---------------------------------- EMPTY INVENTORY -----------------------------------------
         // Empty the inventory of all the ingredients that remain stored in it
         EmptyInventory();
+
+
+        // ---------------------------------- REASSIGN TODAY CHIP -------------------------------------
+        // Assign the new Today day chip
+        AssignToday();
     }
 
 
