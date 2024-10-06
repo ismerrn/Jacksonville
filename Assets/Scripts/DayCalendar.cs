@@ -109,7 +109,11 @@ public class DayCalendar : MonoBehaviour
         // Set it as clicked
         isClicked = true;
 
-        // Update its state to Selected (by changing its sprite)
-        daySpriteRenderer.sprite = daySelected;
+        // If it's a Default/Regular day
+        if (isToday == false)
+        {
+            // Update its state to Default Selected (by changing its sprite)
+            daySpriteRenderer.sprite = daySelected;
+        }
     }
 }

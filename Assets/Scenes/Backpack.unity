@@ -144,6 +144,11 @@ MonoBehaviour:
   owner: {fileID: 0}
   ingrIndex: 2
   ingrQuantity: {fileID: 0}
+--- !u!1 &17030727 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7568390487439505832, guid: 2f310f872e59b2a49951b1cde0e0fdb1, type: 3}
+  m_PrefabInstance: {fileID: 369803770}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &17569726
 GameObject:
   m_ObjectHideFlags: 0
@@ -2421,7 +2426,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 145, y: 0}
+  m_AnchoredPosition: {x: 145, y: -2}
   m_SizeDelta: {x: 57.8, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &225695354
@@ -3350,19 +3355,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8766798239414559877, guid: 2f310f872e59b2a49951b1cde0e0fdb1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 8766798239414559877, guid: 2f310f872e59b2a49951b1cde0e0fdb1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 8766798239414559877, guid: 2f310f872e59b2a49951b1cde0e0fdb1, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 2.7
       objectReference: {fileID: 0}
     - target: {fileID: 8766798239414559877, guid: 2f310f872e59b2a49951b1cde0e0fdb1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 357.2998
+      value: 359
       objectReference: {fileID: 0}
     - target: {fileID: 8766798239414559877, guid: 2f310f872e59b2a49951b1cde0e0fdb1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6430,7 +6435,7 @@ Transform:
   m_GameObject: {fileID: 740574130}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 362, y: -145, z: 0}
+  m_LocalPosition: {x: 362, y: -141, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6517,7 +6522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
       propertyPath: isToday
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8487,7 +8492,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questsScripts: []
   calendarDayChips: []
-  questDescriptionTxt: {fileID: 1827482572}
+  qOwnerIcon: {fileID: 17030727}
+  qOwnerNameTxt: {fileID: 445465436}
+  qDateTxt: {fileID: 801172561}
+  qDaysLeftTxt: {fileID: 123758578}
+  qDescriptionTxt: {fileID: 1827482572}
+  qReward1Icon: {fileID: 2063380849}
+  qReward1Txt: {fileID: 2000685772}
+  qReward2Icon: {fileID: 1424038157}
+  qReward2Txt: {fileID: 1608930585}
 --- !u!1 &1025793703
 GameObject:
   m_ObjectHideFlags: 0
@@ -9278,7 +9291,7 @@ PrefabInstance:
     - target: {fileID: 1345159033989949426, guid: f59fef4d4d669e9468012a9e69d82b39, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: d430c2d93bdbf1741a4af5bd4db9f7ea, type: 3}
+      objectReference: {fileID: 21300000, guid: 69bee1df08c8a6c42af12ef5a9282bf8, type: 3}
     - target: {fileID: 1345159033989949426, guid: f59fef4d4d669e9468012a9e69d82b39, type: 3}
       propertyPath: m_SortingOrder
       value: 25
@@ -9305,7 +9318,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8104423682056357311, guid: f59fef4d4d669e9468012a9e69d82b39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -275
+      value: -277
       objectReference: {fileID: 0}
     - target: {fileID: 8104423682056357311, guid: f59fef4d4d669e9468012a9e69d82b39, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10710,6 +10723,12 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questDate
+      value: '05 - Spring
+
+        (           )'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questCarrots
       value: 4
       objectReference: {fileID: 0}
@@ -10722,10 +10741,34 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questOwnerIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 300c4d47a474a774c84c5694c4c83d20, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questOwnerName
+      value: Felix
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questDescription
-      value: '"I have a group of herbivores coming to the restaurant this week and
-        I need vegetables to prepare meals to suit their tastes.  Bring me some and
-        I will reward you well."'
+      value: "\"I have a group of herbivores coming to the restaurant this week and
+        I need vegetables to prepare meals to suit their tastes. \n\nBring me some
+        and I will reward you well.\""
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward1Icon
+      value: 
+      objectReference: {fileID: 21300000, guid: b4cbb3d8d2c91f1488d39c895346d31f, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward2Icon
+      value: 
+      objectReference: {fileID: 21300000, guid: d430c2d93bdbf1741a4af5bd4db9f7ea, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward1Content
+      value: +5 spcs
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward2Content
+      value: x2000
       objectReference: {fileID: 0}
     - target: {fileID: 3688254956407598187, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_Sprite
@@ -11893,7 +11936,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -3, y: -101.850006}
+  m_AnchoredPosition: {x: -3, y: -97.850006}
   m_SizeDelta: {x: 149, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1392894873 stripped
@@ -12122,6 +12165,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1424038157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2034252464028750301, guid: f59fef4d4d669e9468012a9e69d82b39, type: 3}
+  m_PrefabInstance: {fileID: 1931555503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1429484014
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12159,6 +12207,12 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questDate
+      value: '06 - Spring
+
+        (           )'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questCarrots
       value: 3
       objectReference: {fileID: 0}
@@ -12175,12 +12229,36 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questOwnerIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: c1ce8823f63f9584f8085a30fb3fda5b, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questOwnerName
+      value: Bobby
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questDescription
-      value: '"I met a bear on Tinder who is very environmentally conscious. She
-        says that if we keep eating meat and fish at this rate, we''re going to kill
-        the planet.  I''d like to impress her by starting to introduce more vegetables
-        in my diet.  Can you bring me the ones that are closest to the taste of a
-        Good salmon?"'
+      value: "\"I met a bear on Tinder who is very environmentally conscious. She
+        says that if we keep eating meat and fish at this rate, we're going to kill
+        the planet.  \n\nI'd like to impress her by starting to introduce more vegetables
+        in my diet. \n\nCan you bring me the ones that are closest to the taste of
+        a Good salmon?\""
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward1Icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 69bee1df08c8a6c42af12ef5a9282bf8, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward2Icon
+      value: 
+      objectReference: {fileID: 21300000, guid: d430c2d93bdbf1741a4af5bd4db9f7ea, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward1Content
+      value: +1 stps
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward2Content
+      value: x2000
       objectReference: {fileID: 0}
     - target: {fileID: 3688254956407598187, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_Sprite
@@ -12426,6 +12504,12 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questDate
+      value: '07 - Spring
+
+        (           )'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questCarrots
       value: 2
       objectReference: {fileID: 0}
@@ -12442,11 +12526,35 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questOwnerIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 18ee9a47a661a0c44ba356f6475e30e3, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questOwnerName
+      value: Niggel
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questDescription
-      value: '"I know I recently placed a huge order with you, but I have to admit
+      value: "\"I know I recently placed a huge order with you, but I have to admit
         that eating is my favorite activity in the world, well, after jumping off
-        water lily trampolines, of course.  Anyway, do you think you could bring
-        me a new shipment of food so I don''t starve to death?"'
+        water lily trampolines, of course. \n\nAnyway, do you think you could bring
+        me a new shipment of food so I don't starve to death?\""
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward1Icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 92e54c7eda3179d428e44faef808f22b, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward2Icon
+      value: 
+      objectReference: {fileID: 21300000, guid: d430c2d93bdbf1741a4af5bd4db9f7ea, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward1Content
+      value: Garlic
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward2Content
+      value: x2000
       objectReference: {fileID: 0}
     - target: {fileID: 3688254956407598187, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_Sprite
@@ -13367,8 +13475,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 592723126049154644, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
       propertyPath: m_text
-      value: Ollie
+      value: Ozzy
       objectReference: {fileID: 0}
+    - target: {fileID: 602478968894029779, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bb19862e5fc22244f9494a7e46a665f3, type: 3}
     - target: {fileID: 649608514034548997, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
       propertyPath: m_TagString
       value: Untagged
@@ -13551,7 +13663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8938047605661824586, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
       propertyPath: m_text
-      value: 14
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8995050732629173717, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
       propertyPath: m_TagString
@@ -13782,7 +13894,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 57.8, y: 25}
+  m_SizeDelta: {x: 58, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1608930585
 MonoBehaviour:
@@ -13804,7 +13916,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Garlic
+  m_text: x2000
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3dc53f90d2ac68d42915344d85b000cb, type: 2}
   m_sharedMaterial: {fileID: 3842893125722849633, guid: 3dc53f90d2ac68d42915344d85b000cb, type: 2}
@@ -13831,14 +13943,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -15923,7 +16035,7 @@ PrefabInstance:
     - target: {fileID: 1345159033989949426, guid: f59fef4d4d669e9468012a9e69d82b39, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1b8c506749baddd48a7649538295d0f7, type: 3}
+      objectReference: {fileID: 21300000, guid: d430c2d93bdbf1741a4af5bd4db9f7ea, type: 3}
     - target: {fileID: 1345159033989949426, guid: f59fef4d4d669e9468012a9e69d82b39, type: 3}
       propertyPath: m_SortingOrder
       value: 25
@@ -15933,12 +16045,24 @@ PrefabInstance:
       value: Item
       objectReference: {fileID: 0}
     - target: {fileID: 8104423682056357311, guid: f59fef4d4d669e9468012a9e69d82b39, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8104423682056357311, guid: f59fef4d4d669e9468012a9e69d82b39, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8104423682056357311, guid: f59fef4d4d669e9468012a9e69d82b39, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8104423682056357311, guid: f59fef4d4d669e9468012a9e69d82b39, type: 3}
       propertyPath: m_LocalPosition.x
       value: 459
       objectReference: {fileID: 0}
     - target: {fileID: 8104423682056357311, guid: f59fef4d4d669e9468012a9e69d82b39, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -275
+      value: -277
       objectReference: {fileID: 0}
     - target: {fileID: 8104423682056357311, guid: f59fef4d4d669e9468012a9e69d82b39, type: 3}
       propertyPath: m_LocalPosition.z
@@ -16019,6 +16143,12 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questDate
+      value: '03 - Spring
+
+        (           )'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questTomatos
       value: 5
       objectReference: {fileID: 0}
@@ -16031,10 +16161,34 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questOwnerIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: d2414b32ec0a1854b8cebc4b32878541, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questOwnerName
+      value: Tim
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questDescription
       value: "\"This season's harvest was spoiled by bad weather, and my wife went
-        into premature labor with at least 10 babies.  Do you think you could bring
-        us some of your harvest so we can feed them?\u201D"
+        into premature labor with at least 10 babies. \n\nDo you think you could
+        bring us some of your harvest so we can feed them?\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward1Icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 69bee1df08c8a6c42af12ef5a9282bf8, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward2Icon
+      value: 
+      objectReference: {fileID: 21300000, guid: d430c2d93bdbf1741a4af5bd4db9f7ea, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward1Content
+      value: +2 stps
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward2Content
+      value: x2000
       objectReference: {fileID: 0}
     - target: {fileID: 3688254956407598187, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_Sprite
@@ -16613,7 +16767,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 57.8, y: 25}
+  m_SizeDelta: {x: 58, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2000685772
 MonoBehaviour:
@@ -16635,7 +16789,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: x1000
+  m_text: +1 stps
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3dc53f90d2ac68d42915344d85b000cb, type: 2}
   m_sharedMaterial: {fileID: 3842893125722849633, guid: 3dc53f90d2ac68d42915344d85b000cb, type: 2}
@@ -16662,14 +16816,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 18
+  m_fontSizeBase: 18
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -16931,6 +17085,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb3cd29410e75a447b5771c90bc92dfd, type: 3}
+--- !u!1 &2063380849 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2034252464028750301, guid: f59fef4d4d669e9468012a9e69d82b39, type: 3}
+  m_PrefabInstance: {fileID: 1123621562}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2075223324
 GameObject:
   m_ObjectHideFlags: 0
@@ -17294,7 +17453,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -2}
   m_SizeDelta: {x: 57.8, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &2112835108
@@ -18002,6 +18161,12 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questDate
+      value: '02 - Spring
+
+        (           )'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questCarrots
       value: 5
       objectReference: {fileID: 0}
@@ -18014,10 +18179,34 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questOwnerIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 67805d7fbe50e4a4c8ac602c5537a492, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questOwnerName
+      value: Mark
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questDescription
       value: "\u201CIn a few days I want to celebrate a party with friends to inaugurate
         my new house, and I would like to prepare a delicious salad and some mango
-        ice cream.  Do you think you could bring me some ingredients?\u201D"
+        ice cream. \n\nDo you think you could bring me some ingredients?\u201D"
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward1Icon
+      value: 
+      objectReference: {fileID: 21300000, guid: 69bee1df08c8a6c42af12ef5a9282bf8, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward2Icon
+      value: 
+      objectReference: {fileID: 21300000, guid: d430c2d93bdbf1741a4af5bd4db9f7ea, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward1Content
+      value: +1 stps
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questReward2Content
+      value: x2000
       objectReference: {fileID: 0}
     - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_LocalPosition.x

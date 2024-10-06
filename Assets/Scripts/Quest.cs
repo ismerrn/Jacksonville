@@ -5,12 +5,44 @@ using UnityEngine;
 
 public class Quest : MonoBehaviour
 {
-    // ---------------------------------- BACKPACK -----------------------------------------
+    // ---------------------------------- BACKPACK -------------------------------------------------
     // Store backpack ingredients
     public int[] backpackIngredients;
 
 
-    // ---------------------------------- QUEST --------------------------------------------
+
+    // ---------------------------------- QUEST ----------------------------------------------------
+    // ---------------------------------- Quest info --------------------------------------
+    // ------------------------------- Set Quest ------------------------------
+    // Store the day the Quest is required (update Inspector Unity)
+    public int questDay;
+
+    // Reference the Quest UI associated to this quest
+    public GameObject questUI;
+
+
+    // ------------------------------- Owner's Identity -----------------------
+    // Reference to Quest Owner's Icon
+    public Sprite questOwnerIcon;
+
+    // Reference to Quest Owner's Name
+    public string questOwnerName;
+
+    // ------------------------------- Quest's Timing -------------------------
+    // Add this before a String to add a Text box UI in the Inspector so you can add enter spaces and +
+    [TextArea]
+
+    // Reference to Quest's date
+    public string questDate;
+
+    // ------------------------------- Quest's Narrative ----------------------
+    // Add this before a String to add a Text box UI in the Inspector so you can add enter spaces and +
+    [TextArea]
+
+    // Store the quest description text
+    public string questDescription;
+
+    // ------------------------------- Quest's Orders -------------------------
     // Storequest ingredients
     public int[] questIngredients;
 
@@ -20,28 +52,29 @@ public class Quest : MonoBehaviour
     public int questEggplants;
     public int questMushrooms;
 
-    // Store the day the Quest is required (update Inspector Unity)
-    public int questDay;
+    // ------------------------------- Rewards --------------------------------
+    // Store Reward 1: Icon + Content (text explaining reward)
+    public Sprite questReward1Icon;
+    public string questReward1Content;
 
-    // Reference the Quest UI associated to this quest
-    public GameObject questUI;
+    // Store Reward 1: Icon + Content (text explaining reward)
+    public Sprite questReward2Icon;
+    public string questReward2Content;
 
-    // Add this before a String to add a Text box UI in the Inspector so you can add enter spaces and +
-    [TextArea]
 
-    // Store the quest description text
-    public string questDescription;
-
+    // ---------------------------------- Connectors --------------------------------------
     // Reference the Quest's Days Left text
     public TextMeshProUGUI questDaysLeftTxt;
 
 
-    // ---------------------------------- GAME CONTROLLER ----------------------------------
+
+    // ---------------------------------- GAME CONTROLLER ------------------------------------------
     // Reference to Game Controller script
     public GameController GameControllerScript;
 
     // Reference to Calendar script
     public Calendar CalendarScript;
+
 
 
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
