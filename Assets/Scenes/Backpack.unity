@@ -17150,6 +17150,10 @@ PrefabInstance:
       value: Tim
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questDaysLeftTxt
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questDescription
       value: "\"This season's harvest was spoiled by bad weather, and my wife went
         into premature labor with at least 10 babies. \n\nDo you think you could
@@ -18876,7 +18880,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5772911746000714846, guid: b34c8a86f78bd1e4cacad6085a075fc1, type: 3}
       propertyPath: pathStopTime
-      value: 1
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 5772911746000714846, guid: b34c8a86f78bd1e4cacad6085a075fc1, type: 3}
       propertyPath: deliveryButton
