@@ -32,6 +32,15 @@ public class GameController : MonoBehaviour
 
 
 
+    // ---------------------------------- MONEY ----------------------------------------------------
+    // Store the Player's money quantity
+    public int playerMoney = 0;
+
+    // Store the current player Money (UI text)
+    public TextMeshProUGUI playerMoneyTxt;
+
+
+
     // ---------------------------------- CALENDAR -------------------------------------------------
     // ---------------------------------- Compacted ---------------------------------------
     // Store the Current Day Text from the Compacted Calendar
@@ -351,8 +360,6 @@ public class GameController : MonoBehaviour
             // For the rest of the days
             else
             {
-                //Debug.Log(indexChip);
-
                 // Set as a Default chip
                 calendarChips[i].GetComponent<DayCalendar>().isToday = false;
 
@@ -626,6 +633,11 @@ public class GameController : MonoBehaviour
 
         // Update the Steps UI with the Steps Left
         stepsLeftTxt.text = "" + stepsLeft;
+
+
+        // ---------------------------------- UPDATE MONEY UPGRADES -----------------------------------
+        // Update the Player's Money UI Text
+        playerMoneyTxt.text = "" + playerMoney;
 
 
         // ---------------------------------- RESET CAMERA TO MAIN POS --------------------------------

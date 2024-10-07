@@ -18,6 +18,8 @@ public class Quest : MonoBehaviour
     // Store backpack ingredients
     public int[] backpackIngredients;
 
+    // Store the extra backpack for the reward
+    private GameObject extraBackpack;
 
 
     // ---------------------------------- QUEST ----------------------------------------------------
@@ -28,6 +30,17 @@ public class Quest : MonoBehaviour
 
     // Reference the Quest UI associated to this quest
     public GameObject questUI;
+
+    // Store if each order has been completed or not
+    public bool isOrder1Completed = false;
+    public bool isOrder2Completed = false;
+    public bool isOrder3Completed = false;
+
+    // Store if the quest has been completed or not
+    public bool isQuestCompleted = false;
+
+    // Reference to store time left to accomplish this quest
+    public int daysLeftForQuest;
 
 
     // ------------------------------- Owner's Identity -----------------------
@@ -70,18 +83,30 @@ public class Quest : MonoBehaviour
     public int qEggplantsRequired;
     public int qMushroomsRequired;
 
+    // Store the Orders ingredients' indexes
+    public int[] ordersIndex;
+
     // Store the type of ingredients wanted and in which order
     public int ingr1Index;
     public int ingr2Index;
     public int ingr3Index;
 
     // ------------------------------- Rewards --------------------------------
-    // Store Reward 1: Icon + Content (text explaining reward)
+    // Store every Reward type
+    private string[] rewardTypes;
+
+    // Store Rewards types
+    public int reward1ID;
+    public int reward2ID;
+
+    // Store Reward 1: Icon + Value (int value) + Content (text explaining reward)
     public Sprite questReward1Icon;
+    public int qReward1Value;
     public string questReward1Content;
 
-    // Store Reward 1: Icon + Content (text explaining reward)
+    // Store Reward 1: Icon + Value (int value) + Content (text explaining reward)
     public Sprite questReward2Icon;
+    public int qReward2Value;
     public string questReward2Content;
 
 
@@ -131,6 +156,9 @@ public class Quest : MonoBehaviour
         // Store the Days Left from the Quest UI (1st child)
         questDaysLeftTxt = questUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 
+        // Store the extra space backpack reward
+        extraBackpack = GameObject.Find("Extra 1");
+
 
         // ---------------------------------- STORE ----------------------------------------------------
         // Store origin/starting number of each Ingredient needed for the quest
@@ -140,10 +168,16 @@ public class Quest : MonoBehaviour
         qMushroomsRequired = questMushrooms;
 
         // Store ingredients sprites
-        typeIngredients = new Sprite[4] { tomatoIngr, carrotIngr, eggplantIngr, mushroomIngr };
+        typeIngredients = new Sprite[4] {tomatoIngr, carrotIngr, eggplantIngr, mushroomIngr};
 
         // Store the origin Ingredients required for each quest
         qIngredientsRequired = new int[4] {qTomatosRequired, qCarrotsRequired, qEggplantsRequired, qMushroomsRequired};
+
+        // Store Order ingredients' indexes
+        ordersIndex = new int[3] {ingr1Index, ingr2Index, ingr3Index};
+
+        // Store every type of Reward
+        rewardTypes = new string[4] { "Money", "Steps", "Backpack spaces", "Ingredients" };
 
         // Store the number of each Ingredient needed for the quest
         questIngredients[0] = questTomatos;
@@ -179,6 +213,27 @@ public class Quest : MonoBehaviour
 
         // After delivering ingredients, update the quests' UI
         GameControllerScript.CheckIngrUpdate();
+
+        // Set the Quest as completed
+        isQuestCompleted = true;
+
+        // Loop through the 4 quest ingredients
+        for (int i = 0; i < questIngredients.Length; i = i + 1)
+        {
+            // If there's any ingredient to deliver
+            if (questIngredients[i] > 0)
+            {
+                // Set the Quest as Incomplete
+                isQuestCompleted = false;
+            }
+        }
+
+        // If Quest is completed
+        if (isQuestCompleted == true)
+        {
+            // Active rewarding system
+            RewardPlayer();
+        }
     }
 
 
@@ -218,14 +273,76 @@ public class Quest : MonoBehaviour
                 UpdateIngrPlaced();
             }
         }
+    }
 
-        // If (there's no ingredients left to deliver)
-        /*else
+
+    // ---------------------------------- DELIVER REWARD 2 PLAYER ------------------------------------------
+    // Reward Player when completing villager's quest
+    public void RewardPlayer()
+    {
+        // If (there's still left days to complete quest)
+        if (daysLeftForQuest > 0)
         {
-            // Check quest UI order
-            // Deactivate the renderer of the ingredient selected (as none is selected for now)
-            //pIngredientSelected.GetComponent<SpriteRenderer>().enabled = true;
-        }*/
+            // Give Rewards
+            for (int i = 0; i < rewardTypes.Length; i = i + 1)
+            {
+                // Check the type of reward for reward 1
+                if (reward1ID == i)
+                {
+                    SetRewards(i);
+                }
+
+                // Check the type of reward for reward 2
+                if (reward2ID == i)
+                {
+                    SetRewards(i);
+                }
+            }
+        }
+    }
+
+    // ---------------------------------- SET TYPE OF REWARD -----------------------------------------------
+    // Set the type of reward
+    public void SetRewards(int i)
+    {
+        // Money reward
+        if (i == 0)
+        {
+            // Add X coins to money counter
+            GameControllerScript.playerMoney = GameControllerScript.playerMoney + qReward2Value;
+        }
+
+        // Steps reward
+        else if (i == 1)
+        {
+            // Add X steps to total steps
+            GameControllerScript.stepsTotal = GameControllerScript.stepsTotal + qReward1Value;
+        }
+
+        // Backpack spaces reward
+        else if (i == 2)
+        {
+            // Add 1 line (5 spaces) to backpack
+            // Set all the chips as visible
+            extraBackpack.transform.GetChild(0).GetComponent<SpriteRenderer>().enabled = true;
+            extraBackpack.transform.GetChild(1).GetComponent<SpriteRenderer>().enabled = true;
+            extraBackpack.transform.GetChild(2).GetComponent<SpriteRenderer>().enabled = true;
+            extraBackpack.transform.GetChild(3).GetComponent<SpriteRenderer>().enabled = true;
+            extraBackpack.transform.GetChild(4).GetComponent<SpriteRenderer>().enabled = true;
+
+            // Set all the collider chip as active so they can be interacted with
+            extraBackpack.transform.GetChild(0).GetComponent<BoxCollider>().enabled = true;
+            extraBackpack.transform.GetChild(1).GetComponent<BoxCollider>().enabled = true;
+            extraBackpack.transform.GetChild(2).GetComponent<BoxCollider>().enabled = true;
+            extraBackpack.transform.GetChild(3).GetComponent<BoxCollider>().enabled = true;
+            extraBackpack.transform.GetChild(4).GetComponent<BoxCollider>().enabled = true;
+        }
+
+        // Ingredient reward
+        else if (i == 3)
+        {
+            // Unlock ingredient
+        }
     }
 
 
@@ -233,9 +350,6 @@ public class Quest : MonoBehaviour
     // Update the Days Left in the Quest UI
     public void UpdateDaysLeft()
     {
-        // Reference to store time left to accomplish this quest
-        int daysLeftForQuest;
-
         // Calculate the Days Left for the Quest to expire (+1 because the current day counts too)
         daysLeftForQuest = questDay - CalendarScript.daysUsed + 1;
 
