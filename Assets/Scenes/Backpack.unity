@@ -12791,10 +12791,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questDescription
-      value: "\"I met a bear on Tinder who is very environmentally conscious. She
-        says that if we keep eating meat and fish at this rate, we're going to kill
-        the planet.  \n\nI'd like to impress her by starting to introduce more vegetables
-        into my diet. \n\nCan you bring me the ones that taste most like a good salmon?\""
+      value: '"I met a vegetarian bear on Tinder who I''d like to impress by starting
+        to eat more vegetables.
+
+
+        Can you bring me the ones that are closest
+        to the taste of a good salmon?"'
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questReward1Icon
@@ -13155,10 +13157,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questDescription
-      value: "\"I know I recently ordered you\_a\_huge\_delivery, but I have to admit
-        that eating is my favorite activity in the world, well, after jumping off
-        water lily trampolines, of course. \n\nAnyway, do you think you could bring
-        me a new shipment of food so I don't starve to death?\""
+      value: '"I know I recently ordered you a huge delivery, but I love eating as
+        much as jumping off water lily trampolines.
+
+
+        Anyway, do you think
+        you could bring me a new shipment of food so I don''t starve to death?"'
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questReward1Icon
@@ -19254,8 +19258,8 @@ PrefabInstance:
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questDescription
       value: "\u201CIn a few days I want to celebrate a party with friends to inaugurate
-        my new house, and I would like to prepare a delicious salad and some mango
-        ice cream. \n\nDo you think you could bring me some ingredients?\u201D"
+        my new house, and I would like to prepare a delicious salad. \n\nDo you think
+        you could bring me some ingredients?\u201D"
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questReward1Icon
