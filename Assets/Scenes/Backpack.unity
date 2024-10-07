@@ -2527,6 +2527,11 @@ RectTransform:
   m_AnchoredPosition: {x: 145, y: -2}
   m_SizeDelta: {x: 57.8, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &223916347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4291045221176007676, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+  m_PrefabInstance: {fileID: 743243571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &225695354
 GameObject:
   m_ObjectHideFlags: 0
@@ -3045,6 +3050,11 @@ RectTransform:
   m_AnchoredPosition: {x: -51.5, y: -206.85}
   m_SizeDelta: {x: 57.800003, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &285479437 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4291045221176007676, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+  m_PrefabInstance: {fileID: 663726733}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &285839747 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 9058364284222184997, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
@@ -6543,6 +6553,10 @@ PrefabInstance:
       propertyPath: weekID
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: ownerID
+      value: 
+      objectReference: {fileID: 1748736211}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6771,6 +6785,10 @@ PrefabInstance:
       propertyPath: isToday
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: ownerID
+      value: 
+      objectReference: {fileID: 842771451}
     - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
       propertyPath: isClicked
       value: 1
@@ -7580,6 +7598,11 @@ Transform:
   - {fileID: 1578164636}
   m_Father: {fileID: 1413034442}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &842771451 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5354007124470236277, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+  m_PrefabInstance: {fileID: 7635310298438372845}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &847714026
 GameObject:
   m_ObjectHideFlags: 0
@@ -8575,6 +8598,11 @@ MonoBehaviour:
   owner: {fileID: 0}
   ingrIndex: 3
   ingrQuantity: {fileID: 0}
+--- !u!1 &961011732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4291045221176007676, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+  m_PrefabInstance: {fileID: 2140199640}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &973541007
 GameObject:
   m_ObjectHideFlags: 0
@@ -9965,6 +9993,10 @@ MonoBehaviour:
   currentDayTxt: {fileID: 896249400}
   currentWeekDayTxt: {fileID: 1107222884}
   activeDay: {fileID: 166462776}
+  lastActiveDay: {fileID: 0}
+  pastDay: {fileID: 21300000, guid: 6a28fea0e0230ec4dab4333bbf1051c8, type: 3}
+  pastQuestCompleted: {fileID: 21300000, guid: 33abd09e8f0c19e47b94713387843f87, type: 3}
+  pastQuestNotCompleted: {fileID: 21300000, guid: 0400a332b9b52e54ea71c59ba493dfb6, type: 3}
   CalendarScript: {fileID: 1173666312}
   calendarChips: []
   dayDefault: {fileID: 21300000, guid: fe408547448187a4fa4518b28f90b27e, type: 3}
@@ -10674,6 +10706,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256067631}
   m_CullTransparentMesh: 1
+--- !u!1 &1270384405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4291045221176007676, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+  m_PrefabInstance: {fileID: 1774823541}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1272823754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11160,6 +11197,10 @@ PrefabInstance:
       propertyPath: questCarrots
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questDayChip
+      value: 
+      objectReference: {fileID: 285479437}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: qReward1Value
       value: 0
@@ -12721,6 +12762,10 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questDayChip
+      value: 
+      objectReference: {fileID: 1270384405}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questTomatos
       value: 4
       objectReference: {fileID: 0}
@@ -12749,8 +12794,7 @@ PrefabInstance:
       value: "\"I met a bear on Tinder who is very environmentally conscious. She
         says that if we keep eating meat and fish at this rate, we're going to kill
         the planet.  \n\nI'd like to impress her by starting to introduce more vegetables
-        in my diet. \n\nCan you bring me the ones that are closest to the taste of
-        a Good salmon?\""
+        into my diet. \n\nCan you bring me the ones that taste most like a good salmon?\""
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questReward1Icon
@@ -13082,6 +13126,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questDayChip
+      value: 
+      objectReference: {fileID: 961011732}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questTomatos
       value: 0
       objectReference: {fileID: 0}
@@ -13107,7 +13155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questDescription
-      value: "\"I know I recently placed a huge order with you, but I have to admit
+      value: "\"I know I recently ordered you\_a\_huge\_delivery, but I have to admit
         that eating is my favorite activity in the world, well, after jumping off
         water lily trampolines, of course. \n\nAnyway, do you think you could bring
         me a new shipment of food so I don't starve to death?\""
@@ -13328,6 +13376,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1461927015}
   m_CullTransparentMesh: 1
+--- !u!1 &1465560876 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5354007124470236277, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+  m_PrefabInstance: {fileID: 1429484014}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1472022625
 GameObject:
   m_ObjectHideFlags: 0
@@ -14134,6 +14187,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2337326140699892550, guid: 6d4d29bae863894479010b0013a91210, type: 3}
   m_PrefabInstance: {fileID: 1578164635}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1583707400 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5354007124470236277, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+  m_PrefabInstance: {fileID: 1461681945}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1595339113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14913,6 +14971,10 @@ PrefabInstance:
       propertyPath: weekID
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: ownerID
+      value: 
+      objectReference: {fileID: 1787845836}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15326,6 +15388,11 @@ Transform:
   - {fileID: 365188801}
   m_Father: {fileID: 787023566}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1748736211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5354007124470236277, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+  m_PrefabInstance: {fileID: 1290804751}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1767222624
 GameObject:
   m_ObjectHideFlags: 0
@@ -15612,6 +15679,10 @@ PrefabInstance:
       propertyPath: isToday
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: ownerID
+      value: 
+      objectReference: {fileID: 1465560876}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -15756,6 +15827,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1780312855}
   m_CullTransparentMesh: 1
+--- !u!1 &1787845836 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5354007124470236277, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+  m_PrefabInstance: {fileID: 1966878567}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1790150973
 GameObject:
   m_ObjectHideFlags: 0
@@ -16843,6 +16919,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1844421964}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1929261306 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4291045221176007676, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+  m_PrefabInstance: {fileID: 1623066467}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1931555503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17028,6 +17109,10 @@ PrefabInstance:
       propertyPath: mushroomIngr
       value: 
       objectReference: {fileID: 21300000, guid: d81423aaf8e5442458bdcbd73852f733, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questDayChip
+      value: 
+      objectReference: {fileID: 1929261306}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questTomatos
       value: 4
@@ -18681,6 +18766,10 @@ PrefabInstance:
       propertyPath: weekID
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: ownerID
+      value: 
+      objectReference: {fileID: 1583707400}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19130,6 +19219,10 @@ PrefabInstance:
       propertyPath: questCarrots
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questDayChip
+      value: 
+      objectReference: {fileID: 223916347}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questTomatos
       value: 3

@@ -22,8 +22,16 @@ public class Quest : MonoBehaviour
     private GameObject extraBackpack;
 
 
+
+    // ---------------------------------- CALENDAR -------------------------------------------------
+    // Reference to the Quest day
+    public GameObject questDayChip;
+
+
+
     // ---------------------------------- QUEST ----------------------------------------------------
     // ---------------------------------- Quest info --------------------------------------
+
     // ------------------------------- Set Quest ------------------------------
     // Store the day the Quest is required (update Inspector Unity)
     public int questDay;

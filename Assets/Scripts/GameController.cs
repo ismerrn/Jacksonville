@@ -54,6 +54,14 @@ public class GameController : MonoBehaviour
     // Store the current Day
     public GameObject activeDay;
 
+    // Store the last current Day
+    public GameObject lastActiveDay;
+
+    // Store the sprite for the default past day + past quest days (one for the quest completed, and other for the quest not completed)
+    public Sprite pastDay;
+    public Sprite pastQuestCompleted;
+    public Sprite pastQuestNotCompleted;
+
     // Store the Calendar Script
     public Calendar CalendarScript;
 
@@ -347,6 +355,9 @@ public class GameController : MonoBehaviour
             // Find the week & day currently happening
             if (calendarChips[i].GetComponent<DayCalendar>().weekID == CalendarScript.weeksUsed && calendarChips[i].GetComponent<DayCalendar>().dayID == CalendarScript.daysUsed)
             {
+                // Store the last "current day"
+                lastActiveDay = activeDay;
+
                 // Set as a Today chip
                 calendarChips[i].GetComponent<DayCalendar>().isToday = true;
 
@@ -596,6 +607,7 @@ public class GameController : MonoBehaviour
     }
 
 
+
     // ---------------------------------- RESET DAY ------------------------------------------------------------------------------
     // Reset the day as new one
     public void ResetDay()
@@ -617,6 +629,7 @@ public class GameController : MonoBehaviour
             // Update the Current Day text
             currentDayTxt.text = "" + CalendarScript.daysUsed;
         }
+
 
         // Update the Week Day text
         currentWeekDayTxt.text = "" + CalendarScript.activeWeekDay.tag;
@@ -680,7 +693,62 @@ public class GameController : MonoBehaviour
         // ---------------------------------- REASSIGN TODAY CHIP -------------------------------------
         // Assign the new Today day chip
         AssignToday();
+
+
+        // ---------------------------------- SET PAST DAY'S UI ---------------------------------------
+        // Update past day's UI
+        UpdatePastDayUI();
+
     }
+
+
+
+    // ---------------------------------- UPDATE PAST DAY'S UI ------------------------------------------------------------------
+    public void UpdatePastDayUI()
+    {
+        // Reference to Day's 3rd GO child
+        GameObject PastDayUI = lastActiveDay.transform.GetChild(2).gameObject;
+
+        // Reference to Past Day GO's Sprite Renderer
+        SpriteRenderer PastDaySR = PastDayUI.GetComponent<SpriteRenderer>();
+
+        // Reference to Past Day's Script (Day Calendar)
+        DayCalendar ChipDayScript = lastActiveDay.GetComponent<DayCalendar>();
+
+
+        // If it's a mission day
+        if (lastActiveDay.tag == "Mission Day")
+        {
+            // Active the Past Day GO
+            PastDayUI.SetActive(true);
+
+
+            // If the Day's Quest has been completed
+            if (ChipDayScript.questOwnerScript.isQuestCompleted == true)
+            {
+                // Set its sprite to the one past quest day with the mission completed
+                PastDaySR.sprite = pastQuestCompleted;
+            }
+
+            // If the Day's Quest is uncompleted
+            else
+            {
+                // Set its sprite to the past quest day with the mission uncompleted
+                PastDaySR.sprite = pastQuestNotCompleted;
+            }
+        }
+
+        // If it's a regular day
+        else
+        {
+            // Active the Past Day GO
+            PastDayUI.SetActive(true);
+
+            // Set its sprite to the past default day
+            PastDaySR.sprite = pastDay;
+        }
+    }
+
 
 
     // ---------------------------------- EMPTY INVENTORY -----------------------------------------------------------------------

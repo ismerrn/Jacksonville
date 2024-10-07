@@ -4,6 +4,27 @@ using UnityEngine;
 
 public class DayCalendar : MonoBehaviour
 {
+    // ---------------------------------- GAME CONTROLLER ------------------------------------------
+    // Access Game Controller script
+    private GameController GameControllerScript;
+
+    // Access Calendar script
+    private Calendar CalendarScript;
+
+
+
+    // ---------------------------------- QUEST ----------------------------------------------------
+    // Store every Quest script
+    private Quest[] QuestScripts;
+
+    // Reference to the quest owner
+    public GameObject questOwner;
+
+    // Reference to the quest owner's script
+    public Quest questOwnerScript;
+
+
+
     // ---------------------------------- CALENDAR PANEL -------------------------------------------
     // Store the Calendar Panel script
     private CalendarPanel CalendarPanelScript;
@@ -26,6 +47,9 @@ public class DayCalendar : MonoBehaviour
     // Check if the chip has been clicked
     public bool isToday;
 
+    // Check if the day has already past
+    public bool hasPast = false;
+
     // Check if the chip has been clicked
     public bool isClicked = false;
 
@@ -34,16 +58,6 @@ public class DayCalendar : MonoBehaviour
     public Sprite dayToday;
     public Sprite daySelected;
     // Sprites from days passed and missions failed/accomplished
-
-
-
-    // ---------------------------------- GAME CONTROLLER ------------------------------------------
-    // Access Game Controller script
-    private GameController GameControllerScript;
-
-    // Access Calendar script
-    private Calendar CalendarScript;
-
 
 
 
@@ -64,6 +78,9 @@ public class DayCalendar : MonoBehaviour
         // Store all the day chips in an array
         calendarChips = FindObjectsOfType<DayCalendar>();
 
+        // Store all the Quest scripts
+        QuestScripts = FindObjectsOfType<Quest>();
+
         // Loop through all the Calendar chips
         for (int i = 0; i < calendarChips.Length; i = i + 1)
         {
@@ -72,6 +89,20 @@ public class DayCalendar : MonoBehaviour
             {
                 // Add them the tag "Mission Day"
                 calendarChips[i].tag = "Mission Day";
+
+                // Loop through all the Quest Owners (5)
+                for (int i2 = 0; i2 < QuestScripts.Length; i2 = i2 + 1)
+                {
+                    // Check who is the Quest's owner
+                    if (transform.GetChild(0).tag == QuestScripts[i2].questOwnerName)
+                    {
+                        // Store the Quest Owner
+                        questOwner = QuestScripts[i2].gameObject;
+
+                        // Store the Quest Owner's script
+                        questOwnerScript = QuestScripts[i2];
+                    }
+                }
             }
         }
     }
