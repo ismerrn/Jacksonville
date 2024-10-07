@@ -16466,8 +16466,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "\u201CIn a few days I want to celebrate\na party with friends to inaugurate\nmy
-    new house, and I would like to\nprepare a delicious salad and some\nmango ice
-    cream.\r\n\r\nDo you think you could bring me\nsome ingredients?\u201D"
+    new house, and I would like to\nprepare a delicious salad.\r\n\r\nDo you think
+    you could bring me\nsome ingredients?\u201D"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3dc53f90d2ac68d42915344d85b000cb, type: 2}
   m_sharedMaterial: {fileID: 3842893125722849633, guid: 3dc53f90d2ac68d42915344d85b000cb, type: 2}
