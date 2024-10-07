@@ -37,6 +37,7 @@ public class OrderIngr : MonoBehaviour
     // When delivering an order update its text
     public void UpdateQuantity()
     {
+        // For bugs
         if (ingrQuantity != null && owner != null)
         {
             // Update text with the current ingredients needed for that quest

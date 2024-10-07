@@ -5,6 +5,15 @@ using UnityEngine;
 
 public class Quest : MonoBehaviour
 {
+    // ---------------------------------- GAME CONTROLLER ------------------------------------------
+    // Reference to Game Controller script
+    public GameController GameControllerScript;
+
+    // Reference to Calendar script
+    public Calendar CalendarScript;
+
+
+
     // ---------------------------------- BACKPACK -------------------------------------------------
     // Store backpack ingredients
     public int[] backpackIngredients;
@@ -52,6 +61,20 @@ public class Quest : MonoBehaviour
     public int questEggplants;
     public int questMushrooms;
 
+    // Store origin/starting number of ingredients required for the quest
+    public int[] qIngredientsRequired;
+
+    // Store the starting requirements of each ingredient for this quest
+    public int qTomatosRequired;
+    public int qCarrotsRequired;
+    public int qEggplantsRequired;
+    public int qMushroomsRequired;
+
+    // Store the type of ingredients wanted and in which order
+    public int ingr1Index;
+    public int ingr2Index;
+    public int ingr3Index;
+
     // ------------------------------- Rewards --------------------------------
     // Store Reward 1: Icon + Content (text explaining reward)
     public Sprite questReward1Icon;
@@ -66,14 +89,32 @@ public class Quest : MonoBehaviour
     // Reference the Quest's Days Left text
     public TextMeshProUGUI questDaysLeftTxt;
 
+    // Reference the Quest's Days Left text
+    public TextMeshProUGUI questDaysLeftCalendarTxt;
+
+    // Store the Quest's (+Details) Order 1 ingredient icon + quantity text
+    public GameObject qOrder1Icon;
+    public TextMeshProUGUI qOrder1Txt;
+
+    // Store the Quest's (+Details) Order 2 ingredient icon + quantity text
+    public GameObject qOrder2Icon;
+    public TextMeshProUGUI qOrder2Txt;
+
+    // Store the Quest's (+Details) Order 3 ingredient icon + quantity text
+    public GameObject qOrder3Icon;
+    public TextMeshProUGUI qOrder3Txt;
 
 
-    // ---------------------------------- GAME CONTROLLER ------------------------------------------
-    // Reference to Game Controller script
-    public GameController GameControllerScript;
 
-    // Reference to Calendar script
-    public Calendar CalendarScript;
+    // ---------------------------------- INGREDIENTS ----------------------------------------------
+    // Store every type of ingredients
+    public Sprite[] typeIngredients;
+
+    // Store ingredients sprites
+    public Sprite tomatoIngr;
+    public Sprite carrotIngr;
+    public Sprite eggplantIngr;
+    public Sprite mushroomIngr;
 
 
 
@@ -89,6 +130,20 @@ public class Quest : MonoBehaviour
 
         // Store the Days Left from the Quest UI (1st child)
         questDaysLeftTxt = questUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+
+
+        // ---------------------------------- STORE ----------------------------------------------------
+        // Store origin/starting number of each Ingredient needed for the quest
+        qTomatosRequired = questTomatos;
+        qCarrotsRequired = questCarrots;
+        qEggplantsRequired = questEggplants;
+        qMushroomsRequired = questMushrooms;
+
+        // Store ingredients sprites
+        typeIngredients = new Sprite[4] { tomatoIngr, carrotIngr, eggplantIngr, mushroomIngr };
+
+        // Store the origin Ingredients required for each quest
+        qIngredientsRequired = new int[4] {qTomatosRequired, qCarrotsRequired, qEggplantsRequired, qMushroomsRequired};
 
         // Store the number of each Ingredient needed for the quest
         questIngredients[0] = questTomatos;
@@ -196,6 +251,48 @@ public class Quest : MonoBehaviour
         {
             // Update the Days Left text in the Quest UI
             questDaysLeftTxt.text = "" + 0;
+        }
+    }
+
+    // ---------------------------------- CHECK & UPDATE QUEST'S ORDERS --------------------------------------------------
+    // Check the Quest Orders and then Update it in the Calendar
+    public void CheckUpdateQuestOrder()
+    {
+        // Loop through all the ingredients (4)
+        for (int i = 0; i < qIngredientsRequired.Length; i = i + 1)
+        {
+            // ---------------------------------- ORDER 1 ----------------------------------------------------
+            // Check the ingredient of the Order 1
+            if (ingr1Index == i)
+            {
+                // Update the Ingredient icon with the Villager's quest info
+                qOrder1Icon.GetComponent<SpriteRenderer>().sprite = typeIngredients[i];
+
+                // Update Ingredient Quantity text with the Villager's quest info
+                qOrder1Txt.text = "x" + qIngredientsRequired[i];
+            }
+
+            // ---------------------------------- ORDER 2 ----------------------------------------------------
+            // Check the ingredient of the Order 2
+            else if (ingr2Index == i)
+            {
+                // Update the Ingredient icon with the Villager's quest info
+                qOrder2Icon.GetComponent<SpriteRenderer>().sprite = typeIngredients[i];
+
+                // Update Ingredient Quantity text with the Villager's quest info
+                qOrder2Txt.text = "x" + qIngredientsRequired[i];
+            }
+
+            // ---------------------------------- ORDER 3 ----------------------------------------------------
+            // Check the ingredient of the Order 3
+            else if (ingr3Index == i)
+            {
+                // Update the Ingredient icon with the Villager's quest info
+                qOrder3Icon.GetComponent<SpriteRenderer>().sprite = typeIngredients[i];
+
+                // Update Ingredient Quantity text with the Villager's quest info
+                qOrder3Txt.text = "x" + qIngredientsRequired[i];
+            }
         }
     }
 }

@@ -38,11 +38,12 @@ public class DayCalendar : MonoBehaviour
 
 
     // ---------------------------------- GAME CONTROLLER ------------------------------------------
-    // Reference to the Game Controller GO
-    private GameObject gameController;
-
     // Access Game Controller script
     private GameController GameControllerScript;
+
+    // Access Calendar script
+    private Calendar CalendarScript;
+
 
 
 
@@ -50,11 +51,11 @@ public class DayCalendar : MonoBehaviour
     void Start()
     {
         // ---------------------------------- ACCESS --------------------------------------------
-        // Access Game Controller GO
-        gameController = GameObject.Find("Game Controller");
+        // Access the Game Controller Script
+        GameControllerScript = FindObjectOfType<GameController>();
 
-        // Access the Game Controller Script from the Game Controller GO
-        GameControllerScript = gameController.GetComponent<GameController>();
+        // Access the Calendar Script
+        CalendarScript = FindObjectOfType<Calendar>();
 
         // Access the Calendar Panel script
         CalendarPanelScript = FindObjectOfType<CalendarPanel>();
@@ -101,13 +102,20 @@ public class DayCalendar : MonoBehaviour
 
 
     // ---------------------------------- DAY IS SELECTED ----------------------------------------------------------------
+    // Unselect last clicked chip + Select the current clicked chip (change its UI to the selected one)
     public void SelectCalendarChip()
     {
+        // Unselect last selected chip
+        CalendarScript.DeselectCalendarChip();
+
         // Access the Sprite Renderer of the clicked chip
         SpriteRenderer daySpriteRenderer = GetComponent<SpriteRenderer>();
 
         // Set it as clicked
         isClicked = true;
+
+        // Store the selected day
+        Calendar.selectedDay = this;
 
         // If it's a Default/Regular day
         if (isToday == false)

@@ -45,10 +45,19 @@ public class Calendar : MonoBehaviour
 
 
 
-    // ---------------------------------- COMPACTED CALENDAR ---------------------------------------
-    // ---------------------------------- Texts -------------------------------------------
-    // Store the Current Day Text from the Compacted Calendar
-    //public TextMeshProUGUI currentDayTxt;
+    // ---------------------------------- SELECTION ------------------------------------------------
+    // Reference to the selected day
+    public static DayCalendar selectedDay;
+
+    // References to all the Day Chips
+    public DayCalendar[] cDayChips;
+
+    // ---------------------------------- States ------------------------------------------
+    // Store the sprite of each day chip state
+    public Sprite dayDefault;
+    public Sprite dayToday;
+    public Sprite daySelected;
+    // Sprites from days passed and missions failed/accomplished
 
 
 
@@ -70,6 +79,9 @@ public class Calendar : MonoBehaviour
 
         // Store the Week Days' names in the array Week Days
         weekDays = new string[7] { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday" };
+
+        // Store all the references to the Day chips
+        cDayChips = FindObjectsOfType<DayCalendar>();
     }
 
 
@@ -163,6 +175,41 @@ public class Calendar : MonoBehaviour
                     activeWeekDay.tag = weekDays[0];
 
                     break;
+                }
+            }
+        }
+    }
+
+
+    // ---------------------------------- DAY IS UNSELECTED ------------------------------------------------
+    public void DeselectCalendarChip()
+    {
+        // Loop through all the day chips (28)
+        for (int i = 0; i < cDayChips.Length; i = i + 1)
+        {
+            // It it was the last clicked day
+            if (cDayChips[i].isClicked == true)
+            {
+                // Access its Sprite Renderer
+                SpriteRenderer daySpriteRenderer = cDayChips[i].GetComponent<SpriteRenderer>();
+
+                // Unselect it
+                cDayChips[i].isClicked = false;
+
+                // Empty the selected day
+                selectedDay = null;
+
+                // If it's a Default/Regular day
+                if (cDayChips[i].isToday == false)
+                {
+                    // Update its state to Default non selected (by changing its sprite)
+                    daySpriteRenderer.sprite = dayDefault;
+                }
+
+                else
+                {
+                    // Update its state to Today non selected (by changing its sprite)
+                    daySpriteRenderer.sprite = dayToday;
                 }
             }
         }

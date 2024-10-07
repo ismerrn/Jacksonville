@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3 days
+  m_text: 2 days
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3dc53f90d2ac68d42915344d85b000cb, type: 2}
   m_sharedMaterial: {fileID: 3842893125722849633, guid: 3dc53f90d2ac68d42915344d85b000cb, type: 2}
@@ -4226,6 +4226,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7142989081525668931, guid: 3a0f63d1a4884934480722a0b3cb6a63, type: 3}
   m_PrefabInstance: {fileID: 448863262}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &449108548 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2034252464028750301, guid: f59fef4d4d669e9468012a9e69d82b39, type: 3}
+  m_PrefabInstance: {fileID: 193157957}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &466071839
 GameObject:
   m_ObjectHideFlags: 0
@@ -5276,6 +5281,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7142989081525668931, guid: 3a0f63d1a4884934480722a0b3cb6a63, type: 3}
   m_PrefabInstance: {fileID: 581980610}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &583106396 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2034252464028750301, guid: f59fef4d4d669e9468012a9e69d82b39, type: 3}
+  m_PrefabInstance: {fileID: 1373559603}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &583992541
 GameObject:
@@ -6523,6 +6533,10 @@ PrefabInstance:
     - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
       propertyPath: isToday
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: isClicked
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8492,11 +8506,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questsScripts: []
   calendarDayChips: []
+  typeIngredients: []
+  tomatoIngr: {fileID: 21300000, guid: 542922db10411ae4cb2343885c349931, type: 3}
+  carrotIngr: {fileID: 21300000, guid: b75dcf935e681ca45a92148ae0ba7cdc, type: 3}
+  eggplantIngr: {fileID: 21300000, guid: 4bf924bb7a63e4441921fd4e0966e6ad, type: 3}
+  mushroomIngr: {fileID: 21300000, guid: d81423aaf8e5442458bdcbd73852f733, type: 3}
   qOwnerIcon: {fileID: 17030727}
   qOwnerNameTxt: {fileID: 445465436}
   qDateTxt: {fileID: 801172561}
   qDaysLeftTxt: {fileID: 123758578}
   qDescriptionTxt: {fileID: 1827482572}
+  qOrder1Icon: {fileID: 583106396}
+  qOrder1Txt: {fileID: 1820976566}
+  qOrder2Icon: {fileID: 2117351654}
+  qOrder2Txt: {fileID: 1472376653}
+  qOrder3Icon: {fileID: 449108548}
+  qOrder3Txt: {fileID: 1780312857}
   qReward1Icon: {fileID: 2063380849}
   qReward1Txt: {fileID: 2000685772}
   qReward2Icon: {fileID: 1424038157}
@@ -9695,6 +9720,10 @@ MonoBehaviour:
   yearsUsed: 0
   activeSeason: {fileID: 327588039}
   activeWeekDay: {fileID: 519679689}
+  cDayChips: []
+  dayDefault: {fileID: 21300000, guid: fe408547448187a4fa4518b28f90b27e, type: 3}
+  dayToday: {fileID: 21300000, guid: 99cf6becf78024643bffd9842d0238a6, type: 3}
+  daySelected: {fileID: 21300000, guid: 1e300e840b9a77946855615d00932c86, type: 3}
 --- !u!1001 &1175680348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10729,6 +10758,58 @@ PrefabInstance:
         (           )'
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: carrotIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: b75dcf935e681ca45a92148ae0ba7cdc, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: ingr1Index
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: ingr2Index
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: ingr3Index
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder1Txt
+      value: 
+      objectReference: {fileID: 1820976566}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder2Txt
+      value: 
+      objectReference: {fileID: 1472376653}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder3Txt
+      value: 
+      objectReference: {fileID: 1780312857}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: tomatoIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: 542922db10411ae4cb2343885c349931, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder1Icon
+      value: 
+      objectReference: {fileID: 583106396}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder2Icon
+      value: 
+      objectReference: {fileID: 2117351654}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder3Icon
+      value: 
+      objectReference: {fileID: 449108548}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: eggplantIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: 4bf924bb7a63e4441921fd4e0966e6ad, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: mushroomIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: d81423aaf8e5442458bdcbd73852f733, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questCarrots
       value: 4
       objectReference: {fileID: 0}
@@ -10770,6 +10851,10 @@ PrefabInstance:
       propertyPath: questReward2Content
       value: x2000
       objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questDaysLeftCalendarTxt
+      value: 
+      objectReference: {fileID: 123758578}
     - target: {fileID: 3688254956407598187, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -12213,6 +12298,54 @@ PrefabInstance:
         (           )'
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: carrotIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: b75dcf935e681ca45a92148ae0ba7cdc, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: ingr1Index
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: ingr3Index
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder1Txt
+      value: 
+      objectReference: {fileID: 1820976566}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder2Txt
+      value: 
+      objectReference: {fileID: 1472376653}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder3Txt
+      value: 
+      objectReference: {fileID: 1780312857}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: tomatoIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: 542922db10411ae4cb2343885c349931, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder1Icon
+      value: 
+      objectReference: {fileID: 583106396}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder2Icon
+      value: 
+      objectReference: {fileID: 2117351654}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder3Icon
+      value: 
+      objectReference: {fileID: 449108548}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: eggplantIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: 4bf924bb7a63e4441921fd4e0966e6ad, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: mushroomIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: d81423aaf8e5442458bdcbd73852f733, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questCarrots
       value: 3
       objectReference: {fileID: 0}
@@ -12260,6 +12393,10 @@ PrefabInstance:
       propertyPath: questReward2Content
       value: x2000
       objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questDaysLeftCalendarTxt
+      value: 
+      objectReference: {fileID: 123758578}
     - target: {fileID: 3688254956407598187, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -12510,6 +12647,58 @@ PrefabInstance:
         (           )'
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: carrotIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: b75dcf935e681ca45a92148ae0ba7cdc, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: ingr1Index
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: ingr2Index
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: ingr3Index
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder1Txt
+      value: 
+      objectReference: {fileID: 1820976566}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder2Txt
+      value: 
+      objectReference: {fileID: 1472376653}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder3Txt
+      value: 
+      objectReference: {fileID: 1780312857}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: tomatoIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: 542922db10411ae4cb2343885c349931, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder1Icon
+      value: 
+      objectReference: {fileID: 583106396}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder2Icon
+      value: 
+      objectReference: {fileID: 2117351654}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder3Icon
+      value: 
+      objectReference: {fileID: 449108548}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: eggplantIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: 4bf924bb7a63e4441921fd4e0966e6ad, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: mushroomIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: d81423aaf8e5442458bdcbd73852f733, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questCarrots
       value: 2
       objectReference: {fileID: 0}
@@ -12556,6 +12745,10 @@ PrefabInstance:
       propertyPath: questReward2Content
       value: x2000
       objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questDaysLeftCalendarTxt
+      value: 
+      objectReference: {fileID: 123758578}
     - target: {fileID: 3688254956407598187, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -16149,6 +16342,58 @@ PrefabInstance:
         (           )'
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: carrotIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: b75dcf935e681ca45a92148ae0ba7cdc, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: ingr1Index
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: ingr2Index
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: ingr3Index
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder1Txt
+      value: 
+      objectReference: {fileID: 1820976566}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder2Txt
+      value: 
+      objectReference: {fileID: 1472376653}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder3Txt
+      value: 
+      objectReference: {fileID: 1780312857}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: tomatoIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: 542922db10411ae4cb2343885c349931, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder1Icon
+      value: 
+      objectReference: {fileID: 583106396}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder2Icon
+      value: 
+      objectReference: {fileID: 2117351654}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder3Icon
+      value: 
+      objectReference: {fileID: 449108548}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: eggplantIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: 4bf924bb7a63e4441921fd4e0966e6ad, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: mushroomIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: d81423aaf8e5442458bdcbd73852f733, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questTomatos
       value: 5
       objectReference: {fileID: 0}
@@ -16190,6 +16435,10 @@ PrefabInstance:
       propertyPath: questReward2Content
       value: x2000
       objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questDaysLeftCalendarTxt
+      value: 
+      objectReference: {fileID: 123758578}
     - target: {fileID: 3688254956407598187, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -17656,6 +17905,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7142989081525668931, guid: 3a0f63d1a4884934480722a0b3cb6a63, type: 3}
   m_PrefabInstance: {fileID: 2116604679}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2117351654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2034252464028750301, guid: f59fef4d4d669e9468012a9e69d82b39, type: 3}
+  m_PrefabInstance: {fileID: 18814206}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2122556911
 GameObject:
   m_ObjectHideFlags: 0
@@ -18167,6 +18421,54 @@ PrefabInstance:
         (           )'
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: carrotIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: b75dcf935e681ca45a92148ae0ba7cdc, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: ingr2Index
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: ingr3Index
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder1Txt
+      value: 
+      objectReference: {fileID: 1820976566}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder2Txt
+      value: 
+      objectReference: {fileID: 1472376653}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder3Txt
+      value: 
+      objectReference: {fileID: 1780312857}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: tomatoIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: 542922db10411ae4cb2343885c349931, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder1Icon
+      value: 
+      objectReference: {fileID: 583106396}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder2Icon
+      value: 
+      objectReference: {fileID: 2117351654}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: qOrder3Icon
+      value: 
+      objectReference: {fileID: 449108548}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: eggplantIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: 4bf924bb7a63e4441921fd4e0966e6ad, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: mushroomIngr
+      value: 
+      objectReference: {fileID: 21300000, guid: d81423aaf8e5442458bdcbd73852f733, type: 3}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questCarrots
       value: 5
       objectReference: {fileID: 0}
@@ -18208,6 +18510,10 @@ PrefabInstance:
       propertyPath: questReward2Content
       value: x2000
       objectReference: {fileID: 0}
+    - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: questDaysLeftCalendarTxt
+      value: 
+      objectReference: {fileID: 123758578}
     - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1

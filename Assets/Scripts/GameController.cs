@@ -48,6 +48,9 @@ public class GameController : MonoBehaviour
     // Store the Calendar Script
     public Calendar CalendarScript;
 
+    // Store the Calendar Panel Script
+    private CalendarPanel CalendarPanelScript;
+
     // Store every Calendar chip
     public DayCalendar[] calendarChips;
 
@@ -191,6 +194,9 @@ public class GameController : MonoBehaviour
         // ---------------------------------- CALENDAR ----------------------------------------------------
         // Store all the day chips in an array
         calendarChips = FindObjectsOfType<DayCalendar>();
+
+        // Reference to the Calendar Panel Script
+        CalendarPanelScript = FindObjectOfType<CalendarPanel>();
 
 
         // ---------------------------------- PLAYER CHIP (MAP) -------------------------------------------
@@ -607,6 +613,11 @@ public class GameController : MonoBehaviour
 
         // Update the Week Day text
         currentWeekDayTxt.text = "" + CalendarScript.activeWeekDay.tag;
+
+
+        // ---------------------------------- RESET STEPS AVAILABLE -----------------------------------
+        // Update Calendar's +Detail Panel with the current left days
+        CalendarPanelScript.CheckQuestToDisplay();
 
 
         // ---------------------------------- RESET STEPS AVAILABLE -----------------------------------

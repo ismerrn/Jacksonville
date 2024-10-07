@@ -6,6 +6,12 @@ using UnityEngine;
 
 public class CalendarPanel : MonoBehaviour
 {
+    // ---------------------------------- GAME CONTROLLER ------------------------------------------
+    // Access Calendar script
+    private Calendar CalendarScript;
+
+
+
     // ---------------------------------- QUESTS ---------------------------------------------------
     // Store every Quest script
     public Quest[] questsScripts;
@@ -19,21 +25,28 @@ public class CalendarPanel : MonoBehaviour
 
 
     // ---------------------------------- +DETAILS PANEL -------------------------------------------
+    // ------------------------------- Owner Identity -------------------------
     // Store the Quest's (+Details) Owner Icon GO
     public GameObject qOwnerIcon;
 
     // Store the Quest's (+Details) Owner Name text
     public TextMeshProUGUI qOwnerNameTxt;
 
+
+    // ------------------------------- Timing ---------------------------------
     // Store the Quest's (+Details) Date text
     public TextMeshProUGUI qDateTxt;
 
     // Store the Quest's (+Details) Days Left text
     public TextMeshProUGUI qDaysLeftTxt;
 
+
+    // ------------------------------- Requirements ---------------------------
     // Store the Quest's (+Details) Description text
     public TextMeshProUGUI qDescriptionTxt;
 
+
+    // ------------------------------- Rewards --------------------------------
     // Store the Quest's (+Details) Reward 1 Icon GO
     public GameObject qReward1Icon;
 
@@ -51,6 +64,11 @@ public class CalendarPanel : MonoBehaviour
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
     void Start()
     {
+        // ---------------------------------- ACCESS ------------------------------------------------------
+        // Access the Calendar script
+        CalendarScript = FindObjectOfType<Calendar>();
+
+
         // ---------------------------------- STORE -------------------------------------------------------
         // Store all the Quest scripts
         questsScripts = FindObjectsOfType<Quest>();
@@ -58,6 +76,7 @@ public class CalendarPanel : MonoBehaviour
         // Store all the Calendar Day chips
         calendarDayChips = FindObjectsOfType<DayCalendar>();
     }
+
 
 
     // ---------------------------------- CHECK QUEST TO DISPLAY ---------------------------------------------------------
@@ -74,10 +93,9 @@ public class CalendarPanel : MonoBehaviour
                 if (calendarDayChips[i].transform.GetChild(0).tag == "Mark")
                 {
                     // And update the +Details Panel with Mark's quest data (icon, name, date, description, ingredient orders, rewards)
-                    UpdateQuestOwnerIcon(i);
-                    UpdateQuestOwnerName(i);
-                    UpdateQuestDate(i);
-                    UpdateQuestDescript(i);
+                    UpdateQuestOwnerIdentity(i);
+                    UpdateQuestTime(i);
+                    UpdateQuestRequirements(i);
                     UpdateQuestRewards(i);
                 }
 
@@ -85,10 +103,9 @@ public class CalendarPanel : MonoBehaviour
                 if (calendarDayChips[i].transform.GetChild(0).tag == "Tim")
                 {
                     // And update the +Details Panel with Tim's quest data (icon, name, date, description, ingredient orders, rewards)
-                    UpdateQuestOwnerIcon(i);
-                    UpdateQuestOwnerName(i);
-                    UpdateQuestDate(i);
-                    UpdateQuestDescript(i);
+                    UpdateQuestOwnerIdentity(i);
+                    UpdateQuestTime(i);
+                    UpdateQuestRequirements(i);
                     UpdateQuestRewards(i);
                 }
 
@@ -96,10 +113,9 @@ public class CalendarPanel : MonoBehaviour
                 if (calendarDayChips[i].transform.GetChild(0).tag == "Felix")
                 {
                     // And update the +Details Panel with Felix's quest data (icon, name, date, description, ingredient orders, rewards)
-                    UpdateQuestOwnerIcon(i);
-                    UpdateQuestOwnerName(i);
-                    UpdateQuestDate(i);
-                    UpdateQuestDescript(i);
+                    UpdateQuestOwnerIdentity(i);
+                    UpdateQuestTime(i);
+                    UpdateQuestRequirements(i);
                     UpdateQuestRewards(i);
                 }
 
@@ -107,10 +123,9 @@ public class CalendarPanel : MonoBehaviour
                 if (calendarDayChips[i].transform.GetChild(0).tag == "Bobby")
                 {
                     // And update the +Details Panel with Bobby's quest data (icon, name, date, description, ingredient orders, rewards)
-                    UpdateQuestOwnerIcon(i);
-                    UpdateQuestOwnerName(i);
-                    UpdateQuestDate(i);
-                    UpdateQuestDescript(i);
+                    UpdateQuestOwnerIdentity(i);
+                    UpdateQuestTime(i);
+                    UpdateQuestRequirements(i);
                     UpdateQuestRewards(i);
                 }
 
@@ -118,10 +133,9 @@ public class CalendarPanel : MonoBehaviour
                 if (calendarDayChips[i].transform.GetChild(0).tag == "Niggel")
                 {
                     // And update the +Details Panel with Niggel's quest data (icon, name, date, description, ingredient orders, rewards)
-                    UpdateQuestOwnerIcon(i);
-                    UpdateQuestOwnerName(i);
-                    UpdateQuestDate(i);
-                    UpdateQuestDescript(i);
+                    UpdateQuestOwnerIdentity(i);
+                    UpdateQuestTime(i);
+                    UpdateQuestRequirements(i);
                     UpdateQuestRewards(i);
                 }
             }
@@ -129,9 +143,10 @@ public class CalendarPanel : MonoBehaviour
     }
 
 
+
     // ---------------------------------- UPDATE QUEST OWNER ICON --------------------------------------------------------
-    // Update the Quest +Details panel with the Villager's icon
-    void UpdateQuestOwnerIcon(int i)
+    // Update the Quest +Details panel with the quest owner icon + quest owner name
+    void UpdateQuestOwnerIdentity(int i)
     {
         // Loop through all the quest scripts
         for (int i2 = 0; i2 < questsScripts.Length; i2 = i2 + 1)
@@ -141,21 +156,7 @@ public class CalendarPanel : MonoBehaviour
             {
                 // Update the +Details Quest Owner Icon to the selected quest owner icon
                 qOwnerIcon.GetComponent<SpriteRenderer>().sprite = questsScripts[i2].questOwnerIcon;
-            }
-        }
-    }
 
-
-    // ---------------------------------- UPDATE QUEST OWNER NAME --------------------------------------------------------
-    // Update the Quest +Details panel with the Villager's name
-    void UpdateQuestOwnerName(int i)
-    {
-        // Loop through all the quest scripts
-        for (int i2 = 0; i2 < questsScripts.Length; i2 = i2 + 1)
-        {
-            // Look for Quest of the Mission owner
-            if (calendarDayChips[i].transform.GetChild(0).tag == questsScripts[i2].gameObject.name)
-            {
                 // Set the owner's name as the +Details panel quest owner's name
                 qOwnerNameTxt.text = "" + questsScripts[i2].questOwnerName;
             }
@@ -163,9 +164,10 @@ public class CalendarPanel : MonoBehaviour
     }
 
 
+
     // ---------------------------------- UPDATE QUEST DATE --------------------------------------------------------------
-    // Update the Quest +Details panel with the Villager's quest date
-    void UpdateQuestDate(int i)
+    // Update the Quest +Details panel with the Villager's quest date + quest days left
+    void UpdateQuestTime(int i)
     {
         // Loop through all the quest scripts
         for (int i2 = 0; i2 < questsScripts.Length; i2 = i2 + 1)
@@ -173,16 +175,42 @@ public class CalendarPanel : MonoBehaviour
             // Look for Quest of the Mission owner
             if (calendarDayChips[i].transform.GetChild(0).tag == questsScripts[i2].gameObject.name)
             {
+                // ---------------------------------- CALCULATE DAYS LEFT ----------------------------------------
+                // Reference to store time left to accomplish this quest
+                int daysLeftForQuest;
+
+                // Calculate the Days Left for the Quest to expire (+1 because the current day counts too)
+                daysLeftForQuest = questsScripts[i2].questDay - CalendarScript.daysUsed + 1;
+
+
+                // ---------------------------------- UPDATE QUEST DATE ------------------------------------------
                 // Set the owner's quest date as the +Details panel quest date text
                 qDateTxt.text = "" + questsScripts[i2].questDate;
+
+
+                // ---------------------------------- UPDATE LEFT DAYS -------------------------------------------
+                // If there's days left in Positive numbers (0, 1, 2, etc.)
+                if (daysLeftForQuest >= 0)
+                {
+                    // Update the Days Left text in the Calendar +Details UI Panel
+                    qDaysLeftTxt.text = daysLeftForQuest + " days";
+                }
+
+                // If there's days left in Negative numbers
+                else
+                {
+                    // Update the Days Left text in the Calendar +Details UI Panel
+                    qDaysLeftTxt.text = 0 + " days";
+                }
             }
         }
     }
+
 
 
     // ---------------------------------- UPDATE QUEST DESCRIPTION -------------------------------------------------------
-    // Update the Quest +Details panel with the Villager's quest description
-    void UpdateQuestDescript(int i)
+    // Update the Quest +Details panel with the Villager's quest description + quest ingredient orders
+    void UpdateQuestRequirements(int i)
     {
         // Loop through all the quest scripts
         for (int i2 = 0; i2 < questsScripts.Length; i2 = i2 + 1)
@@ -190,11 +218,16 @@ public class CalendarPanel : MonoBehaviour
             // Look for Quest of the Mission owner
             if (calendarDayChips[i].transform.GetChild(0).tag == questsScripts[i2].gameObject.name)
             {
+                // ---------------------------------- DESCRIPTION ------------------------------------------------
                 // Set the owner's quest description as the +Details panel quest Description text
                 qDescriptionTxt.text = "" + questsScripts[i2].questDescription;
+
+                // Check & Update the Quest's Orders
+                questsScripts[i2].CheckUpdateQuestOrder();
             }
         }
     }
+
 
 
     // ---------------------------------- UPDATE QUEST REWARDS -----------------------------------------------------------
