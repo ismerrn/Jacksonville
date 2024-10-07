@@ -45,6 +45,11 @@ public class Player : MonoBehaviour
     public Quest[] villagersQuests;
 
 
+    // ---------------------------------- END DEMO NOTIFICATION ------------------------------------
+    // Reference to the end demo Notification GO
+    public GameObject endDemoNotification;
+
+
     // ---------------------------------- AT THE START OF THE GAME ------------------------------------------
     void Start()
     {
@@ -221,8 +226,19 @@ public class Player : MonoBehaviour
                 // Make the week day pass
                 CalendarScript.WeekDayPass();
 
-                // Crear una función (y llamarla) que resetee el día
-                GameControllerScript.ResetDay();
+                // If the player has passed the 1st week
+                if (GameControllerScript.activeDay.GetComponent<DayCalendar>().dayID == 7)
+                {
+                    // Active the end demo Notification
+                    endDemoNotification.SetActive(true);
+                }
+
+                // If the player is still in the 1st week
+                else
+                {
+                    // Reset day
+                    GameControllerScript.ResetDay();
+                }
             }
         }
     }

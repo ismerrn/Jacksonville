@@ -1,9 +1,10 @@
 using System;
 using System.Collections;
+using UnityEngine.UI;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -392,8 +393,6 @@ public class GameController : MonoBehaviour
             // And If it's a Mission day
             if (activeDay.tag == "Mission Day")
             {
-                Debug.Log("Es día de Misión");
-
                 // Deactivate the Default Villager icon
                 activeDay.transform.GetChild(0).gameObject.SetActive(false);
 
@@ -407,8 +406,6 @@ public class GameController : MonoBehaviour
             // Or If it's a Regular day
             else
             {
-                Debug.Log("Es día Normal");
-
                 // Set it as Today (by changing its sprite)
                 activeDay.GetComponent<SpriteRenderer>().sprite = dayToday;
             }
@@ -423,8 +420,6 @@ public class GameController : MonoBehaviour
                 // And If it's a Mission day
                 if (calendarChips[i].tag == "Mission Day")
                 {
-                    Debug.Log("Es día de Misión");
-
                     // Activate the Default Villager icon
                     calendarChips[i].transform.GetChild(0).gameObject.SetActive(true);
 
@@ -438,8 +433,6 @@ public class GameController : MonoBehaviour
                 // Or If it's a Regular day
                 else
                 {
-                    Debug.Log("Es día Normal");
-
                     // Set it as Today (by changing its sprite)
                     calendarChips[i].GetComponent<SpriteRenderer>().sprite = dayDefault;
                 }
@@ -451,8 +444,6 @@ public class GameController : MonoBehaviour
                 // And If it's a Mission day
                 if (calendarChips[i].tag == "Mission Day")
                 {
-                    Debug.Log("Es día de Misión");
-
                     // Activate the Default Villager icon
                     calendarChips[i].transform.GetChild(0).gameObject.SetActive(true);
 
@@ -466,8 +457,6 @@ public class GameController : MonoBehaviour
                 // Or If it's a Regular day
                 else
                 {
-                    Debug.Log("Es día Normal");
-
                     // Set it as Today (by changing its sprite)
                     calendarChips[i].GetComponent<SpriteRenderer>().sprite = daySelected;
                 }
@@ -925,6 +914,25 @@ public class GameController : MonoBehaviour
             // Store that Camera isn't focusing in the Map screen
             isInMap = true;
         }
+    }
+
+
+
+    // ---------------------------------- RESTART GAME --------------------------------------------------------------------------
+    // When restart button clicked, restart game from 0
+    public void RestartGame()
+    {
+        // Restart Game (by restarting the scene)
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+
+    // ---------------------------------- QUIT GAME -----------------------------------------------------------------------------
+    // When quit button clicked, quit game
+    public void QuitGame()
+    {
+        // Close the game
+        Application.Quit();
     }
 }
 
