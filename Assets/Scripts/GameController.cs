@@ -444,6 +444,34 @@ public class GameController : MonoBehaviour
                     calendarChips[i].GetComponent<SpriteRenderer>().sprite = dayDefault;
                 }
             }
+            
+            // If it has been selected
+            else
+            {
+                // And If it's a Mission day
+                if (calendarChips[i].tag == "Mission Day")
+                {
+                    Debug.Log("Es día de Misión");
+
+                    // Activate the Default Villager icon
+                    calendarChips[i].transform.GetChild(0).gameObject.SetActive(true);
+
+                    // Deactivate the Today Villager icon
+                    calendarChips[i].transform.GetChild(1).gameObject.SetActive(false);
+
+                    // Set it as Today (by changing its sprite)
+                    calendarChips[i].GetComponent<SpriteRenderer>().sprite = daySelected;
+                }
+
+                // Or If it's a Regular day
+                else
+                {
+                    Debug.Log("Es día Normal");
+
+                    // Set it as Today (by changing its sprite)
+                    calendarChips[i].GetComponent<SpriteRenderer>().sprite = daySelected;
+                }
+            }
         }
 
     }
@@ -466,8 +494,12 @@ public class GameController : MonoBehaviour
                 // Set it as not clicked
                 calendarChips[i].isClicked = false;
 
-                // Update its state to Default (by changing its sprite)
-                daySpriteRenderer.sprite = dayDefault;
+                // If it's not a today chip
+                if (calendarChips[i].GetComponent<DayCalendar>().isToday == false)
+                {
+                    // Update its state to Default (by changing its sprite)
+                    daySpriteRenderer.sprite = dayDefault;
+                }
             }
         }
     }
