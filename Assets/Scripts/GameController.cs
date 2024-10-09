@@ -931,6 +931,9 @@ public class GameController : MonoBehaviour
     // When quit button clicked, quit game
     public void QuitGame()
     {
+        // Print "Exit game" in the Console
+        Debug.Log("Exit game");
+
         // Close the game
         Application.Quit();
     }
