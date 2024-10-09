@@ -52,6 +52,9 @@ public class GameController : MonoBehaviour
 
 
     // ---------------------------------- General -----------------------------------------
+    // Reference to Calendar canvas
+    public GameObject calendarCanvas;
+
     // Store the current Day
     public GameObject activeDay;
 
@@ -133,6 +136,9 @@ public class GameController : MonoBehaviour
 
 
     // ---------------------------------- MAP ------------------------------------------------------
+    // Reference to Map canvas
+    public GameObject mapCanvas;
+
     // ---------------------------------- Steps -------------------------------------------
     // Store the number of Steps (Total --> each round, Left --> not used this round)
     public int stepsTotal = 3;
@@ -830,6 +836,13 @@ public class GameController : MonoBehaviour
                 UnselectIngredient();
             }
 
+            // ---------------------------------- DE/ACTIVATE CANVASES ------------------------------
+            // Deactivate the Calendar canvas
+            calendarCanvas.SetActive(true);
+
+            // Deactivate Map canvas
+            mapCanvas.SetActive(false);
+
 
             // ---------------------------------- CHANGE CAMERA POSITION ----------------------------
             // Set the Main Camera's position as the Calendar screen position
@@ -863,6 +876,13 @@ public class GameController : MonoBehaviour
                 // Unselect Ingredient
                 UnselectIngredient();
             }
+
+            // ---------------------------------- DE/ACTIVATE CANVASES ------------------------------
+            // Deactivate the Calendar canvas
+            calendarCanvas.SetActive(false);
+
+            // Deactivate Map canvas
+            mapCanvas.SetActive(false);
 
 
             // ---------------------------------- CHANGE CAMERA POSITION ----------------------------
@@ -898,6 +918,13 @@ public class GameController : MonoBehaviour
                 UnselectIngredient();
             }
 
+            // ---------------------------------- DE/ACTIVATE CANVASES ------------------------------
+            // Deactivate the Calendar canvas
+            calendarCanvas.SetActive(false);
+
+            // Activate Map canvas
+            mapCanvas.SetActive(true);
+
 
             // ---------------------------------- CHANGE CAMERA POSITION ----------------------------
             // Set the Main Camera's position as the Calendar screen position
@@ -931,6 +958,9 @@ public class GameController : MonoBehaviour
     // When quit button clicked, quit game
     public void QuitGame()
     {
+        // Print "Exit game" in the Console
+        Debug.Log("Exit game");
+
         // Close the game
         Application.Quit();
     }

@@ -46,6 +46,9 @@ public class Player : MonoBehaviour
 
 
     // ---------------------------------- END DEMO NOTIFICATION ------------------------------------
+    // Reference to Map canvas
+    public GameObject mapCanvas;
+
     // Reference to the end demo Notification GO
     public GameObject endDemoNotification;
 
@@ -229,6 +232,10 @@ public class Player : MonoBehaviour
                 // If the player has passed the 1st week
                 if (GameControllerScript.activeDay.GetComponent<DayCalendar>().dayID == 7)
                 {
+                    // ---------------------------------- DE/ACTIVATE CANVASES ------------------------------
+                    // Activate Map canvas
+                    mapCanvas.SetActive(true);
+
                     // Active the end demo Notification
                     endDemoNotification.SetActive(true);
                 }
