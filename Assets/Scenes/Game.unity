@@ -7125,7 +7125,23 @@ PrefabInstance:
     - target: {fileID: 5903054105426568730, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 300c4d47a474a774c84c5694c4c83d20, type: 3}
+      objectReference: {fileID: 21300000, guid: 43d0aec6ec8157f45b8cf2410eddde69, type: 3}
+    - target: {fileID: 6785425876898427459, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785425876898427459, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785425876898427459, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 6785425876898427459, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7690793036081936252, guid: f7cd1ec41a432c048828be1220354d91, type: 3}
       propertyPath: dayID
       value: 5
@@ -11705,6 +11721,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 612287526}
     m_Modifications:
     - target: {fileID: 88020687301699155, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_Size.x
+      value: 3.8568258
+      objectReference: {fileID: 0}
+    - target: {fileID: 88020687301699155, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_Size.y
+      value: 4.2186375
+      objectReference: {fileID: 0}
+    - target: {fileID: 88020687301699155, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.10175514
+      objectReference: {fileID: 0}
+    - target: {fileID: 88020687301699155, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
@@ -11718,11 +11746,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 88020687301699155, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 45
+      value: 4.43
       objectReference: {fileID: 0}
     - target: {fileID: 88020687301699155, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 42
+      value: 4.21
       objectReference: {fileID: 0}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questUI
@@ -11821,7 +11849,7 @@ PrefabInstance:
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questOwnerIcon
       value: 
-      objectReference: {fileID: 21300000, guid: 300c4d47a474a774c84c5694c4c83d20, type: 3}
+      objectReference: {fileID: 21300000, guid: 43d0aec6ec8157f45b8cf2410eddde69, type: 3}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questOwnerName
       value: Felix
@@ -11855,7 +11883,19 @@ PrefabInstance:
     - target: {fileID: 3688254956407598187, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 300c4d47a474a774c84c5694c4c83d20, type: 3}
+      objectReference: {fileID: 21300000, guid: 43d0aec6ec8157f45b8cf2410eddde69, type: 3}
+    - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11895,6 +11935,10 @@ PrefabInstance:
     - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3695475494860011139, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5354007124470236277, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: m_Name
@@ -14077,7 +14121,7 @@ PrefabInstance:
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questOwnerIcon
       value: 
-      objectReference: {fileID: 21300000, guid: 18ee9a47a661a0c44ba356f6475e30e3, type: 3}
+      objectReference: {fileID: 21300000, guid: d72338dcb2f43e140a19daca35b7adae, type: 3}
     - target: {fileID: 1780848153517929162, guid: 08a38c786fc9f5645bcb995824a5a3b5, type: 3}
       propertyPath: questOwnerName
       value: Niggel
@@ -15247,6 +15291,22 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
+    - target: {fileID: 2402370868076990475, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402370868076990475, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402370868076990475, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402370868076990475, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2630399248432294943, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -15319,6 +15379,10 @@ PrefabInstance:
       propertyPath: m_text
       value: x2
       objectReference: {fileID: 0}
+    - target: {fileID: 3357327002786022482, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 43d0aec6ec8157f45b8cf2410eddde69, type: 3}
     - target: {fileID: 3382826725734915541, guid: f9b7e499f5df8d24297bdd13a47dc5a3, type: 3}
       propertyPath: m_text
       value: Felix

@@ -137,12 +137,12 @@ public class Player : MonoBehaviour
                 }
             }
 
-            // If player's path goes through Felix's house
+            // If player's path goes through Bobby's house
             if (collision.name == "Bobby")
             {
                 Debug.Log("Toma Bobby");
 
-                // If there's still days left to accomplish Felix's quest
+                // If there's still days left to accomplish Bobby's quest
                 if (gameController.GetComponent<Calendar>().daysUsed <= collision.GetComponent<Quest>().questDay)
                 {
                     // Deliver the ingredients available and needed
@@ -150,12 +150,12 @@ public class Player : MonoBehaviour
                 }
             }
 
-            // If player's path goes through Felix's house
+            // If player's path goes through Niggel's house
             if (collision.name == "Niggel")
             {
                 Debug.Log("Toma Niggel");
 
-                // If there's still days left to accomplish Felix's quest
+                // If there's still days left to accomplish Niggel's quest
                 if (gameController.GetComponent<Calendar>().daysUsed <= collision.GetComponent<Quest>().questDay)
                 {
                     // Deliver the ingredients available and needed
